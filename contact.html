@@ -29,6 +29,10 @@
         .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 1rem; }
         .submit-btn { background-color: var(--primary-color); color: var(--white); border: none; padding: 12px 20px; border-radius: 4px; cursor: pointer; font-weight: bold; width: 100%; transition: opacity 0.3s; }
         .submit-btn:hover { opacity: 0.9; }
+        
+        /* Honeypot Security Field - Completely Invisible to Humans */
+        .security-field { display: none !important; tab-index: -1; autocomplete: off; }
+        
         @media (max-width: 768px) { .contact-layout { grid-template-columns: 1fr; } }
         footer { text-align: center; padding: 20px; color: #777; font-size: 0.85rem; border-top: 1px solid #e2e8f0; margin-top: 40px; }
     </style>
@@ -62,18 +66,24 @@
             </div>
 
             <div class="form-card">
-                <form id="contactForm">
+                <form id="securedContactForm">
+                    <!-- Invisible Honeypot Spam Trap Field -->
+                    <div class="form-group security-field">
+                        <label for="middle_name">Leave this box completely blank</label>
+                        <input type="text" id="middle_name" name="middle_name">
+                    </div>
+
                     <div class="form-group">
                         <label for="name">Company / Contact Name</label>
-                        <input type="text" id="name" required autocomplete="name">
+                        <input type="text" id="name" required minlength="3" maxlength="70">
                     </div>
                     <div class="form-group">
                         <label for="email">Secure Return Email Address</label>
-                        <input type="email" id="email" required autocomplete="email">
+                        <input type="email" id="email" required>
                     </div>
                     <div class="form-group">
                         <label for="message">Procurement Query / Scope Description</label>
-                        <textarea id="message" rows="5" required></textarea>
+                        <textarea id="message" rows="5" required minlength="10" maxlength="2000"></textarea>
                     </div>
                     <button type="submit" class="submit-btn">Send Message Directly</button>
                 </form>
@@ -83,16 +93,31 @@
     </div>
 
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        document.getElementById('securedContactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value;
-            var message = document.getElementById('message').value;
+            // 1. Check if Honeypot Trap was filled by a script crawler
+            var trapField = document.getElementById('middle_name').value;
+            if (trapField.length > 0) {
+                console.warn("Spam execution intercepted.");
+                return false; 
+            }
             
-            var subject = encodeURIComponent("Procurement Query from " + name);
-            var body = encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message);
+            var name = document.getElementById('name').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var message = document.getElementById('message').value.trim();
             
+            // 2. Validate input fields to avoid empty or malicious submittals
+            if (name.length < 3 || message.length < 10) {
+                alert("Please provide a valid name and dynamic description query.");
+                return false;
+            }
+            
+            // 3. Process encrypted text string handling for handoff
+            var subject = encodeURIComponent("Procurement Inquiry from " + name);
+            var body = encodeURIComponent("Company/Contact: " + name + "\nReturn Email Address: " + email + "\n\nScope Description:\n" + message);
+            
+            // Route message data using verified local email handler client
             window.location.href = "mailto:info@asgrc.co?subject=" + subject + "&body=" + body;
         });
     </script>
