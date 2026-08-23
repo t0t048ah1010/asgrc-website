@@ -1,9 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASGRC – Products</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --asgrc-blue: #0A2A66;
+            --asgrc-grey: #BFC4CC;
+        }
+
+        /* Improved fade-in animation */
+        .fade {
+            opacity: 0;
+            animation: fadeIn 2.5s ease-out forwards;
+            animation-delay: 0.2s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 fade">
+
+<!-- NAVBAR -->
+<header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row md:justify-between md:items-center">
+
+        <!-- Text Logo -->
+        <div class="flex flex-col leading-tight text-center md:text-left mb-4 md:mb-0">
+            <span class="font-extrabold tracking-wider"
+                  style="color:#0A2A66; font-size:36px;">
+                ASGRC
+            </span>
+            <span class="italic"
+                  style="color:#0A2A66; font-size:16px; margin-top:-4px;">
+                Building Elegance
+            </span>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="flex flex-wrap justify-center gap-4 text-lg font-medium">
+            <a href="index.html" class="hover:text-blue-600">Home</a>
+            <a href="products.html" class="hover:text-blue-600">Products</a>
+            <a href="projects.html" class="hover:text-blue-600">Projects</a>
+            <a href="about.html" class="hover:text-blue-600">About</a>
+            <a href="contact.html" class="hover:text-blue-600">Contact</a>
+        </nav>
+
+    </div>
+</header>
+
+<!-- PAGE TITLE -->
+<section class="py-16 bg-white fade">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+        <h1 class="text-5xl font-bold mb-4" style="color: var(--asgrc-blue);">Our Products</h1>
+        <p class="text-lg max-w-3xl mx-auto">
+            ASGRC manufactures high‑performance composite materials including GRC, GRP and GRG,
+            engineered for architectural façades, interior features and complex structural designs.
+        </p>
+    </div>
+</section>
+
+<!-- PRODUCTS GRID WITH BLURRED ARCHITECTURAL BACKGROUND -->
 <section class="py-20 fade"
-style="background: linear-gradient(135deg, #f0f4ff, #d9e2ff, #bfc9ff);">
+style="
+    background: url('assets/img/creek.jpg') center/cover no-repeat fixed;
+    backdrop-filter: blur(6px);
+    background-color: rgba(255,255,255,0.85);
+">
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
 
         <!-- GRC -->
-        <div class="bg-white shadow rounded p-8 fade">
+        <div class="bg-white shadow-xl rounded p-8 fade">
             <h2 class="text-3xl font-bold mb-4" style="color: var(--asgrc-blue);">GRC</h2>
             <p class="text-lg mb-4">
                 Glass Reinforced Concrete (GRC) is a lightweight, durable material ideal for
@@ -16,7 +90,7 @@ style="background: linear-gradient(135deg, #f0f4ff, #d9e2ff, #bfc9ff);">
         </div>
 
         <!-- GRP -->
-        <div class="bg-white shadow rounded p-8 fade">
+        <div class="bg-white shadow-xl rounded p-8 fade">
             <h2 class="text-3xl font-bold mb-4" style="color: var(--asgrc-blue);">GRP</h2>
             <p class="text-lg mb-4">
                 Glass Reinforced Plastic (GRP) is a high‑strength composite used for domes, canopies,
@@ -29,7 +103,7 @@ style="background: linear-gradient(135deg, #f0f4ff, #d9e2ff, #bfc9ff);">
         </div>
 
         <!-- GRG -->
-        <div class="bg-white shadow rounded p-8 fade">
+        <div class="bg-white shadow-xl rounded p-8 fade">
             <h2 class="text-3xl font-bold mb-4" style="color: var(--asgrc-blue);">GRG</h2>
             <p class="text-lg mb-4">
                 Glass Reinforced Gypsum (GRG) is designed for interior applications such as ceilings,
@@ -43,3 +117,23 @@ style="background: linear-gradient(135deg, #f0f4ff, #d9e2ff, #bfc9ff);">
 
     </div>
 </section>
+
+<!-- FOOTER -->
+<footer style="background-color: var(--asgrc-blue); color: white;" class="py-10 fade">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div>
+            <h4 class="text-xl font-bold mb-4">ASGRC</h4>
+            <p>Delivering engineered GRC, GRP & GRG solutions with precision, innovation and excellence.</p>
+        </div>
+        <div>
+            <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+                <li><a href="products.html" class="hover:text-gray-200">Products</a></li>
+                <li><a href="projects.html" class="hover:text-gray-200">Projects</a></li>
+                <li><a href="about.html" class="hover:text-gray-200">About</a></li>
+                <li><a href="contact.html" class="hover:text-gray-200">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="text-xl font-bold mb-4">Contact</h4>
+            <p>Email: info@asgrc.com</p>
