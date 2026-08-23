@@ -28,11 +28,20 @@
 
 <body class="bg-gray-50 text-gray-800 fade">
 
+<!-- HEADER BANNER -->
+<section class="relative h-72 flex items-center justify-center fade"
+style="background: url('header-bg.jpg') center/cover no-repeat;">
+    <div class="bg-black bg-opacity-40 w-full h-full absolute top-0 left-0"></div>
+    <h1 class="text-5xl font-bold text-white relative z-10 tracking-wide">
+        ASGRC PROJECTS
+    </h1>
+</section>
+
 <!-- NAVBAR -->
-<header class="bg-white shadow">
+<header class="bg-white shadow fade">
     <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row md:justify-between md:items-center">
 
-        <!-- Text Logo -->
+        <!-- Logo -->
         <div class="flex flex-col leading-tight text-center md:text-left mb-4 md:mb-0">
             <span class="font-extrabold tracking-wider"
                   style="color:#0A2A66; font-size:36px;">
@@ -56,97 +65,301 @@
     </div>
 </header>
 
-<!-- PAGE TITLE -->
-<section class="py-16 bg-white fade">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-        <h1 class="text-5xl font-bold mb-4" style="color: var(--asgrc-blue);">Our Projects</h1>
-        <p class="text-lg max-w-3xl mx-auto">
-            ASGRC delivers engineered GRC, GRP and GRG solutions to some of the UAE’s most iconic developments.
-            Below are selected projects showcasing our craftsmanship and technical excellence.
-        </p>
-    </div>
-</section>
-
-<!-- PROJECTS GRID WITH BLURRED BACKGROUND -->
+<!-- CATEGORY SECTION TEMPLATE -->
 <section class="py-20 fade"
 style="
-    background: url('assets/img/creek.jpg') center/cover no-repeat fixed;
+    background: url('creek.jpg') center/cover no-repeat fixed;
     backdrop-filter: blur(6px);
     background-color: rgba(255,255,255,0.85);
 ">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+    <div class="max-w-7xl mx-auto px-6">
 
-        <!-- Creek Edge Towers -->
-        <div class="bg-white shadow-xl rounded overflow-hidden fade">
-            <img src="assets/img/creek.jpg" class="w-full h-56 object-cover">
-            <div class="p-6">
-                <h3 class="text-2xl font-bold mb-2" style="color: var(--asgrc-blue);">Creek Edge Towers – EMAAR</h3>
-                <p class="text-lg">
-                    GFRC cladding system covering 280,000 m² including podium structures.
-                </p>
+        <!-- CATEGORY TITLE -->
+        <h2 class="text-4xl font-bold mb-10" style="color: var(--asgrc-blue);">Highrise Projects</h2>
+
+        <!-- GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+            <!-- Creek Edge -->
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="creek.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">Creek Edge 1 & 2 – Creek Harbour</h3>
+                    <p class="text-lg">Client: Emaar Properties PJSC</p>
+                </div>
             </div>
-        </div>
 
-        <!-- Ahad Tower -->
-        <div class="bg-white shadow-xl rounded overflow-hidden fade">
-            <img src="assets/img/ahad.jpg" class="w-full h-56 object-cover">
-            <div class="p-6">
-                <h3 class="text-2xl font-bold mb-2" style="color: var(--asgrc-blue);">Ahad Tower – Dubai</h3>
-                <p class="text-lg">
-                    Prestigious GFRC façade system with 13,000 m² of engineered cladding.
-                </p>
+            <!-- Beach Mansion -->
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="placeholder-highrise.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">The Beach Mansion – Dubai Harbour</h3>
+                    <p class="text-lg">Client: Emaar Properties PJSC</p>
+                </div>
             </div>
-        </div>
 
-        <!-- Urban Oasis Tower -->
-        <div class="bg-white shadow-xl rounded overflow-hidden fade">
-            <img src="assets/img/urban.jpg" class="w-full h-56 object-cover">
-            <div class="p-6">
-                <h3 class="text-2xl font-bold mb-2" style="color: var(--asgrc-blue);">Urban Oasis Tower – Dar Al Arkan</h3>
-                <p class="text-lg">
-                    GFRC cladding system covering 180,000 m² including podiums.
-                </p>
+            <!-- Palace Beach Residence -->
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="placeholder-highrise.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">The Palace Beach Residence – Dubai Harbour</h3>
+                    <p class="text-lg">Client: Emaar Properties PJSC</p>
+                </div>
             </div>
-        </div>
 
-        <!-- Mosque -->
-        <div class="bg-white shadow-xl rounded overflow-hidden fade">
-            <img src="assets/img/mosque.jpg" class="w-full h-56 object-cover">
-            <div class="p-6">
-                <h3 class="text-2xl font-bold mb-2" style="color: var(--asgrc-blue);">HH Sheikh Rashid Bin Mohammed Mosque</h3>
-                <p class="text-lg">
-                    GFRC façade system showcasing elegant architectural detailing.
-                </p>
+            <!-- Urban Oasis -->
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="urban.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">Urban Oasis Tower – Business Bay</h3>
+                    <p class="text-lg">Client: Dar Al Arkan Real Estate</p>
+                </div>
             </div>
+
+            <!-- Ahad Residences -->
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="ahad.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">Ahad Residences – Business Bay</h3>
+                    <p class="text-lg">Client: Ahad Development</p>
+                </div>
+            </div>
+
+            <!-- Peninsula D -->
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="placeholder-highrise.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">The Peninsula – Plot D – Business Bay</h3>
+                    <p class="text-lg">Client: Select Group</p>
+                </div>
+            </div>
+
+            <!-- Peninsula B -->
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="placeholder-highrise.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">The Peninsula – Plot B – Business Bay</h3>
+                    <p class="text-lg">Client: Select Group</p>
+                </div>
+            </div>
+
         </div>
 
-    </div>
-</section>
+        <!-- LOWRISE -->
+        <h2 class="text-4xl font-bold mt-20 mb-10" style="color: var(--asgrc-blue);">Lowrise Projects</h2>
 
-<!-- FOOTER -->
-<footer style="background-color: var(--asgrc-blue); color: white;" class="py-10 fade">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
-        <div>
-            <h4 class="text-xl font-bold mb-4">ASGRC</h4>
-            <p>Delivering engineered GRC, GRP & GRG solutions with precision, innovation and excellence.</p>
-        </div>
-        <div>
-            <h4 class="text-xl font-bold mb-4">Quick Links</h4>
-            <ul class="space-y-2">
-                <li><a href="products.html" class="hover:text-gray-200">Products</a></li>
-                <li><a href="projects.html" class="hover:text-gray-200">Projects</a></li>
-                <li><a href="about.html" class="hover:text-gray-200">About</a></li>
-                <li><a href="contact.html" class="hover:text-gray-200">Contact</a></li>
-            </ul>
-        </div>
-        <div>
-            <h4 class="text-xl font-bold mb-4">Contact</h4>
-            <p>Email: info@asgrc.com</p>
-            <p>Phone: +971 000 0000</p>
-            <p>Dubai Industrial City</p>
-        </div>
-    </div>
-</footer>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-</body>
-</html>
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="placeholder-lowrise.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">City Walk – Dubai</h3>
+                    <p class="text-lg">Client: Dubai Holding</p>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="placeholder-lowrise.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">Creek Beach – Creek Harbour</h3>
+                    <p class="text-lg">Client: Emaar Properties PJSC</p>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="placeholder-lowrise.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">Madinat Jumeirah – Phase 5</h3>
+                    <p class="text-lg">Client: Dubai Holding</p>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="placeholder-lowrise.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">Madinat Jumeirah – Phase 8</h3>
+                    <p class="text-lg">Client: Dubai Holding</p>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="placeholder-lowrise.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">Miracle Hills 2 – Dubai</h3>
+                    <p class="text-lg">Client: Al Habbai</p>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="placeholder-lowrise.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">The Orchid – JVC</h3>
+                    <p class="text-lg">Client: Binghatti</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- MALL -->
+        <h2 class="text-4xl font-bold mt-20 mb-10" style="color: var(--asgrc-blue);">Mall Projects</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="placeholder-mall.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">Nad Al Sheba Mall – Dubai</h3>
+                    <p class="text-lg">Client: Dubai Holding Real Estate</p>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="placeholder-mall.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">City Land Mall – Global Village</h3>
+                    <p class="text-lg">Client: Global Village</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- COMMERCIAL -->
+        <h2 class="text-4xl font-bold mt-20 mb-10" style="color: var(--asgrc-blue);">Commercial Projects</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="placeholder-commercial.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">Al Barsha Hall – Dubai</h3>
+                    <p class="text-lg">Client: Dubai Municipality</p>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="placeholder-commercial.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">Masaar – Sharjah</h3>
+                    <p class="text-lg">Client: Arada</p>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="placeholder-commercial.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">Tilal Al Ghaf Retail Hub – Dubai</h3>
+                    <p class="text-lg">Client: Majid Al Futtaim</p>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="placeholder-commercial.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">YIWU Market – Dubai</h3>
+                    <p class="text-lg">Client: DP World</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- HOTELS -->
+        <h2 class="text-4xl font-bold mt-20 mb-10" style="color: var(--asgrc-blue);">Hotel Projects</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="placeholder-hotel.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">Mileo – Palm Jumeirah</h3>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="placeholder-hotel.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">Aloft Dubai Airport</h3>
+                    <p class="text-lg">Client: Marriott International</p>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="placeholder-hotel.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">Aloft Hotel – Al Mina</h3>
+                    <p class="text-lg">Client: Marriott International</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- OFFICE -->
+        <h2 class="text-4xl font-bold mt-20 mb-10" style="color: var(--asgrc-blue);">Office Buildings</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="placeholder-office.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">RTA Headquarters – Dubai</h3>
+                    <p class="text-lg">Client: RTA</p>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="placeholder-office.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">VISA Headquarters – Dubai</h3>
+                    <p class="text-lg">Client: Visa Inc</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- VILLAS -->
+        <h2 class="text-4xl font-bold mt-20 mb-10" style="color: var(--asgrc-blue);">Villa Projects</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="placeholder-villa.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">BVLGARI Ocean Mansions – Dubai</h3>
+                    <p class="text-lg">Client: Dubai Holding</p>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="placeholder-villa.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">Reeman Villa Community – Abu Dhabi</h3>
+                    <p class="text-lg">Client: Aldar Properties</p>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="placeholder-villa.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">Lamborghini Mansions – Dubai Hills</h3>
+                    <p class="text-lg">Client: Emaar Properties PJSC</p>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="placeholder-villa.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">Royal Villas – Dubai</h3>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-xl rounded overflow-hidden fade">
+                <img src="placeholder-villa.jpg" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">Bloomingdale Villas – Dubai</h3>
+                    <p class="text-lg">Client: SOL Properties</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- MOSQUES -->
+        <h2 class="text-4xl font-bold mt-20 mb-10" style="color: var(--asgr
