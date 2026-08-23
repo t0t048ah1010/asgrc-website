@@ -3,74 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; form-action 'self' mailto:;">
-    <title>Al Shafar GRC LLC | About Us</title>
+    <title>ASGRC – About Us</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
     <style>
-        :root { --primary-color: #002870; --accent-color: #002870; --text-main: #333333; --bg-light: #f4f7fa; --white: #ffffff; }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; color: var(--text-main); background-color: var(--bg-light); padding: 20px; }
-        .main-container { max-width: 1200px; margin: 0 auto; }
-        .nav-bar { display: flex; justify-content: space-between; align-items: center; background-color: var(--white); padding: 20px 30px; border-radius: 6px; margin-bottom: 20px; border-bottom: 3px solid var(--accent-color); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .logo-block { text-decoration: none; display: flex; flex-direction: column; }
-        .logo-text { font-size: 2.2rem; font-weight: 800; color: var(--primary-color); display: block; line-height: 0.9; font-style: italic; }
-        .logo-sub { font-family: "Georgia", font-size: 1.05rem; color: var(--primary-color); font-weight: bold; font-style: italic; display: block; margin-top: 6px; }
-        .nav-links { display: flex; list-style: none; gap: 20px; }
-        .nav-links a { text-decoration: none; color: var(--primary-color); font-weight: 600; }
-        .nav-links a:hover { opacity: 0.7; }
-        .section-title { font-size: 1.8rem; color: var(--primary-color); margin: 35px 0 20px 0; padding-bottom: 8px; border-bottom: 3px solid var(--accent-color); text-transform: uppercase; }
-        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 35px; }
-        .about-card { background-color: var(--white); padding: 30px; border-radius: 6px; border: 1px solid #e2e8f0; border-top: 4px solid var(--primary-color); box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
-        .about-card h3 { color: var(--primary-color); margin-bottom: 12px; }
-        .image-banner { width: 100%; min-height: 450px; background-color: #e2e8f0; border-radius: 6px; overflow: hidden; margin-bottom: 30px; display: flex; justify-content: center; align-items: center; border: 1px solid #cbd5e1; }
-        .image-banner img { width: 100%; height: 100%; max-height: 550px; object-fit: contain; display: block; }
-        .client-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
-        .client-logo-card { background-color: var(--white); border-radius: 6px; border: 1px solid #e2e8f0; aspect-ratio: 3 / 2; display: flex; justify-content: center; align-items: center; padding: 20px; filter: grayscale(100%); opacity: 0.85; transition: all 0.3s; }
-        .client-logo-card:hover { filter: grayscale(0%); opacity: 1; transform: translateY(-3px); }
-        .client-logo-card img { max-width: 100%; max-height: 100%; object-fit: contain; }
-        @media (max-width: 768px) { .image-banner { min-height: 250px; } }
-        footer { text-align: center; padding: 20px; color: #777; font-size: 0.85rem; border-top: 1px solid #e2e8f0; margin-top: 40px; }
+        :root {
+            --asgrc-blue: #0A2A66;
+            --asgrc-grey: #BFC4CC;
+        }
+
+        .fade {
+            opacity: 0;
+            animation: fadeIn 2.5s ease-out forwards;
+            animation-delay: 0.2s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     </style>
 </head>
-<body>
-    <div class="main-container">
-        <nav class="nav-bar">
-            <a href="index.html" class="logo-block"><span class="logo-text">ASGRC</span><span class="logo-sub">Building Elegance</span></a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" style="border-bottom: 2px solid var(--primary-color);">About Us</a></li>
-                <li><a href="capabilities.html">Capabilities & Gallery</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
+
+<body class="bg-gray-50 text-gray-800 fade">
+
+<!-- HEADER BANNER -->
+<section class="relative h-72 flex items-center justify-center fade"
+style="background: url('header-bg.jpg') center/cover no-repeat;">
+    <div class="bg-black bg-opacity-40 w-full h-full absolute top-0 left-0"></div>
+    <h1 class="text-5xl font-bold text-white relative z-10 tracking-wide">
+        ABOUT ASGRC
+    </h1>
+</section>
+
+<!-- NAVBAR -->
+<header class="bg-white shadow fade">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row md:justify-between md:items-center">
+
+        <div class="flex flex-col leading-tight text-center md:text-left mb-4 md:mb-0">
+            <span class="font-extrabold tracking-wider"
+                  style="color:#0A2A66; font-size:36px;">
+                ASGRC
+            </span>
+            <span class="italic"
+                  style="color:#0A2A66; font-size:16px; margin-top:-4px;">
+                Building Elegance
+            </span>
+        </div>
+
+        <nav class="flex flex-wrap justify-center gap-4 text-lg font-medium">
+            <a href="index.html" class="hover:text-blue-600">Home</a>
+            <a href="products.html" class="hover:text-blue-600">Products</a>
+            <a href="projects.html" class="hover:text-blue-600">Projects</a>
+            <a href="about.html" class="hover:text-blue-600">About</a>
+            <a href="contact.html" class="hover:text-blue-600">Contact</a>
         </nav>
 
-        <h2 class="section-title">Corporate Overview</h2>
-        <div class="image-banner"><img src="factory-overview.jpg" onerror="this.onerror=null; this.src='factory-overview.jpg.jpg';" alt="Factory Floor"></div>
-
-        <div class="grid-layout">
-            <div class="about-card">
-                <h3>Who We Are</h3>
-                <p>Operating with over 20 years of continuous expertise, ASGRC works from the largest state-of-the-art manufacturing facility in Dubai Industrial City (DIC). We are dedicated to pioneering structural innovation through advanced production technologies.</p>
-            </div>
-            <div class="about-card">
-                <h3>Our Core Mission</h3>
-                <p>To remain the regional partner of choice for luxury architectural designs. We achieve this by providing extensively engineered products, premium craftsmanship, and absolute customer satisfaction.</p>
-            </div>
-            <div class="about-card">
-                <h3>Compliance & Quality</h3>
-                <p>Fully compliant with ISO 9001 standards for premium quality management. Our operations are explicitly approved by the UAE Ministry of Interior Civil Defense authorities for fire-retardant structural implementation.</p>
-            </div>
-        </div>
-
-        <h2 class="section-title">Approved Client Networks</h2>
-        <div class="client-grid">
-            <div class="client-logo-card"><img src="client-emaar.jpg" onerror="this.onerror=null; this.src='client-emaar.jpg.jpg';" alt="Emaar"></div>
-            <div class="client-logo-card"><img src="client-dararkan.jpg" onerror="this.onerror=null; this.src='client-dararkan.jpg.jpg';" alt="Dar Al Arkan"></div>
-            <div class="client-logo-card"><img src="client-arada.jpg" onerror="this.onerror=null; this.src='client-arada.jpg.jpg';" alt="Arada"></div>
-            <div class="client-logo-card"><img src="client-government.jpg" onerror="this.onerror=null; this.src='client-government.jpg.jpg';" alt="UAE Gov"></div>
-            <div class="client-logo-card"><img src="client-nakheel.jpg" onerror="this.onerror=null; this.src='client-nakheel.jpg.jpg';" alt="Nakheel"></div>
-            <div class="client-logo-card"><img src="client-dubaiholding.jpg" onerror="this.onerror=null; this.src='client-dubaiholding.jpg.jpg';" alt="Dubai Holding"></div>
-        </div>
-        <footer><p>&copy; 2026 Al Shafar GRC L.L.C. Secure Profile Framework.</p></footer>
     </div>
+</header>
+
+<!-- ABOUT SECTION -->
+<section class="py-20 fade"
+style="
+    background: url('creek.jpg') center/cover no-repeat fixed;
+    backdrop-filter: blur(6px);
+    background-color: rgba(255,255,255,0.85);
+">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <h2 class="text-4xl font-bold mb-10" style="color: var(--asgrc-blue);">Who We Are</h2>
+
+        <p class="text-lg leading-relaxed mb-10">
+            ASGRC is a leading manufacturer of GRC, GRP and GRG architectural products, delivering
+            engineered façade systems, interior features and complex structural elements across the UAE.
+            With a commitment to precision, innovation and craftsmanship, ASGRC supports major developers,
+            consultants and contractors with high‑performance composite solutions.
+        </p>
+
+        <h2 class="text-4xl font-bold mb-10" style="color: var(--asgrc-blue);">Our Expertise</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+            <div class="bg-white shadow-xl rounded p-8 fade">
+                <h3 class="text-2xl font-bold mb-4">GRC Manufacturing</h3>
+                <p class="text-lg">
+                    Advanced spray and premix GRC systems engineered for façades, cladding, screens,
+                    cornices, domes and architectural detailing.
+                </p>
+            </div>
+
+            <div class="bg-white shadow-xl rounded p-8 fade">
+                <h3 class="text-2xl font-bold mb-4">GRP Fabrication</h3>
+                <p class="text-lg">
+                    High‑strength GRP moulding for curved structures, canopies, domes and lightweight
+                    architectural features requiring flexibility and precision.
+                </p>
+            </div>
+
+            <div class="bg-white shadow-xl rounded p-8 fade">
+                <h3 class="text-2xl font-bold mb-4">GRG Interior Works</h3>
+                <p class="text-lg">
+                    Smooth, fire‑resistant GRG systems for ceilings, wall panels, columns and luxury
+                    interior environments.
+                </p>
+            </div>
+
+        </div>
+
+        <h2 class="text-4xl font-bold mt-20 mb-10" style="color: var(--asgrc-blue);">Our Mission</h2>
+
+        <p class="text-lg leading-relaxed mb-10">
+            To deliver elegant, durable and engineered composite solutions that elevate architectural
+            design while ensuring long‑term performance and reliability.
+        </p>
+
+        <h2 class="text-4xl font-bold mb-10" style="color: var(--asgrc-blue);">Our Vision</h2>
+
+        <p class="text-lg leading-relaxed mb-10">
+            To be the region’s most trusted provider of GRC, GRP and GRG systems, known for quality,
+            innovation and architectural excellence.
+        </p>
+
+        <h2 class="text-4xl font-bold mb-10" style="color: var(--asgrc-blue);">Why ASGRC?</h2>
+
+        <ul class="text-lg space-y-4">
+            <li>✔ Proven track record with major UAE developers</li>
+            <li>✔ Advanced manufacturing and moulding capabilities</li>
+            <li>✔ Engineering‑driven design and detailing</li>
+            <li>✔ Durable, weather‑resistant composite materials</li>
+            <li>✔ Precision installation and project execution</li>
+        </ul>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background-color: var(--asgrc-blue); color: white;" class="py-10 fade">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div>
+            <h4 class="text-xl font-bold mb-4">ASGRC</h4>
+            <p>Delivering engineered GRC, GRP & GRG solutions with precision, innovation and excellence.</p>
+        </div>
+        <div>
+            <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+                <li><a href="products.html" class="hover:text-gray-200">Products</a></li>
+                <li><a href="projects.html" class="hover:text-gray-200">Projects</a></li>
+                <li><a href="about.html" class="hover:text-gray-200">About</a></li>
+                <li><a href="contact.html" class="hover:text-gray-200">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="text-xl font-bold mb-4">Contact</h4>
+            <p>Email: info@asgrc.com</p>
+            <p>Phone: +971 000 0000</p>
+            <p>Dubai Industrial City</p>
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
