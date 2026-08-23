@@ -19,27 +19,32 @@
 
 <!-- NAVBAR -->
 <header class="bg-white shadow">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row md:justify-between md:items-center">
 
-        <!-- Text-based Logo -->
-        <div class="flex flex-col leading-tight">
-            <span style="color:#0A2A66; font-size:48px; font-weight:800; letter-spacing:2px;">
+        <!-- Text Logo -->
+        <div class="flex flex-col leading-tight text-center md:text-left mb-4 md:mb-0">
+            <span class="font-extrabold tracking-wider"
+                  style="color:#0A2A66; font-size:36px;">
                 ASGRC
             </span>
-            <span style="color:#0A2A66; font-size:20px; font-style:italic; margin-top:-6px;">
+            <span class="italic"
+                  style="color:#0A2A66; font-size:16px; margin-top:-4px;">
                 Building Elegance
             </span>
         </div>
 
-        <nav class="space-x-6 text-lg font-medium">
+        <!-- Navigation -->
+        <nav class="flex flex-wrap justify-center gap-4 text-lg font-medium">
             <a href="index.html" class="hover:text-blue-600">Home</a>
             <a href="products.html" class="hover:text-blue-600">Products</a>
             <a href="projects.html" class="hover:text-blue-600">Projects</a>
             <a href="about.html" class="hover:text-blue-600">About</a>
             <a href="contact.html" class="hover:text-blue-600">Contact</a>
         </nav>
+
     </div>
 </header>
+
 
 <!-- HERO -->
 <section class="bg-cover bg-center h-[70vh] flex items-center" 
