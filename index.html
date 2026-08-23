@@ -3,153 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; form-action 'self' mailto:;">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <title>Al Shafar GRC LLC | Home</title>
+    <title>ASGRC – Building Elegance</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
     <style>
-        :root { --primary-color: #002870; --accent-color: #002870; --text-main: #333333; --bg-light: #f4f7fa; --white: #ffffff; }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; color: var(--text-main); background-color: var(--bg-light); }
-        
-        .main-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-        /* Floating Navigation Overlay */
-        .nav-bar { 
-            display: flex; justify-content: space-between; align-items: center; 
-            background-color: rgba(255, 255, 255, 0.95); 
-            padding: 20px 30px; border-radius: 6px; 
-            margin-top: 20px;
-            margin-bottom: 20px; 
-            border-bottom: 3px solid var(--accent-color); 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            position: absolute; width: calc(100% - 40px); max-width: 1160px; z-index: 10;
+        :root {
+            --asgrc-blue: #0A2A66;
+            --asgrc-grey: #BFC4CC;
         }
-        .logo-block { text-decoration: none; display: flex; flex-direction: column; }
-        .logo-text { font-size: 2.2rem; font-weight: 800; color: var(--primary-color); display: block; line-height: 0.9; letter-spacing: -0.5px; font-style: italic; }
-        .logo-sub { font-family: "Georgia", "Times New Roman", Times, serif; font-size: 1.05rem; color: var(--primary-color); font-weight: bold; font-style: italic; display: block; margin-top: 6px; letter-spacing: 0.3px; }
-        .nav-links { display: flex; list-style: none; gap: 20px; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--primary-color); font-weight: 600; font-size: 0.95rem; }
-        .nav-links a:hover { opacity: 0.7; }
-
-        /* Immersive Top Hero Picture Banner */
-        .brand-header { 
-            background: linear-gradient(135deg, rgba(0, 18, 58, 0.5) 0%, rgba(0, 40, 112, 0.65) 100%), url('one-thousand-museum.jpg') no-repeat center center/cover;
-            color: var(--white); 
-            height: 75vh;
-            border-radius: 6px; 
-            margin-bottom: 0px; 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 100px 30px 0 30px;
-        }
-        .brand-header h1 { font-size: 3.8rem; font-weight: 900; text-transform: uppercase; text-shadow: 0 4px 12px rgba(0,0,0,0.4); }
-        .brand-header p { opacity: 1; margin-top: 10px; font-style: italic; font-family: "Georgia", Times, serif; font-size: 1.3rem; text-shadow: 0 2px 6px rgba(0,0,0,0.4); }
-
-        /* Integrated Info Ribbon */
-        .info-ribbon {
-            background-color: #020b1e; color: #cbd5e0;
-            display: flex; justify-content: center; gap: 40px;
-            padding: 16px 20px; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.5px;
-            border-bottom: 4px solid var(--primary-color); border-bottom-left-radius: 6px; border-bottom-right-radius: 6px;
-            margin-bottom: 35px;
-        }
-
-        /* NEW Section: Corporate Introduction Paragraph */
-        .company-intro-section {
-            background-color: var(--white); padding: 40px; border-radius: 6px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02); border: 1px solid #e2e8f0;
-            margin-bottom: 40px;
-        }
-        .intro-title { font-size: 1.6rem; color: var(--primary-color); font-weight: 800; text-transform: uppercase; margin-bottom: 15px; letter-spacing: 0.5px; }
-        .intro-text { font-size: 1.1rem; color: #4a5568; line-height: 1.7; margin-bottom: 25px; }
-        
-        /* Intro Statistics Sub-grid Layout */
-        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; border-top: 1px solid #e2e8f0; padding-top: 25px; }
-        .metric-item { display: flex; flex-direction: column; }
-        .metric-number { font-size: 1.8rem; font-weight: 800; color: var(--primary-color); }
-        .metric-label { font-size: 0.85rem; font-weight: 700; color: #718096; text-transform: uppercase; margin-top: 2px; }
-
-        /* Classic Project Grid Section Layout Underneath */
-        .section-title { font-size: 1.8rem; color: var(--primary-color); margin: 35px 0 20px 0; padding-bottom: 8px; border-bottom: 3px solid var(--accent-color); text-transform: uppercase; }
-        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-bottom: 40px; }
-        .project-card { background-color: var(--white); border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,0.02); transition: transform 0.3s ease; }
-        .project-card:hover { transform: translateY(-5px); }
-        .image-frame { width: 100%; height: 220px; background-color: #e2e8f0; }
-        .image-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .card-content { padding: 20px; flex-grow: 1; }
-        .card-content h3 { color: var(--primary-color); margin-bottom: 10px; }
-        .tags-wrapper { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 15px; }
-        .project-tag { background-color: #eef2f7; color: var(--primary-color); padding: 4px 10px; font-size: 0.8rem; font-weight: 600; border-radius: 3px; }
-        
-        footer { text-align: center; padding: 20px; color: #777; font-size: 0.85rem; border-top: 1px solid #e2e8f0; margin-top: 40px; }
     </style>
 </head>
-<body>
-    <div class="main-container">
-        <nav class="nav-bar">
-            <a href="index.html" class="logo-block"><span class="logo-text">ASGRC</span><span class="logo-sub">Building Elegance</span></a>
-            <ul class="nav-links">
-                <li><a href="index.html" style="border-bottom: 2px solid var(--primary-color);">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="capabilities.html">Capabilities & Gallery</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
 
-        <!-- Big Background Picture Header Element -->
-        <header class="brand-header">
-            <h1>AL SHAFAR GRC LLC</h1>
-            <p>Building Elegance — Glass Fiber Reinforced Concrete Architectural Elements</p>
-        </header>
+<body class="bg-gray-50 text-gray-800">
 
-        <!-- Address Info Ribbon Layer -->
-        <div class="info-ribbon">
-            <span>📍 Dubai, United Arab Emirates</span>
-            <span>✉️ info@asgrc.co</span>
+<!-- NAVBAR -->
+<header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+        <!-- Text-based Logo -->
+        <div class="flex flex-col leading-tight">
+            <span style="color:#0A2A66; font-size:48px; font-weight:800; letter-spacing:2px;">
+                ASGRC
+            </span>
+            <span style="color:#0A2A66; font-size:20px; font-style:italic; margin-top:-6px;">
+                Building Elegance
+            </span>
         </div>
 
-        <!-- NEWLY INSERTED SECTION: Profile Summary Paragraph -->
-        <section class="company-intro-section">
-            <h2 class="intro-title">Leading Building Elegance Across the UAE</h2>
-            <p class="intro-text">
-                As part of the prestigious Al Shafar Group of Companies, ASGRC is one of the UAE's premier manufacturers of bespoke glass fiber reinforced products. Operating from a state-of-the-art manufacturing facility in Dubai Industrial City (DIC)—the largest of its kind in the region—we deliver complete, high-end engineered solutions from design to manufacturing, site logistics, and final installation. Backed by over 20 years of expert craftsmanship, we specialize in delivering robust GFRC, GFRG, GFRP, and UHPC elements engineered to support the region's most iconic and complex architectural landmarks.
-            </p>
-            <div class="metrics-grid">
-                <div class="metric-item">
-                    <span class="metric-number">20+ Years</span>
-                    <span class="metric-label">Industry Expertise</span>
-                </div>
-                <div class="metric-item">
-                    <span class="metric-number">DIC Facility</span>
-                    <span class="metric-label">Largest Plant in UAE</span>
-                </div>
-                <div class="metric-item">
-                    <span class="metric-number">End-to-End</span>
-                    <span class="metric-label">Engineering & Installation</span>
-                </div>
-            </div>
-        </section>
+        <nav class="space-x-6 text-lg font-medium">
+            <a href="index.html" class="hover:text-blue-600">Home</a>
+            <a href="products.html" class="hover:text-blue-600">Products</a>
+            <a href="projects.html" class="hover:text-blue-600">Projects</a>
+            <a href="about.html" class="hover:text-blue-600">About</a>
+            <a href="contact.html" class="hover:text-blue-600">Contact</a>
+        </nav>
+    </div>
+</header>
 
-        <!-- Classic Grid Configuration Restored Below -->
-        <h2 class="section-title">Iconic Regional Flagships</h2>
-        <div class="grid-layout">
-            <div class="project-card">
-                <div class="image-frame"><img src="creek-edge.jpg" alt="Creek Edge Towers"></div>
-                <div class="card-content">
-                    <h3>Creek Edge Towers</h3>
-                    <p>Comprehensive installation of custom GFRC Cladding across 280,000 m² along with integrated exterior podium works for Emaar properties.</p>
-                    <div class="tags-wrapper"><span class="project-tag">Dubai Creek Harbour</span><span class="project-tag">Emaar</span></div>
+<!-- HERO -->
+<section class="bg-cover bg-center h-[70vh] flex items-center" 
+style="background-image:url('assets/img/creek.jpg');">
+    <div class="bg-black bg-opacity-50 w-full h-full flex items-center">
+        <div class="max-w-4xl mx-auto px-6 text-white">
+            <h2 class="text-5xl font-extrabold mb-4">Architectural GRC, GRP & GRG Solutions</h2>
+            <p class="text-xl mb-6">
+                Engineered façade systems, bespoke precast elements and premium composite products for the UAE’s most prestigious developments.
+            </p>
+            <a href="contact.html" class="px-6 py-3 rounded text-lg font-semibold"
+               style="background-color: var(--asgrc-blue); color: white;">
+               Request a Proposal
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl font-bold mb-6 text-center" style="color: var(--asgrc-blue);">About ASGRC</h2>
+        <p class="text-lg leading-relaxed text-center max-w-4xl mx-auto">
+            With over 20 years of experience in bespoke glass fiber reinforced products, ASGRC operates from one of the largest 
+            state‑of‑the‑art manufacturing facilities in Dubai Industrial City. We deliver GFRC, GFRG, GFRP and UHPC solutions 
+            to landmark projects across the UAE, combining advanced production technologies with exceptional workmanship.
+        </p>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="py-20 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl font-bold mb-10 text-center" style="color: var(--asgrc-blue);">Featured Projects</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+            <!-- Creek -->
+            <div class="shadow rounded overflow-hidden bg-white">
+                <img src="assets/img/creek.jpg" alt="Creek Edge Towers">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Creek Edge Towers – EMAAR</h3>
+                    <p>GFRC cladding system covering 280,000 m² including podium structures.</p>
                 </div>
             </div>
-            <div class="project-card">
-                <div class="image-frame"><img src="urban-oasis.jpg" alt="Urban Oasis Tower"></div>
-                <div class="card-content">
-                    <h3>Urban Oasis Tower</h3>
-                    <p>Architectural facade design implementation utilizing high-grade complex modular structures spanning over 180,000 m² of development space.</p>
-                    <div class="tags-wrapper"><span class="project-tag">Business Bay</span><span class="project-tag">Dar Al Arkan</span></div>
+
+            <!-- Ahad -->
+            <div class="shadow rounded overflow-hidden bg-white">
+                <img src="assets/img/ahad.jpg" alt="Ahad Tower">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Ahad Tower – Dubai</h3>
+                    <p>Prestigious GFRC façade system with 13,000 m² of engineered cladding.</p>
                 </div>
             </div>
+
+            <!-- Urban -->
+            <div class="shadow rounded overflow-hidden bg-white">
+                <img src="assets/img/urban.jpg" alt="Urban Oasis Tower">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Urban Oasis Tower – Dar Al Arkan</h3>
+                    <p>GFRC cladding system covering 180,000 m² including podiums.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Optional Mosque -->
+        <div class="max-w-4xl mx-auto mt-16">
+            <div class="shadow rounded overflow-hidden bg-white">
+                <img src="assets/img/mosque.jpg" alt="Sheikh Rashid Bin Mohammed Mosque">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">HH Sheikh Rashid Bin Mohammed Mosque</h3>
+                    <p>GFRC façade system showcasing elegant architectural detailing.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background-color: var(--asgrc-blue); color: white;" class="py-10">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div>
+            <h4 class="text-xl font-bold mb-4">ASGRC</h4>
+            <p>Delivering engineered GRC, GRP & GRG solutions with precision, innovation and excellence.</p>
+        </div>
+        <div>
+            <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+                <li><a href="products.html" class="hover:text-gray-200">Products</a></li>
+                <li><a href="projects.html" class="hover:text-gray-200">Projects</a></li>
+                <li><a href="about.html" class="hover:text-gray-200">About</a></li>
+                <li><a href="contact.html" class="hover:text-gray-200">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="text-xl font-bold mb-4">Contact</h4>
+            <p>Email: info@asgrc.com</p>
+            <p>Phone: +971 000 0000</p>
+            <p>Dubai Industrial City</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
