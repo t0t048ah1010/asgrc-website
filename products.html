@@ -12,13 +12,22 @@
             --asgrc-blue: #0A2A66;
             --asgrc-grey: #BFC4CC;
         }
+
+        /* Fade-in animation */
+        .fade {
+            opacity: 0;
+            animation: fadeIn 1.2s forwards;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
     </style>
 </head>
 
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800 fade">
 
 <!-- NAVBAR -->
-<header class="bg-white shadow">
+<header class="bg-white shadow fade">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
         <!-- Text Logo -->
@@ -42,7 +51,7 @@
 </header>
 
 <!-- PAGE TITLE -->
-<section class="py-16 bg-white">
+<section class="py-16 bg-white fade">
     <div class="max-w-7xl mx-auto px-6 text-center">
         <h1 class="text-5xl font-bold mb-4" style="color: var(--asgrc-blue);">Our Products</h1>
         <p class="text-lg max-w-3xl mx-auto">
@@ -53,11 +62,11 @@
 </section>
 
 <!-- PRODUCTS GRID -->
-<section class="py-20 bg-gray-100">
+<section class="py-20 bg-gray-100 fade">
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
 
         <!-- GRC -->
-        <div class="bg-white shadow rounded p-8">
+        <div class="bg-white shadow rounded p-8 fade">
             <h2 class="text-3xl font-bold mb-4" style="color: var(--asgrc-blue);">GRC</h2>
             <p class="text-lg mb-4">
                 Glass Reinforced Concrete (GRC) is a lightweight, durable material ideal for
@@ -70,7 +79,7 @@
         </div>
 
         <!-- GRP -->
-        <div class="bg-white shadow rounded p-8">
+        <div class="bg-white shadow rounded p-8 fade">
             <h2 class="text-3xl font-bold mb-4" style="color: var(--asgrc-blue);">GRP</h2>
             <p class="text-lg mb-4">
                 Glass Reinforced Plastic (GRP) is a high‑strength composite used for domes, canopies,
@@ -83,7 +92,7 @@
         </div>
 
         <!-- GRG -->
-        <div class="bg-white shadow rounded p-8">
+        <div class="bg-white shadow rounded p-8 fade">
             <h2 class="text-3xl font-bold mb-4" style="color: var(--asgrc-blue);">GRG</h2>
             <p class="text-lg mb-4">
                 Glass Reinforced Gypsum (GRG) is designed for interior applications such as ceilings,
@@ -99,7 +108,7 @@
 </section>
 
 <!-- FOOTER -->
-<footer style="background-color: var(--asgrc-blue); color: white;" class="py-10">
+<footer style="background-color: var(--asgrc-blue); color: white;" class="py-10 fade">
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
         <div>
             <h4 class="text-xl font-bold mb-4">ASGRC</h4>
