@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — ASGRC Building Elegance</title>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=cabinet-grotesk@500,700,800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --bg: #f8f6f0; --card: #ffffff; --text: #111827; --muted: #6b7280; --line: #ded8ce; --blue: #12377f; --red: #e51d49; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Satoshi', sans-serif; }
+    .container-custom { width: min(1200px, calc(100% - 2rem)); margin: 0 auto; }
+    @media(min-width: 768px) { .container-custom { width: min(1200px, calc(100% - 4rem)); } }
+    .display-font { font-family: 'Cabinet Grotesk', sans-serif; letter-spacing: -0.04em; }
+    .kicker { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+    .line-border { border-color: var(--line); }
+    .top-bar { position: sticky; top: 0; z-index: 30; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(0,0,0,0.06); height: 42px; }
+    .top-bar-inner { height: 42px; display: flex; align-items: center; justify-content: space-between; font-weight: 800; font-size: 14px; }
+    .card-panel { background: var(--card); border: 1px solid var(--line); border-radius: 1.5rem; overflow: hidden; }
+    .project-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+    .btn-dark { background: var(--text); color: #fff; padding: 0.75rem 1.75rem; border-radius: 999px; text-decoration: none; display: inline-flex; align-items: center; font-weight: 500; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="top-bar">
+    <div class="container-custom top-bar-inner">
+      <a href="index.html" class="display-font font-extrabold text-gray-900 tracking-tight">ASGRC <span class="text-red-600">BUILDING ELEGANCE</span></a>
+      <nav class="hidden md:flex gap-6 text-xs uppercase tracking-wider font-semibold text-gray-600">
+        <a href="what-we-do.html" class="hover:text-black">Design</a>
+        <a href="how-we-do-it.html" class="hover:text-black">Manufacture</a>
+        <a href="construct.html" class="hover:text-black">Construct</a>
+        <a href="portfolio.html" class="text-red-600">Portfolio</a>
+        <a href="materials.html" class="hover:text-black">Materials</a>
+        <a href="about.html" class="hover:text-black">About</a>
+        <a href="contact.html" class="hover:text-black">Contact</a>
+      </nav>
+      <a href="contact.html" class="text-xs uppercase tracking-wider font-bold text-red-600 md:hidden">Inquire</a>
+    </div>
+  </header>
+
+  <!-- Hero Header -->
+  <section class="py-16 md:py-24 border-b line-border bg-white">
+    <div class="container-custom">
+      <p class="kicker mb-2">Our Work Across the UAE</p>
+      <h1 class="display-font text-5xl sm:text-6xl font-extrabold tracking-tight">Project Portfolio</h1>
+      <p class="mt-4 text-gray-600 text-lg max-w-2xl">A curated selection of landmark high-rise towers, residential communities, luxury villas, commercial centers, and cultural monuments delivered by ASGRC.</p>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <main class="py-20">
+    <div class="container-custom">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Project 1 -->
+        <article class="card-panel">
+          <img src="https://asgrc.co/assets/img/creek.jpg" alt="Creek Edge Towers" class="project-img">
+          <div class="p-6">
+            <span class="text-[10px] tracking-widest uppercase font-bold text-red-600">High-Rise Façade</span>
+            <h3 class="display-font text-2xl font-bold mt-1">Creek Edge 1 & 2</h3>
+            <p class="text-xs text-gray-500 mt-2"><strong>Client:</strong> Emaar Properties PJSC</p>
+            <p class="text-xs text-gray-500"><strong>Location:</strong> Dubai Creek Harbour</p>
+            <p class="text-sm text-gray-600 mt-3">280,000 m² of engineered GFRC tower cladding and podium architectural fins.</p>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="card-panel">
+          <img src="https://asgrc.co/assets/img/urban.jpg" alt="Urban Oasis Tower" class="project-img">
+          <div class="p-6">
+            <span class="text-[10px] tracking-widest uppercase font-bold text-red-600">High-Rise Residential</span>
+            <h3 class="display-font text-2xl font-bold mt-1">Urban Oasis Tower</h3>
+            <p class="text-xs text-gray-500 mt-2"><strong>Client:</strong> Dar Al Arkan Real Estate</p>
+            <p class="text-xs text-gray-500"><strong>Location:</strong> Business Bay, Dubai</p>
+            <p class="text-sm text-gray-600 mt-3">180,000 m² Missoni-styled dynamic curvilinear GFRC façade envelope.</p>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="card-panel">
+          <img src="https://asgrc.co/assets/img/ahad.jpg" alt="Ahad Residences" class="project-img">
+          <div class="p-6">
+            <span class="text-[10px] tracking-widest uppercase font-bold text-red-600">High-Rise Tower</span>
+            <h3 class="display-font text-2xl font-bold mt-1">Ahad Residences</h3>
+            <p class="text-xs text-gray-500 mt-2"><strong>Client:</strong> Ahad Development</p>
+            <p class="text-xs text-gray-500"><strong>Location:</strong> Business Bay, Dubai</p>
+            <p class="text-sm text-gray-600 mt-3">13,000 m² high-precision architectural panels and textured external cladding.</p>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="card-panel">
+          <img src="https://asgrc.co/creek.jpg" alt="The Beach Mansion" class="project-img">
+          <div class="p-6">
+            <span class="text-[10px] tracking-widest uppercase font-bold text-red-600">Waterfront Luxury</span>
+            <h3 class="display-font text-2xl font-bold mt-1">The Beach Mansion</h3>
+            <p class="text-xs text-gray-500 mt-2"><strong>Client:</strong> Emaar Properties PJSC</p>
+            <p class="text-xs text-gray-500"><strong>Location:</strong> Dubai Harbour</p>
+            <p class="text-sm text-gray-600 mt-3">Marine-grade salt-resistant GFRC balcony fascias and decorative crowns.</p>
+          </div>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="card-panel">
+          <img src="https://asgrc.co/assets/img/mosque.jpg" alt="Mercedes Flagship Center" class="project-img">
+          <div class="p-6">
+            <span class="text-[10px] tracking-widest uppercase font-bold text-red-600">Special Architectural Building</span>
+            <h3 class="display-font text-2xl font-bold mt-1">Mercedes-Benz Brand Center</h3>
+            <p class="text-xs text-gray-500 mt-2"><strong>Client:</strong> Gargash Motors / Mercedes-Benz</p>
+            <p class="text-xs text-gray-500"><strong>Location:</strong> Dubai Design District (D3)</p>
+            <p class="text-sm text-gray-600 mt-3">Bespoke 3D sculptural panel geometry and ultra-smooth metallic finish.</p>
+          </div>
+        </article>
+
+        <!-- Project 6 -->
+        <article class="card-panel">
+          <img src="https://asgrc.co/assets/img/creek.jpg" alt="Palace Beach Residence" class="project-img">
+          <div class="p-6">
+            <span class="text-[10px] tracking-widest uppercase font-bold text-red-600">High-Rise Façade</span>
+            <h3 class="display-font text-2xl font-bold mt-1">Palace Beach Residence</h3>
+            <p class="text-xs text-gray-500 mt-2"><strong>Client:</strong> Emaar Properties PJSC</p>
+            <p class="text-xs text-gray-500"><strong>Location:</strong> Emaar Beachfront, Dubai</p>
+            <p class="text-sm text-gray-600 mt-3">Large-format lightweight GFRC cladding panels engineered for high wind loads.</p>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="mt-20 p-10 bg-white border line-border rounded-2xl text-center">
+        <h3 class="display-font text-3xl font-bold">Have an Upcoming Landmark Project?</h3>
+        <p class="mt-2 text-gray-600 max-w-xl mx-auto">Explore our full references including mosques, RTA headquarters, retail hubs, and private villa estates.</p>
+        <div class="mt-6">
+          <a href="contact.html" class="btn-dark">Request Project Pre-Qualification (PQD)</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t line-border bg-white pt-12 pb-8">
+    <div class="container-custom text-center text-xs text-gray-500">
+      <p>&copy; 2026 Al Shafar GRC LLC (ASGRC). All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

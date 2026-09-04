@@ -1,125 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; form-action 'self';">
-    <title>Al Shafar GRC LLC | Contact</title>
-    <style>
-        :root { --primary-color: #002870; --accent-color: #002870; --text-main: #333333; --bg-light: #f4f7fa; --white: #ffffff; }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; color: var(--text-main); background-color: var(--bg-light); padding: 20px; }
-        .main-container { max-width: 1200px; margin: 0 auto; }
-        .nav-bar { display: flex; justify-content: space-between; align-items: center; background-color: var(--white); padding: 20px 30px; border-radius: 6px; margin-bottom: 20px; border-bottom: 3px solid var(--accent-color); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .logo-block { text-decoration: none; display: flex; flex-direction: column; }
-        .logo-text { font-size: 2.2rem; font-weight: 800; color: var(--primary-color); display: block; line-height: 0.9; font-style: italic; }
-        .logo-sub { font-family: "Georgia"; font-size: 1.05rem; color: var(--primary-color); font-weight: bold; font-style: italic; display: block; margin-top: 6px; }
-        .nav-links { display: flex; list-style: none; gap: 20px; }
-        .nav-links a { text-decoration: none; color: var(--primary-color); font-weight: 600; }
-        .nav-links a:hover { opacity: 0.7; }
-        .section-title { font-size: 1.8rem; color: var(--primary-color); margin: 35px 0 20px 0; padding-bottom: 8px; border-bottom: 3px solid var(--accent-color); text-transform: uppercase; }
-        .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        .info-card { background: var(--white); padding: 30px; border-radius: 6px; border: 1px solid #e2e8f0; border-left: 6px solid var(--primary-color); box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
-        .info-item { margin-bottom: 15px; }
-        .info-item strong { display: block; color: var(--primary-color); font-size: 0.85rem; text-transform: uppercase; margin-bottom: 3px; }
-        .registration-box { background-color: #f8fafc; padding: 20px; border-radius: 4px; border: 1px solid #edf2f7; margin-top: 20px; }
-        .form-card { background: var(--white); padding: 30px; border-radius: 6px; border: 1px solid #e2e8f0; box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: 600; color: var(--primary-color); }
-        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 1rem; }
-        .submit-btn { background-color: var(--primary-color); color: var(--white); border: none; padding: 12px 20px; border-radius: 4px; cursor: pointer; font-weight: bold; width: 100%; transition: opacity 0.3s; }
-        .submit-btn:hover { opacity: 0.9; }
-        
-        /* Honeypot Security Field - Completely Invisible to Humans */
-        .security-field { display: none !important; tab-index: -1; autocomplete: off; }
-        
-        @media (max-width: 768px) { .contact-layout { grid-template-columns: 1fr; } }
-        footer { text-align: center; padding: 20px; color: #777; font-size: 0.85rem; border-top: 1px solid #e2e8f0; margin-top: 40px; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — ASGRC Building Elegance</title>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=cabinet-grotesk@500,700,800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --bg: #f8f6f0; --card: #ffffff; --text: #111827; --muted: #6b7280; --line: #ded8ce; --blue: #12377f; --red: #e51d49; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Satoshi', sans-serif; }
+    .container-custom { width: min(1200px, calc(100% - 2rem)); margin: 0 auto; }
+    @media(min-width: 768px) { .container-custom { width: min(1200px, calc(100% - 4rem)); } }
+    .display-font { font-family: 'Cabinet Grotesk', sans-serif; letter-spacing: -0.04em; }
+    .kicker { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+    .line-border { border-color: var(--line); }
+    .top-bar { position: sticky; top: 0; z-index: 30; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(0,0,0,0.06); height: 42px; }
+    .top-bar-inner { height: 42px; display: flex; align-items: center; justify-content: space-between; font-weight: 800; font-size: 14px; }
+    .card-panel { background: var(--card); border: 1px solid var(--line); border-radius: 1.5rem; overflow: hidden; }
+    .btn-dark { background: var(--text); color: #fff; padding: 0.75rem 1.75rem; border-radius: 999px; text-decoration: none; display: inline-flex; align-items: center; font-weight: 500; }
+    .field, .select, .textarea { width: 100%; padding: 0.85rem 1.25rem; border: 1px solid var(--line); border-radius: 999px; background: transparent; outline: none; font-family: inherit; }
+    .textarea { border-radius: 1.25rem; min-height: 140px; resize: vertical; }
+    .field:focus, .select:focus, .textarea:focus { border-color: var(--blue); }
+  </style>
 </head>
 <body>
-    <div class="main-container">
-        <nav class="nav-bar">
-            <a href="index.html" class="logo-block"><span class="logo-text">ASGRC</span><span class="logo-sub">Building Elegance</span></a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="capabilities.html">Capabilities & Gallery</a></li>
-                <li><a href="contact.html" style="border-bottom: 2px solid var(--primary-color);">Contact Us</a></li>
-            </ul>
-        </nav>
-
-        <h2 class="section-title">Official Corporate Contact Information</h2>
-        <div class="contact-layout">
-            <div class="info-card">
-                <div class="info-item"><strong>Factory Headquarters Location</strong><p>Dubai Industrial City, Saih Shuaib 04, Dubai, UAE</p></div>
-                <div class="info-item"><strong>Mailing Registry Address</strong><p>PO Box 117717, Dubai, United Arab Emirates</p></div>
-                <div class="info-item"><strong>Telephone Communications</strong><p>(+971) 4 320 1288</p></div>
-                <div class="info-item"><strong>Facsimile Line</strong><p>(+971) 4 320 1299</p></div>
-                <div class="info-item"><strong>Verified Corporate Email</strong><p>info@asgrc.co</p></div>
-                
-                <div class="registration-box">
-                    <p><strong>Industrial License ID:</strong> 551807</p>
-                    <p><strong>D-U-N-S Track Value:</strong> 53-449-8725</p>
-                    <p><strong>DCCI Registration Number:</strong> 83235</p>
-                </div>
-            </div>
-
-            <div class="form-card">
-                <form id="securedContactForm">
-                    <!-- Invisible Honeypot Spam Trap Field -->
-                    <div class="form-group security-field">
-                        <label for="middle_name">Leave this box completely blank</label>
-                        <input type="text" id="middle_name" name="middle_name">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="name">Company / Contact Name</label>
-                        <input type="text" id="name" required minlength="3" maxlength="70">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Secure Return Email Address</label>
-                        <input type="email" id="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Procurement Query / Scope Description</label>
-                        <textarea id="message" rows="5" required minlength="10" maxlength="2000"></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message Directly</button>
-                </form>
-            </div>
-        </div>
-        <footer><p>&copy; 2026 Al Shafar GRC L.L.C. All layout matrices compiled securely using localized assets.</p></footer>
+  <!-- Header -->
+  <header class="top-bar">
+    <div class="container-custom top-bar-inner">
+      <a href="index.html" class="display-font font-extrabold text-gray-900 tracking-tight">ASGRC <span class="text-red-600">BUILDING ELEGANCE</span></a>
+      <nav class="hidden md:flex gap-6 text-xs uppercase tracking-wider font-semibold text-gray-600">
+        <a href="what-we-do.html" class="hover:text-black">Design</a>
+        <a href="how-we-do-it.html" class="hover:text-black">Manufacture</a>
+        <a href="construct.html" class="hover:text-black">Construct</a>
+        <a href="portfolio.html" class="hover:text-black">Portfolio</a>
+        <a href="materials.html" class="hover:text-black">Materials</a>
+        <a href="about.html" class="hover:text-black">About</a>
+        <a href="contact.html" class="text-red-600">Contact</a>
+      </nav>
+      <a href="contact.html" class="text-xs uppercase tracking-wider font-bold text-red-600 md:hidden">Inquire</a>
     </div>
+  </header>
 
-    <script>
-        document.getElementById('securedContactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // 1. Check if Honeypot Trap was filled by a script crawler
-            var trapField = document.getElementById('middle_name').value;
-            if (trapField.length > 0) {
-                console.warn("Spam execution intercepted.");
-                return false; 
-            }
-            
-            var name = document.getElementById('name').value.trim();
-            var email = document.getElementById('email').value.trim();
-            var message = document.getElementById('message').value.trim();
-            
-            // 2. Validate input fields to avoid empty or malicious submittals
-            if (name.length < 3 || message.length < 10) {
-                alert("Please provide a valid name and dynamic description query.");
-                return false;
-            }
-            
-            // 3. Process encrypted text string handling for handoff
-            var subject = encodeURIComponent("Procurement Inquiry from " + name);
-            var body = encodeURIComponent("Company/Contact: " + name + "\nReturn Email Address: " + email + "\n\nScope Description:\n" + message);
-            
-            // Route message data using verified local email handler client
-            window.location.href = "mailto:info@asgrc.co?subject=" + subject + "&body=" + body;
-        });
-    </script>
+  <!-- Hero Header -->
+  <section class="py-16 md:py-24 border-b line-border bg-white">
+    <div class="container-custom">
+      <p class="kicker mb-2">Start a Project Consultation</p>
+      <h1 class="display-font text-5xl sm:text-6xl font-extrabold tracking-tight">Let's Build Smarter Together</h1>
+      <p class="mt-4 text-gray-600 text-lg max-w-2xl">Connect directly with our engineering and estimation teams for design-assist tenders, budget proposals, and technical sample inquiries.</p>
+    </div>
+  </section>
+
+  <!-- Contact Form & Info -->
+  <main class="py-20">
+    <div class="container-custom">
+      <div class="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] items-start">
+        
+        <div class="space-y-8">
+          <div class="card-panel p-8">
+            <h3 class="display-font text-2xl font-bold mb-4">Headquarters & DIC Factory</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              <strong>Al Shafar GRC LLC (ASGRC)</strong><br>
+              P.O. Box 117717, Saih Suhaib 04, Plot No. 533-193<br>
+              Dubai Industrial City (DIC), Dubai, United Arab Emirates
+            </p>
+            <div class="mt-6 pt-6 border-t line-border space-y-2 text-sm text-gray-600">
+              <p><strong>Phone:</strong> +971 4 320 1288 / +971 4 320 1299</p>
+              <p><strong>Email:</strong> info@asgrc.ae / info@asgrc.co</p>
+              <p><strong>Website:</strong> www.asgrc.co / www.asgrc.ae</p>
+            </div>
+          </div>
+
+          <div class="card-panel p-8">
+            <h3 class="display-font text-2xl font-bold mb-4">Abu Dhabi Regional Branch</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              <strong>Al Shafar GRC LLC - Abu Dhabi</strong><br>
+              Remah Tower, Harat Al Qumzan Street<br>
+              Abu Dhabi, United Arab Emirates
+            </p>
+          </div>
+        </div>
+
+        <form class="card-panel p-8 md:p-10 bg-white" onsubmit="event.preventDefault(); alert('Inquiry received! We will respond within 24 hours.'); this.reset();">
+          <h2 class="display-font text-3xl font-bold mb-6">Send Project RFP / Brief</h2>
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Your Full Name *</label>
+              <input class="field" type="text" placeholder="John Doe" required>
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Company / Studio *</label>
+              <input class="field" type="text" placeholder="Architecture / Contracting Firm" required>
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Email Address *</label>
+              <input class="field" type="email" placeholder="john@company.com" required>
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Phone Number</label>
+              <input class="field" type="tel" placeholder="+971 ...">
+            </div>
+            <div class="sm:col-span-2">
+              <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Scope / System *</label>
+              <select class="select" required>
+                <option value="">Select scope</option>
+                <option>GFRC Façade & Balcony Panels</option>
+                <option>UHPC Ultra-Thin Cladding & Screens</option>
+                <option>GFRP Curved Mouldings & Canopies</option>
+                <option>GFRG Interior Ceilings & Columns</option>
+                <option>Full Façade Engineering & Turnkey Installation</option>
+              </select>
+            </div>
+            <div class="sm:col-span-2">
+              <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Project Details *</label>
+              <textarea class="textarea" placeholder="Please specify project name, location, estimated façade area (m²), and current stage..." required></textarea>
+            </div>
+            <button type="submit" class="btn-dark sm:col-span-2 justify-center py-3 text-base">Submit Tender Brief</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t line-border bg-white pt-12 pb-8">
+    <div class="container-custom text-center text-xs text-gray-500">
+      <p>&copy; 2026 Al Shafar GRC LLC (ASGRC). All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>

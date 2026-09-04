@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materials — ASGRC Building Elegance</title>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=cabinet-grotesk@500,700,800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --bg: #f8f6f0; --card: #ffffff; --text: #111827; --muted: #6b7280; --line: #ded8ce; --blue: #12377f; --red: #e51d49; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Satoshi', sans-serif; }
+    .container-custom { width: min(1200px, calc(100% - 2rem)); margin: 0 auto; }
+    @media(min-width: 768px) { .container-custom { width: min(1200px, calc(100% - 4rem)); } }
+    .display-font { font-family: 'Cabinet Grotesk', sans-serif; letter-spacing: -0.04em; }
+    .kicker { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+    .line-border { border-color: var(--line); }
+    .top-bar { position: sticky; top: 0; z-index: 30; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(0,0,0,0.06); height: 42px; }
+    .top-bar-inner { height: 42px; display: flex; align-items: center; justify-content: space-between; font-weight: 800; font-size: 14px; }
+    .card-panel { background: var(--card); border: 1px solid var(--line); border-radius: 1.5rem; overflow: hidden; }
+    .btn-dark { background: var(--text); color: #fff; padding: 0.75rem 1.75rem; border-radius: 999px; text-decoration: none; display: inline-flex; align-items: center; font-weight: 500; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="top-bar">
+    <div class="container-custom top-bar-inner">
+      <a href="index.html" class="display-font font-extrabold text-gray-900 tracking-tight">ASGRC <span class="text-red-600">BUILDING ELEGANCE</span></a>
+      <nav class="hidden md:flex gap-6 text-xs uppercase tracking-wider font-semibold text-gray-600">
+        <a href="what-we-do.html" class="hover:text-black">Design</a>
+        <a href="how-we-do-it.html" class="hover:text-black">Manufacture</a>
+        <a href="construct.html" class="hover:text-black">Construct</a>
+        <a href="portfolio.html" class="hover:text-black">Portfolio</a>
+        <a href="materials.html" class="text-red-600">Materials</a>
+        <a href="about.html" class="hover:text-black">About</a>
+        <a href="contact.html" class="hover:text-black">Contact</a>
+      </nav>
+      <a href="contact.html" class="text-xs uppercase tracking-wider font-bold text-red-600 md:hidden">Inquire</a>
+    </div>
+  </header>
+
+  <!-- Hero Header -->
+  <section class="py-16 md:py-24 border-b line-border bg-white">
+    <div class="container-custom">
+      <p class="kicker mb-2">High-Performance Cementitious & Composite Systems</p>
+      <h1 class="display-font text-5xl sm:text-6xl font-extrabold tracking-tight">Advanced Materials & Systems</h1>
+      <p class="mt-4 text-gray-600 text-lg max-w-2xl">Engineered for lightweight envelopes, complex geometric freedom, fire safety, and long-term durability in Middle Eastern climates.</p>
+    </div>
+  </section>
+
+  <!-- Materials Breakdown -->
+  <main class="py-20">
+    <div class="container-custom space-y-16">
+      
+      <!-- GFRC -->
+      <div class="grid gap-10 lg:grid-cols-2 items-center card-panel p-8 md:p-12">
+        <div>
+          <span class="text-xs tracking-widest uppercase font-bold text-red-600">Primary Façade Cladding</span>
+          <h2 class="display-font text-4xl font-bold mt-2">GFRC / GRC</h2>
+          <h3 class="text-gray-500 font-medium text-lg">Glass Fiber Reinforced Concrete</h3>
+          <p class="text-gray-600 mt-4 leading-relaxed text-sm">
+            Composed of high-grade white or grey Portland cement, silica sand, polymers, and alkali-resistant (AR) glass fibers. GFRC provides extreme strength with only 18–20 mm skin thickness, reducing building dead-load by up to 75% compared to traditional precast concrete.
+          </p>
+          <ul class="mt-6 space-y-2 text-sm text-gray-600">
+            <li>&bull; <strong>Density:</strong> 1,800 – 2,100 kg/m³</li>
+            <li>&bull; <strong>Fire Rating:</strong> Class A1 Non-Combustible (BS 8414 & EN 13501-1)</li>
+            <li>&bull; <strong>Applications:</strong> Façades, spandrels, curvilinear fins, sunscreens, and decorative cornices</li>
+          </ul>
+        </div>
+        <div>
+          <img src="https://asgrc.co/assets/img/creek.jpg" alt="GFRC Application" class="rounded-2xl w-full h-[320px] object-cover border line-border">
+        </div>
+      </div>
+
+      <!-- UHPC -->
+      <div class="grid gap-10 lg:grid-cols-2 items-center card-panel p-8 md:p-12">
+        <div class="lg:order-2">
+          <span class="text-xs tracking-widest uppercase font-bold text-red-600">Ultra-High Strength Matrix</span>
+          <h2 class="display-font text-4xl font-bold mt-2">UHPC</h2>
+          <h3 class="text-gray-500 font-medium text-lg">Ultra High Performance Concrete</h3>
+          <p class="text-gray-600 mt-4 leading-relaxed text-sm">
+            An advanced cementitious composite with compressive strengths exceeding 120–150 MPa and exceptional flexural ductility. Allows ultra-thin panels (12–15 mm) with nearly zero porosity, impervious to chloride ingress and salt spray.
+          </p>
+          <ul class="mt-6 space-y-2 text-sm text-gray-600">
+            <li>&bull; <strong>Compressive Strength:</strong> &gt; 130 MPa</li>
+            <li>&bull; <strong>Water Absorption:</strong> &lt; 1.5% (extreme moisture resistance)</li>
+            <li>&bull; <strong>Applications:</strong> Slim architectural louvers, perforated mashrabiya screens, and high-wear podium cladding</li>
+          </ul>
+        </div>
+        <div class="lg:order-1">
+          <img src="https://asgrc.co/assets/img/urban.jpg" alt="UHPC Application" class="rounded-2xl w-full h-[320px] object-cover border line-border">
+        </div>
+      </div>
+
+      <!-- GRP & GRG -->
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="card-panel p-8">
+          <span class="text-xs tracking-widest uppercase font-bold text-red-600">Lightweight Curved Composites</span>
+          <h3 class="display-font text-3xl font-bold mt-2">GFRP / GRP</h3>
+          <p class="text-gray-500 text-sm font-medium">Glass Fiber Reinforced Plastic</p>
+          <p class="text-gray-600 text-sm mt-4 leading-relaxed">
+            Ultra-lightweight resin composite for complex seamless domes, aerodynamic building caps, canopies, and expressive feature sculptures.
+          </p>
+        </div>
+        <div class="card-panel p-8">
+          <span class="text-xs tracking-widest uppercase font-bold text-red-600">Interior Luxury Detailing</span>
+          <h3 class="display-font text-3xl font-bold mt-2">GFRG / GRG</h3>
+          <p class="text-gray-500 text-sm font-medium">Glass Fiber Reinforced Gypsum</p>
+          <p class="text-gray-600 text-sm mt-4 leading-relaxed">
+            High-density alpha gypsum reinforced with glass fibers for silky smooth, fire-resistant interior ceilings, columns, and acoustic auditoriums.
+          </p>
+        </div>
+      </div>
+
+      <!-- Finishes Section -->
+      <div class="p-10 bg-white border line-border rounded-2xl">
+        <p class="kicker">Texture & Finishes</p>
+        <h3 class="display-font text-3xl font-bold mt-2">Available Architectural Finishes</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mt-8 text-center">
+          <div class="p-4 bg-[#f8f6f0] rounded-xl text-xs font-bold uppercase tracking-wider">Acid Etched</div>
+          <div class="p-4 bg-[#f8f6f0] rounded-xl text-xs font-bold uppercase tracking-wider">Smooth Cast</div>
+          <div class="p-4 bg-[#f8f6f0] rounded-xl text-xs font-bold uppercase tracking-wider">Travertine</div>
+          <div class="p-4 bg-[#f8f6f0] rounded-xl text-xs font-bold uppercase tracking-wider">Exposed Aggregate</div>
+          <div class="p-4 bg-[#f8f6f0] rounded-xl text-xs font-bold uppercase tracking-wider">3D Fluted Pattern</div>
+          <div class="p-4 bg-[#f8f6f0] rounded-xl text-xs font-bold uppercase tracking-wider">Metallic Coated</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t line-border bg-white pt-12 pb-8">
+    <div class="container-custom text-center text-xs text-gray-500">
+      <p>&copy; 2026 Al Shafar GRC LLC (ASGRC). All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

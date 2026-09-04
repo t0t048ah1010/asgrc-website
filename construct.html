@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Construct & Installation — ASGRC Building Elegance</title>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=cabinet-grotesk@500,700,800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --bg: #f8f6f0; --card: #ffffff; --text: #111827; --muted: #6b7280; --line: #ded8ce; --blue: #12377f; --red: #e51d49; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Satoshi', sans-serif; }
+    .container-custom { width: min(1200px, calc(100% - 2rem)); margin: 0 auto; }
+    @media(min-width: 768px) { .container-custom { width: min(1200px, calc(100% - 4rem)); } }
+    .display-font { font-family: 'Cabinet Grotesk', sans-serif; letter-spacing: -0.04em; }
+    .kicker { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+    .line-border { border-color: var(--line); }
+    .top-bar { position: sticky; top: 0; z-index: 30; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(0,0,0,0.06); height: 42px; }
+    .top-bar-inner { height: 42px; display: flex; align-items: center; justify-content: space-between; font-weight: 800; font-size: 14px; }
+    .card-panel { background: var(--card); border: 1px solid var(--line); border-radius: 1.5rem; overflow: hidden; }
+    .btn-dark { background: var(--text); color: #fff; padding: 0.75rem 1.75rem; border-radius: 999px; text-decoration: none; display: inline-flex; align-items: center; font-weight: 500; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="top-bar">
+    <div class="container-custom top-bar-inner">
+      <a href="index.html" class="display-font font-extrabold text-gray-900 tracking-tight">ASGRC <span class="text-red-600">BUILDING ELEGANCE</span></a>
+      <nav class="hidden md:flex gap-6 text-xs uppercase tracking-wider font-semibold text-gray-600">
+        <a href="what-we-do.html" class="hover:text-black">Design</a>
+        <a href="how-we-do-it.html" class="hover:text-black">Manufacture</a>
+        <a href="construct.html" class="text-red-600">Construct</a>
+        <a href="portfolio.html" class="hover:text-black">Portfolio</a>
+        <a href="materials.html" class="hover:text-black">Materials</a>
+        <a href="about.html" class="hover:text-black">About</a>
+        <a href="contact.html" class="hover:text-black">Contact</a>
+      </nav>
+      <a href="contact.html" class="text-xs uppercase tracking-wider font-bold text-red-600 md:hidden">Inquire</a>
+    </div>
+  </header>
+
+  <!-- Page Header Hero -->
+  <section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-gray-900 text-white">
+    <img src="https://asgrc.co/creek.jpg" alt="Construction & Site Installation" class="absolute inset-0 w-full h-full object-cover opacity-40">
+    <div class="container-custom relative z-10 py-20">
+      <p class="kicker text-red-400 mb-3">03 / Turnkey Site Execution</p>
+      <h1 class="display-font text-5xl sm:text-6xl font-extrabold max-w-3xl leading-tight">Engineered Installation & Seamless Site Integration.</h1>
+      <p class="mt-4 text-gray-300 text-lg max-w-2xl">From laser 3D setting out and structural framing to façade bracket rigging, joint sealing, and full Civil Defense testing compliance.</p>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <main class="py-20">
+    <div class="container-custom">
+      <div class="grid gap-12 lg:grid-cols-[0.6fr_1.4fr] items-start">
+        <div>
+          <p class="kicker mb-3">Site Delivery Model</p>
+          <h2 class="display-font text-4xl font-bold">Flawless On-Site Execution</h2>
+          <p class="mt-4 text-gray-600 text-sm leading-relaxed">
+            Even the most precise factory panels depend on immaculate on-site craneage, sub-framing alignment, and weather sealing across extreme high-rise environments.
+          </p>
+        </div>
+        <div class="space-y-8">
+          <div class="card-panel p-8">
+            <h3 class="display-font text-2xl font-bold">3D Laser Scanning & Digital Setting-Out</h3>
+            <p class="text-gray-600 mt-2 text-sm leading-relaxed">
+              Our site engineers perform detailed 3D total station and laser point cloud surveys of structural slabs and steel columns to absorb site tolerances prior to bracket installation.
+            </p>
+          </div>
+          <div class="card-panel p-8">
+            <h3 class="display-font text-2xl font-bold">Precision Framing & Engineered Lifting</h3>
+            <p class="text-gray-600 mt-2 text-sm leading-relaxed">
+              High-accuracy hoisting using dedicated tower crane rigs, spider cranes, and monorail winches for large-format panel positioning without micro-fractures.
+            </p>
+          </div>
+          <div class="card-panel p-8">
+            <h3 class="display-font text-2xl font-bold">Waterproofing, Fire Stopping & Handover</h3>
+            <p class="text-gray-600 mt-2 text-sm leading-relaxed">
+              Complete installation of acoustic barriers, non-combustible rockwool insulation, certified Dubai & Abu Dhabi Civil Defense fire barrier cavities, silicone joint weatherproofing, and final digital handover.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-20 p-10 bg-white border line-border rounded-2xl text-center">
+        <h3 class="display-font text-3xl font-bold">Ready to Execute Your Façade Package?</h3>
+        <p class="mt-2 text-gray-600 max-w-xl mx-auto">Get in touch with our operations team to review project schedules, logistics, and site installation methodologies.</p>
+        <div class="mt-6 flex justify-center gap-4">
+          <a href="contact.html" class="btn-dark">Submit Project Tender</a>
+          <a href="portfolio.html" class="border border-gray-300 rounded-full px-6 py-3 font-medium text-sm flex items-center">View Completed Landmarks &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t line-border bg-white pt-12 pb-8">
+    <div class="container-custom text-center text-xs text-gray-500">
+      <p>&copy; 2026 Al Shafar GRC LLC (ASGRC). All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

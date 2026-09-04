@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design — ASGRC Building Elegance</title>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=cabinet-grotesk@500,700,800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --bg: #f8f6f0; --card: #ffffff; --text: #111827; --muted: #6b7280; --line: #ded8ce; --blue: #12377f; --red: #e51d49; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Satoshi', sans-serif; }
+    .container-custom { width: min(1200px, calc(100% - 2rem)); margin: 0 auto; }
+    @media(min-width: 768px) { .container-custom { width: min(1200px, calc(100% - 4rem)); } }
+    .display-font { font-family: 'Cabinet Grotesk', sans-serif; letter-spacing: -0.04em; }
+    .kicker { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+    .line-border { border-color: var(--line); }
+    .top-bar { position: sticky; top: 0; z-index: 30; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(0,0,0,0.06); height: 42px; }
+    .top-bar-inner { height: 42px; display: flex; align-items: center; justify-content: space-between; font-weight: 800; font-size: 14px; }
+    .card-panel { background: var(--card); border: 1px solid var(--line); border-radius: 1.5rem; overflow: hidden; }
+    .btn-dark { background: var(--text); color: #fff; padding: 0.75rem 1.75rem; border-radius: 999px; text-decoration: none; display: inline-flex; align-items: center; font-weight: 500; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="top-bar">
+    <div class="container-custom top-bar-inner">
+      <a href="index.html" class="display-font font-extrabold text-gray-900 tracking-tight">ASGRC <span class="text-red-600">BUILDING ELEGANCE</span></a>
+      <nav class="hidden md:flex gap-6 text-xs uppercase tracking-wider font-semibold text-gray-600">
+        <a href="what-we-do.html" class="text-red-600">Design</a>
+        <a href="how-we-do-it.html" class="hover:text-black">Manufacture</a>
+        <a href="construct.html" class="hover:text-black">Construct</a>
+        <a href="portfolio.html" class="hover:text-black">Portfolio</a>
+        <a href="materials.html" class="hover:text-black">Materials</a>
+        <a href="about.html" class="hover:text-black">About</a>
+        <a href="contact.html" class="hover:text-black">Contact</a>
+      </nav>
+      <a href="contact.html" class="text-xs uppercase tracking-wider font-bold text-red-600 md:hidden">Inquire</a>
+    </div>
+  </header>
+
+  <!-- Page Header Hero -->
+  <section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-gray-900 text-white">
+    <img src="https://asgrc.co/assets/img/ahad.jpg" alt="Façade Engineering and Design" class="absolute inset-0 w-full height-full object-cover opacity-40">
+    <div class="container-custom relative z-10 py-20">
+      <p class="kicker text-red-400 mb-3">01 / Engineering & Architecture</p>
+      <h1 class="display-font text-5xl sm:text-6xl font-extrabold max-w-3xl leading-tight">Translating Bold Architectural Intent into Buildable Systems.</h1>
+      <p class="mt-4 text-gray-300 text-lg max-w-2xl">From early concept geometry and BIM integration to FEA structural validation, ASGRC provides full design-assist to optimize form, weight, and panelization.</p>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <main class="py-20">
+    <div class="container-custom">
+      <div class="grid gap-12 lg:grid-cols-[0.6fr_1.4fr] items-start">
+        <div>
+          <p class="kicker mb-3">Our Design Capability</p>
+          <h2 class="display-font text-4xl font-bold">Advanced Digital & Structural Excellence</h2>
+          <p class="mt-4 text-gray-600 text-sm leading-relaxed">
+            Façade design is not merely detailing—it is the synthesis of structural wind loads, seismic movements, thermal expansion, fixing metallurgy, and mould economy.
+          </p>
+        </div>
+        <div class="space-y-8">
+          <div class="card-panel p-8">
+            <h3 class="display-font text-2xl font-bold">BIM & 3D Computational Modelling</h3>
+            <p class="text-gray-600 mt-2 text-sm leading-relaxed">
+              Our in-house design studio utilizes Rhino 3D, Grasshopper, Autodesk Revit, SketchUp, and Navisworks to coordinate complex double-curved surfaces, parametric louvers, and panel joints directly with main consultants and architects.
+            </p>
+          </div>
+          <div class="card-panel p-8">
+            <h3 class="display-font text-2xl font-bold">Structural Optimization & Engineering Calculations</h3>
+            <p class="text-gray-600 mt-2 text-sm leading-relaxed">
+              Full structural engineering calculations for wind load pressure, dead weight, framing sub-structure, anchor brackets, thermal expansion gaps, and seismic drift allowances in full compliance with UAE Fire & Life Safety Codes.
+            </p>
+          </div>
+          <div class="card-panel p-8">
+            <h3 class="display-font text-2xl font-bold">Value Engineering & Panel Rationalization</h3>
+            <p class="text-gray-600 mt-2 text-sm leading-relaxed">
+              By standardizing mould repetition while preserving organic external aesthetic contours, we reduce project lifecycle costs and drastically accelerate manufacturing lead times.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-20 p-10 bg-white border line-border rounded-2xl text-center">
+        <h3 class="display-font text-3xl font-bold">Need Design Assistance for your Façade?</h3>
+        <p class="mt-2 text-gray-600 max-w-xl mx-auto">Collaborate early with our technical engineering studio in Dubai to optimize your geometry for GFRC or UHPC execution.</p>
+        <div class="mt-6 flex justify-center gap-4">
+          <a href="contact.html" class="btn-dark">Consult Our Design Team</a>
+          <a href="how-we-do-it.html" class="border border-gray-300 rounded-full px-6 py-3 font-medium text-sm flex items-center">Explore Manufacturing &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t line-border bg-white pt-12 pb-8">
+    <div class="container-custom text-center text-xs text-gray-500">
+      <p>&copy; 2026 Al Shafar GRC LLC (ASGRC). All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
