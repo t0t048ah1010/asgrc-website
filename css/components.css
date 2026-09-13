@@ -1,0 +1,58 @@
+/* ---- Reusable Header ---- */
+.navbar {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(247,243,238,0.92); backdrop-filter: blur(12px);
+  border-bottom: 1px solid #ddd6ca;
+  transition: box-shadow 0.3s ease;
+}
+.navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+
+/* ---- Logo ---- */
+.logo { font-family: 'Cabinet Grotesk', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--text); text-decoration: none; letter-spacing: -0.02em; }
+.logo span { color: var(--red); font-weight: 800; }
+.logo-tag { font-size: 0.65rem; color: var(--muted); letter-spacing: 0.05em; font-weight: 500; margin-left: 6px; }
+
+/* ---- Nav links ---- */
+.nav-link {
+  font-size: 0.78rem; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--muted); text-decoration: none;
+  transition: color 0.2s; padding: 0.4rem 0;
+  border-bottom: 2px solid transparent;
+}
+.nav-link:hover, .nav-link.active { color: var(--text); border-bottom-color: var(--gold); }
+.nav-link.cta { color: var(--red); border-bottom: none; }
+
+/* ---- Hamburger ---- */
+.hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+.hamburger span { width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: all 0.3s ease; }
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+@media (max-width: 860px) {
+  .desktop-nav { display: none !important; }
+  .hamburger { display: flex; }
+}
+
+/* ---- Mobile menu ---- */
+.mobile-menu {
+  position: fixed; inset: 0; z-index: 45;
+  background: rgba(247,243,238,0.98); backdrop-filter: blur(16px);
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  opacity: 0; pointer-events: none; transition: opacity 0.35s ease;
+}
+.mobile-menu.open { opacity: 1; pointer-events: auto; }
+.mobile-menu a {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700;
+  color: var(--text); text-decoration: none;
+  margin: 0.4rem 0; transition: color 0.2s;
+}
+.mobile-menu a:hover { color: var(--gold); }
+
+/* ---- Footer ---- */
+.footer { background: var(--navy); color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+.footer a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
+.footer a:hover { color: var(--gold-light); }
+.footer-brand { font-family: 'Cabinet Grotesk', sans-serif; font-weight: 800; font-size: 1.5rem; color: #fff; }
+.footer-tag { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-left: 8px; }

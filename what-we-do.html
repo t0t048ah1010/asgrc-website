@@ -4,101 +4,170 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Design — ASGRC Building Elegance</title>
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=cabinet-grotesk@500,700,800&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    :root { --bg: #f8f6f0; --card: #ffffff; --text: #111827; --muted: #6b7280; --line: #ded8ce; --blue: #12377f; --red: #e51d49; }
-    * { box-sizing: border-box; }
-    body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Satoshi', sans-serif; }
-    .container-custom { width: min(1200px, calc(100% - 2rem)); margin: 0 auto; }
-    @media(min-width: 768px) { .container-custom { width: min(1200px, calc(100% - 4rem)); } }
-    .display-font { font-family: 'Cabinet Grotesk', sans-serif; letter-spacing: -0.04em; }
-    .kicker { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
-    .line-border { border-color: var(--line); }
-    .top-bar { position: sticky; top: 0; z-index: 30; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(0,0,0,0.06); height: 42px; }
-    .top-bar-inner { height: 42px; display: flex; align-items: center; justify-content: space-between; font-weight: 800; font-size: 14px; }
-    .card-panel { background: var(--card); border: 1px solid var(--line); border-radius: 1.5rem; overflow: hidden; }
-    .btn-dark { background: var(--text); color: #fff; padding: 0.75rem 1.75rem; border-radius: 999px; text-decoration: none; display: inline-flex; align-items: center; font-weight: 500; }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
-  <!-- Header -->
-  <header class="top-bar">
-    <div class="container-custom top-bar-inner">
-      <a href="index.html" class="display-font font-extrabold text-gray-900 tracking-tight">ASGRC <span class="text-red-600">BUILDING ELEGANCE</span></a>
-      <nav class="hidden md:flex gap-6 text-xs uppercase tracking-wider font-semibold text-gray-600">
-        <a href="what-we-do.html" class="text-red-600">Design</a>
-        <a href="how-we-do-it.html" class="hover:text-black">Manufacture</a>
-        <a href="construct.html" class="hover:text-black">Construct</a>
-        <a href="portfolio.html" class="hover:text-black">Portfolio</a>
-        <a href="materials.html" class="hover:text-black">Materials</a>
-        <a href="about.html" class="hover:text-black">About</a>
-        <a href="contact.html" class="hover:text-black">Contact</a>
-      </nav>
-      <a href="contact.html" class="text-xs uppercase tracking-wider font-bold text-red-600 md:hidden">Inquire</a>
-    </div>
-  </header>
 
-  <!-- Page Header Hero -->
-  <section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-gray-900 text-white">
-    <img src="https://asgrc.co/assets/img/ahad.jpg" alt="Façade Engineering and Design" class="absolute inset-0 w-full height-full object-cover opacity-40">
-    <div class="container-custom relative z-10 py-20">
-      <p class="kicker text-red-400 mb-3">01 / Engineering & Architecture</p>
-      <h1 class="display-font text-5xl sm:text-6xl font-extrabold max-w-3xl leading-tight">Translating Bold Architectural Intent into Buildable Systems.</h1>
-      <p class="mt-4 text-gray-300 text-lg max-w-2xl">From early concept geometry and BIM integration to FEA structural validation, ASGRC provides full design-assist to optimize form, weight, and panelization.</p>
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;height:64px;">
+    <a href="index.html" class="logo">ASGRC <span>BUILDING ELEGANCE</span><span class="logo-tag">Advanced Cementitious</span></a>
+    <div class="desktop-nav" style="display:flex;align-items:center;gap:2rem;">
+      <a href="what-we-do.html" class="nav-link active">Design</a>
+      <a href="how-we-do-it.html" class="nav-link">Manufacture</a>
+      <a href="construct.html" class="nav-link">Construct</a>
+      <a href="portfolio.html" class="nav-link">Portfolio</a>
+      <a href="materials.html" class="nav-link">Materials</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link cta">Contact</a>
     </div>
-  </section>
+    <button id="hamburger" class="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
-  <!-- Content Section -->
-  <main class="py-20">
-    <div class="container-custom">
-      <div class="grid gap-12 lg:grid-cols-[0.6fr_1.4fr] items-start">
-        <div>
-          <p class="kicker mb-3">Our Design Capability</p>
-          <h2 class="display-font text-4xl font-bold">Advanced Digital & Structural Excellence</h2>
-          <p class="mt-4 text-gray-600 text-sm leading-relaxed">
-            Façade design is not merely detailing—it is the synthesis of structural wind loads, seismic movements, thermal expansion, fixing metallurgy, and mould economy.
-          </p>
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="mobile-menu">
+  <a href="what-we-do.html">Design</a>
+  <a href="how-we-do-it.html">Manufacture</a>
+  <a href="construct.html">Construct</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="materials.html">Materials</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- Page Hero -->
+<section style="padding:7rem 0 4rem;text-align:center;">
+  <div class="container">
+    <p class="kicker fade-up">01 / Engineering &amp; Architecture</p>
+    <h1 class="section-title fade-up" style="font-size:clamp(2.8rem,6vw,4.5rem);margin:1rem 0;">Translating Bold Architectural Intent into<br>Buildable Systems</h1>
+    <p class="fade-up" style="color:var(--muted);max-width:640px;margin:1.5rem auto 0;font-size:1.1rem;line-height:1.8;">From early concept geometry and BIM integration to FEA structural validation, ASGRC provides full design-assist to optimize form, weight, and panelization.</p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Main Content -->
+<section style="padding:5rem 0;">
+  <div class="container">
+    <div class="grid" style="display:grid;gap:5rem;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));">
+      <!-- BIM & Modelling -->
+      <div class="fade-up">
+        <div style="display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;background:var(--navy);border-radius:16px;margin-bottom:1.5rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
         </div>
-        <div class="space-y-8">
-          <div class="card-panel p-8">
-            <h3 class="display-font text-2xl font-bold">BIM & 3D Computational Modelling</h3>
-            <p class="text-gray-600 mt-2 text-sm leading-relaxed">
-              Our in-house design studio utilizes Rhino 3D, Grasshopper, Autodesk Revit, SketchUp, and Navisworks to coordinate complex double-curved surfaces, parametric louvers, and panel joints directly with main consultants and architects.
-            </p>
-          </div>
-          <div class="card-panel p-8">
-            <h3 class="display-font text-2xl font-bold">Structural Optimization & Engineering Calculations</h3>
-            <p class="text-gray-600 mt-2 text-sm leading-relaxed">
-              Full structural engineering calculations for wind load pressure, dead weight, framing sub-structure, anchor brackets, thermal expansion gaps, and seismic drift allowances in full compliance with UAE Fire & Life Safety Codes.
-            </p>
-          </div>
-          <div class="card-panel p-8">
-            <h3 class="display-font text-2xl font-bold">Value Engineering & Panel Rationalization</h3>
-            <p class="text-gray-600 mt-2 text-sm leading-relaxed">
-              By standardizing mould repetition while preserving organic external aesthetic contours, we reduce project lifecycle costs and drastically accelerate manufacturing lead times.
-            </p>
-          </div>
-        </div>
+        <h2 class="section-title" style="font-size:1.8rem;margin-bottom:1rem;">BIM &amp; 3D Computational Modelling</h2>
+        <p style="color:var(--muted);line-height:1.8;">Our in-house design studio utilizes Rhino 3D, Grasshopper, Autodesk Revit, SketchUp, and Navisworks to coordinate complex double-curved surfaces, parametric louvers, and panel joints directly with main consultants and architects.</p>
       </div>
 
-      <div class="mt-20 p-10 bg-white border line-border rounded-2xl text-center">
-        <h3 class="display-font text-3xl font-bold">Need Design Assistance for your Façade?</h3>
-        <p class="mt-2 text-gray-600 max-w-xl mx-auto">Collaborate early with our technical engineering studio in Dubai to optimize your geometry for GFRC or UHPC execution.</p>
-        <div class="mt-6 flex justify-center gap-4">
-          <a href="contact.html" class="btn-dark">Consult Our Design Team</a>
-          <a href="how-we-do-it.html" class="border border-gray-300 rounded-full px-6 py-3 font-medium text-sm flex items-center">Explore Manufacturing &rarr;</a>
+      <!-- Structural -->
+      <div class="fade-up fade-up-delay-1">
+        <div style="display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;background:var(--navy);border-radius:16px;margin-bottom:1.5rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V8"/><path d="M5 12H2l10-10 10 10h-3"/><path d="M5 22h14"/></svg>
+        </div>
+        <h2 class="section-title" style="font-size:1.8rem;margin-bottom:1rem;">Structural Optimization &amp; Engineering</h2>
+        <p style="color:var(--muted);line-height:1.8;">Full structural engineering calculations for wind load pressure, dead weight, framing sub-structure, anchor brackets, thermal expansion gaps, and seismic drift allowances — fully compliant with UAE Fire &amp; Life Safety Codes.</p>
+      </div>
+
+      <!-- Value Engineering -->
+      <div class="fade-up fade-up-delay-2">
+        <div style="display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;background:var(--navy);border-radius:16px;margin-bottom:1.5rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h2 class="section-title" style="font-size:1.8rem;margin-bottom:1rem;">Value Engineering &amp; Panel Rationalization</h2>
+        <p style="color:var(--muted);line-height:1.8;">By standardizing mould repetition while preserving organic external aesthetic contours, we reduce project lifecycle costs and drastically accelerate manufacturing lead times.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Process Steps -->
+<section style="padding:5rem 0;background:var(--bg-alt);">
+  <div class="container">
+    <p class="kicker fade-up" style="margin-bottom:0.75rem;">Design Workflow</p>
+    <h2 class="section-title fade-up" style="font-size:clamp(2rem,4vw,2.8rem);margin-bottom:3rem;">From Concept to Construction-Ready</h2>
+    <div class="grid" style="display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));">
+      <div class="process-step fade-up">
+        <span class="step-number">01</span>
+        <h3 style="font-size:1.1rem;font-weight:700;margin-top:3rem;margin-bottom:0.75rem;">Concept &amp; Geometry Capture</h3>
+        <p style="color:var(--muted);font-size:0.9rem;">Receive architect's vision — 2D drawings, renderings, or massing models — and translate into parametric 3D geometry.</p>
+      </div>
+      <div class="process-step fade-up fade-up-delay-1">
+        <span class="step-number">02</span>
+        <h3 style="font-size:1.1rem;font-weight:700;margin-top:3rem;margin-bottom:0.75rem;">BIM &amp; Structural Analysis</h3>
+        <p style="color:var(--muted);font-size:0.9rem;">Integrate with main consultant models; perform wind load, seismic, and structural FEA analysis.</p>
+      </div>
+      <div class="process-step fade-up fade-up-delay-2">
+        <span class="step-number">03</span>
+        <h3 style="font-size:1.1rem;font-weight:700;margin-top:3rem;margin-bottom:0.75rem;">Value Engineering</h3>
+        <p style="color:var(--muted);font-size:0.9rem;">Optimize panel sizes, joint layouts, and mould strategies to reduce cost and lead time.</p>
+      </div>
+      <div class="process-step fade-up fade-up-delay-3">
+        <span class="step-number">04</span>
+        <h3 style="font-size:1.1rem;font-weight:700;margin-top:3rem;margin-bottom:0.75rem;">Shop Drawings &amp; Approval</h3>
+        <p style="color:var(--muted);font-size:0.9rem;">Deliver production-ready shop drawings, anchor calculations, and fixing details for consultant sign-off.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:5rem 0;text-align:center;">
+  <div class="container" style="max-width:600px;">
+    <p class="kicker fade-up" style="margin-bottom:0.75rem;">Need Design Assistance?</p>
+    <h2 class="section-title fade-up" style="font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1rem;">Collaborate Early With Our Technical Studio</h2>
+    <p class="fade-up" style="color:var(--muted);margin-bottom:2rem;">Our engineers are ready to optimize your geometry for GFRC or UHPC execution.</p>
+    <a href="contact.html" class="btn btn-primary fade-up">Consult Our Design Team</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer" style="padding:4rem 0 2rem;">
+  <div class="container">
+    <div class="grid" style="display:grid;gap:3rem;grid-template-columns:2fr 1fr 1fr 1fr;margin-bottom:3rem;">
+      <div>
+        <div class="footer-brand">ASGRC<span class="footer-tag">Building Elegance</span></div>
+        <p style="margin-top:1rem;line-height:1.7;font-size:0.9rem;max-width:320px;">Al Shafar GRC LLC — Advanced cementitious and composite systems for architectural façades across the Middle East.</p>
+      </div>
+      <div>
+        <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.4);margin-bottom:1rem;">Process</p>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="what-we-do.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Design</a>
+          <a href="how-we-do-it.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Manufacture</a>
+          <a href="construct.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Construct</a>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.4);margin-bottom:1rem;">Company</p>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="portfolio.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Portfolio</a>
+          <a href="materials.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Materials</a>
+          <a href="about.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">About</a>
+          <a href="contact.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Contact</a>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.4);margin-bottom:1rem;">Connect</p>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="mailto:info@asgrc.co" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">info@asgrc.co</a>
+          <a href="tel:+97144295500" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">+971 4 429 5500</a>
         </div>
       </div>
     </div>
-  </main>
+    <hr class="divider" style="border-color:rgba(255,255,255,0.1);">
+    <p style="text-align:center;margin-top:1.5rem;font-size:0.8rem;color:rgba(255,255,255,0.4);">&copy; 2026 Al Shafar GRC LLC. All rights reserved.</p>
+  </div>
+</footer>
 
-  <!-- Footer -->
-  <footer class="border-t line-border bg-white pt-12 pb-8">
-    <div class="container-custom text-center text-xs text-gray-500">
-      <p>&copy; 2026 Al Shafar GRC LLC (ASGRC). All rights reserved.</p>
-    </div>
-  </footer>
+<script src="js/animations.js"></script>
+<script src="js/mobile-nav.js"></script>
 </body>
 </html>

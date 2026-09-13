@@ -3,455 +3,255 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ASGRC — Building Elegance</title>
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=cabinet-grotesk@500,700,800&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    :root {
-      --bg: #f8f6f0;
-      --card: #ffffff;
-      --text: #111827;
-      --muted: #6b7280;
-      --line: #ded8ce;
-      --blue: #12377f;
-      --red: #e51d49;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Satoshi', sans-serif; }
-    .container-custom { width: min(1200px, calc(100% - 2rem)); margin: 0 auto; }
-    @media(min-width: 768px) { .container-custom { width: min(1200px, calc(100% - 4rem)); } }
-    .display-font { font-family: 'Cabinet Grotesk', sans-serif; letter-spacing: -0.04em; }
-    .kicker { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
-    .line-border { border-color: var(--line); }
-    
-    /* Top Bar */
-    .top-bar { position: absolute; top: 0; left: 0; right: 0; z-index: 30; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(0,0,0,0.06); height: 38px; }
-    .top-bar-inner { height: 38px; display: flex; align-items: center; justify-content: space-between; font-weight: 800; font-size: 14px; }
-    .top-logo { text-decoration: none; color: var(--text); font-weight: 800; letter-spacing: -0.03em; }
-    .top-logo span { color: var(--red); }
-    
-    /* Hero */
-    .hero-section { position: relative; min-height: 100svh; overflow: hidden; background: #c2d7eb; display: flex; align-items: center; justify-content: center; text-align: center; }
-    .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.95); z-index: 1; }
-    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.25) 100%); z-index: 2; }
-    .hero-content { position: relative; z-index: 10; padding: 5rem 1rem 7rem; max-width: 900px; }
-    .hero-title { font-size: clamp(2.8rem, 6.8vw, 6rem); line-height: 0.95; text-transform: uppercase; font-weight: 800; color: #ffffff; text-shadow: 0 4px 20px rgba(0,0,0,0.3); }
-    .hero-title span { color: var(--red); }
-    .hero-sub { margin-top: 1.25rem; font-size: clamp(1.1rem, 2vw, 1.6rem); color: #f3f4f6; text-shadow: 0 2px 10px rgba(0,0,0,0.4); }
-    .hero-arrow { position: absolute; left: 50%; bottom: 2rem; transform: translateX(-50%); z-index: 10; width: 34px; height: 60px; border-radius: 999px; border: 1.5px solid rgba(255,255,255,0.9); display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none; font-size: 1.2rem; }
-    
-    /* Overlay Menu */
-    .menu-screen { position: fixed; inset: 0; z-index: 60; background: rgba(248,246,240,0.98); backdrop-filter: blur(12px); opacity: 0; pointer-events: none; transition: opacity 0.25s ease; }
-    .menu-screen.open { opacity: 1; pointer-events: auto; }
-    .menu-layout { min-height: 100svh; display: grid; grid-template-columns: 1fr; align-items: center; padding: 4rem 0; }
-    @media(min-width: 960px) { .menu-layout { grid-template-columns: 1fr 1fr; } }
-    .brand-block .asgrc { font-size: clamp(3rem, 5vw, 5.5rem); font-weight: 800; line-height: 0.85; color: var(--blue); font-style: italic; }
-    .brand-block .tag { font-family: Georgia, serif; font-size: clamp(1.2rem, 1.8vw, 1.8rem); font-style: italic; font-weight: 700; color: var(--blue); margin-top: 0.5rem; }
-    .menu-links a { display: block; text-decoration: none; color: var(--text); font-family: 'Cabinet Grotesk', sans-serif; font-size: clamp(2.2rem, 4vw, 3.8rem); line-height: 1.1; margin-bottom: 0.75rem; transition: color 0.2s; }
-    .menu-links a:hover { color: var(--red); }
-    .close-btn { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: transparent; display: inline-flex; align-items: center; justify-content: center; font-size: 1.25rem; cursor: pointer; }
-    
-    /* Cards & Components */
-    .card-panel { background: var(--card); border: 1px solid var(--line); border-radius: 1.5rem; overflow: hidden; }
-    .card-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
-    .project-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
-    .btn-dark { background: var(--text); color: #fff; padding: 0.75rem 1.75rem; border-radius: 999px; text-decoration: none; display: inline-flex; align-items: center; font-weight: 500; transition: opacity 0.2s; }
-    .btn-dark:hover { opacity: 0.9; }
-    .btn-light { border: 1px solid var(--line); color: var(--text); padding: 0.75rem 1.75rem; border-radius: 999px; text-decoration: none; display: inline-flex; align-items: center; }
-    .btn-light:hover { background: rgba(0,0,0,0.03); }
-    
-    .field, .select, .textarea { width: 100%; padding: 0.85rem 1.25rem; border: 1px solid var(--line); border-radius: 999px; background: transparent; outline: none; font-family: inherit; }
-    .textarea { border-radius: 1.25rem; min-height: 140px; resize: vertical; }
-    .field:focus, .select:focus, .textarea:focus { border-color: var(--blue); }
-  </style>
+  <title>ASGRC — Building Elegance in Advanced Façade Systems</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
 
-  <!-- Top Navigation Bar -->
-  <header class="top-bar">
-    <div class="container-custom top-bar-inner">
-      <a href="index.html" class="top-logo display-font">ASGRC <span>BUILDING ELEGANCE</span></a>
-      <button id="menuOpen" class="text-sm uppercase tracking-wider font-bold flex items-center gap-2 cursor-pointer" aria-label="Open menu">
-        <span>MENU</span>
-        <svg width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2"><line y1="1" x2="18" y2="1"></line><line y1="6" x2="18" y2="6"></line><line y1="11" x2="18" y2="11"></line></svg>
-      </button>
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;height:64px;">
+    <a href="index.html" class="logo">ASGRC <span>BUILDING ELEGANCE</span><span class="logo-tag">Advanced Cementitious</span></a>
+    <div class="desktop-nav" style="display:flex;align-items:center;gap:2rem;">
+      <a href="what-we-do.html" class="nav-link">Design</a>
+      <a href="how-we-do-it.html" class="nav-link">Manufacture</a>
+      <a href="construct.html" class="nav-link">Construct</a>
+      <a href="portfolio.html" class="nav-link">Portfolio</a>
+      <a href="materials.html" class="nav-link">Materials</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link cta">Contact</a>
     </div>
-  </header>
+    <button id="hamburger" class="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
-  <!-- Fullscreen Hero Intro -->
-  <section class="hero-section">
-    <img src="https://asgrc.co/assets/img/creek.jpg" alt="ASGRC Creek Edge Tower GFRC Façade" class="hero-bg">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1 class="hero-title display-font">We Build <span>Smart</span> Solutions</h1>
-      <p class="hero-sub">Advanced materials. Intelligent processes. Exceptional outcomes.</p>
-    </div>
-    <a href="#what-we-do" class="hero-arrow" aria-label="Scroll to What We Do">↓</a>
-  </section>
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="mobile-menu">
+  <a href="what-we-do.html">Design</a>
+  <a href="how-we-do-it.html">Manufacture</a>
+  <a href="construct.html">Construct</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="materials.html">Materials</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
 
-  <!-- Fullscreen Modal Menu -->
-  <div id="menuScreen" class="menu-screen" aria-hidden="true">
-    <div class="container-custom menu-layout">
-      <div class="brand-block">
-        <div class="asgrc">ASGRC</div>
-        <div class="tag">Building Elegance</div>
-        <p class="mt-4 text-gray-500 max-w-sm text-sm">Engineered GRC, GFRG, GFRP and UHPC solutions for façades, interiors, and architectural landmarks across the UAE.</p>
-      </div>
-      <div class="menu-links md:pl-12">
-        <div class="flex justify-end mb-6">
-          <button id="menuClose" class="close-btn" aria-label="Close menu">✕</button>
-        </div>
-        <nav>
-          <a href="what-we-do.html">Design</a>
-          <a href="how-we-do-it.html">Manufacture</a>
-          <a href="construct.html">Construct</a>
-          <a href="portfolio.html">Portfolio</a>
-          <a href="materials.html">Materials</a>
-          <a href="about.html">About ASGRC</a>
-          <a href="contact.html">Contact</a>
-        </nav>
+<!-- Hero -->
+<section class="relative" style="min-height:92vh;display:flex;align-items:center;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;z-index:0;">
+    <img src="https://asgrc.co/assets/img/ahad.jpg" alt="ASGRC Façade Project" class="img-cover" style="filter:brightness(0.55) saturate(0.9);">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="container" style="position:relative;z-index:1;padding:4rem 0;">
+    <div style="max-width:720px;">
+      <p class="kicker" style="color:var(--gold-light);margin-bottom:1.5rem;">Al Shafar GRC LLC</p>
+      <h1 class="section-title" style="font-size:clamp(3rem,7vw,5.5rem);color:#fff;margin-bottom:1.5rem;">
+        Engineering<br>Beauty Into<br>Concrete
+      </h1>
+      <p style="font-size:1.15rem;color:rgba(255,255,255,0.8);line-height:1.7;max-width:540px;margin-bottom:2.5rem;">
+        From concept geometry to turnkey installation — ASGRC delivers advanced GFRC, UHPC, GFRP &amp; GRG systems for the world's most ambitious façades.
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+        <a href="portfolio.html" class="btn btn-gold">View Our Work</a>
+        <a href="contact.html" class="btn" style="background:rgba(255,255,255,0.12);color:#fff;backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.25);">Request a Consultation</a>
       </div>
     </div>
   </div>
+  <!-- Scroll indicator -->
+  <div style="position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:1;">
+    <div style="width:1px;height:60px;background:linear-gradient(to bottom,rgba(255,255,255,0.5),transparent);"></div>
+  </div>
+</section>
 
-  <main>
-    <!-- What We Do -->
-    <section id="what-we-do" class="py-20 md:py-32 border-t line-border">
-      <div class="container-custom">
-        <div class="grid gap-10 lg:grid-cols-[0.6fr_1.4fr] items-start">
-          <div>
-            <p class="kicker mb-3">What We Do</p>
-            <h2 class="display-font text-4xl sm:text-5xl font-bold leading-tight">Cutting-edge materials for cutting-edge designs.</h2>
-            <p class="mt-4 text-gray-500 text-sm">A vertically integrated façade and composite engineering model.</p>
+<!-- Process Pipeline -->
+<section class="dark-section" style="padding:6rem 0 5rem;">
+  <div class="container">
+    <p class="kicker fade-up" style="margin-bottom:0.75rem;">Our Process</p>
+    <h2 class="section-title fade-up" style="font-size:clamp(2.2rem,4vw,3.2rem);margin-bottom:4rem;">Design → Manufacture → Construct</h2>
+    <div class="grid" style="display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));">
+      <!-- Design -->
+      <div class="fade-up fade-up-delay-1" style="padding:2.5rem;position:relative;border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);background:rgba(255,255,255,0.03);">
+        <span style="font-family:'Cabinet Grotesk',sans-serif;font-size:5rem;font-weight:800;color:rgba(255,255,255,0.06);line-height:1;position:absolute;top:-1rem;left:1.5rem;">01</span>
+        <h3 style="font-size:1.4rem;font-weight:700;margin-top:3rem;margin-bottom:1rem;">Façade Engineering &amp; Design</h3>
+        <p style="color:rgba(255,255,255,0.65);line-height:1.7;font-size:0.95rem;">BIM modelling, structural validation, and value engineering — optimizing geometry for GFRC or UHPC execution with full consultant coordination.</p>
+      </div>
+      <!-- Manufacture -->
+      <div class="fade-up fade-up-delay-2" style="padding:2.5rem;position:relative;border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);background:rgba(255,255,255,0.03);">
+        <span style="font-family:'Cabinet Grotesk',sans-serif;font-size:5rem;font-weight:800;color:rgba(255,255,255,0.06);line-height:1;position:absolute;top:-1rem;left:1.5rem;">02</span>
+        <h3 style="font-size:1.4rem;font-weight:700;margin-top:3rem;margin-bottom:1rem;">Precision Manufacturing</h3>
+        <p style="color:rgba(255,255,255,0.65);line-height:1.7;font-size:0.95rem;">Spray &amp; projection processes in our climate-controlled UAE facility. CNC-milled steel moulds, robotic vibratory compaction, and steam curing.</p>
+      </div>
+      <!-- Construct -->
+      <div class="fade-up fade-up-delay-3" style="padding:2.5rem;position:relative;border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);background:rgba(255,255,255,0.03);">
+        <span style="font-family:'Cabinet Grotesk',sans-serif;font-size:5rem;font-weight:800;color:rgba(255,255,255,0.06);line-height:1;position:absolute;top:-1rem;left:1.5rem;">03</span>
+        <h3 style="font-size:1.4rem;font-weight:700;margin-top:3rem;margin-bottom:1rem;">Turnkey Installation</h3>
+        <p style="color:rgba(255,255,255,0.65);line-height:1.7;font-size:0.95rem;">3D laser setting-out, engineered lifting, structural bracket installation, waterproofing, Civil Defense compliance, and full handover.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Bar -->
+<section style="padding:4rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="container">
+    <div class="grid" style="display:grid;gap:2rem;grid-template-columns:repeat(4,1fr);text-align:center;">
+      <div class="fade-up">
+        <div class="stat-num">20+</div>
+        <p style="font-size:0.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.5rem;">Years Experience</p>
+      </div>
+      <div class="fade-up fade-up-delay-1">
+        <div class="stat-num">200+</div>
+        <p style="font-size:0.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.5rem;">Projects Delivered</p>
+      </div>
+      <div class="fade-up fade-up-delay-2">
+        <div class="stat-num">15+</div>
+        <p style="font-size:0.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.5rem;">Countries</p>
+      </div>
+      <div class="fade-up fade-up-delay-3">
+        <div class="stat-num">100%</div>
+        <p style="font-size:0.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.5rem;">Civil Defense Compliant</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Core Capabilities -->
+<section style="padding:6rem 0;">
+  <div class="container">
+    <div style="display:grid;gap:4rem;grid-template-columns:1fr 1fr;align-items:center;">
+      <div class="fade-up">
+        <p class="kicker" style="margin-bottom:0.75rem;">Capabilities</p>
+        <h2 class="section-title" style="font-size:clamp(2rem,4vw,3rem);margin-bottom:1.5rem;">Advanced Cementitious &amp; Composite Systems</h2>
+        <p style="color:var(--muted);line-height:1.8;margin-bottom:2rem;">ASGRC manufactures engineered façade panels, interior features, and structural cladding across four material systems — each optimized for specific architectural performance requirements.</p>
+        <a href="materials.html" class="btn btn-primary" style="margin-bottom:3rem;">Explore Materials &rarr;</a>
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <div style="display:flex;gap:1rem;align-items:flex-start;">
+            <div style="width:40px;height:40px;min-width:40px;background:var(--bg-alt);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;color:var(--navy);">G</div>
+            <div><strong style="font-size:0.95rem;">GFRC / GRC</strong><br><span style="font-size:0.85rem;color:var(--muted);">Spray-applied façade cladding — 18–20mm skin thickness</span></div>
           </div>
-          <div class="lg:border-l line-border lg:pl-10">
-            <p class="text-gray-600 text-lg leading-relaxed">
-              We bring ambitious architectural visions to life through a vertically integrated approach—designing, manufacturing, and constructing with cutting-edge materials and processes. Our work centers on GRC, UHPC, GFRP and GFRG, advanced cementitious technologies that enable complex forms, thin profiles, and exceptional durability.
-            </p>
-            <div class="mt-6">
-              <a href="materials.html" class="text-blue-900 font-semibold underline underline-offset-4">Explore Our Materials &rarr;</a>
-            </div>
-            <div class="grid sm:grid-cols-2 gap-6 mt-12">
-              <figure class="card-panel">
-                <img src="https://asgrc.co/assets/img/creek.jpg" alt="GFRC Façade Panels" class="card-img">
-                <figcaption class="p-4 text-xs tracking-wider uppercase font-medium text-gray-500">GFRC Façade Panels with Custom Finish</figcaption>
-              </figure>
-              <figure class="card-panel">
-                <img src="https://asgrc.co/assets/img/mosque.jpg" alt="Architectural GRC Details" class="card-img">
-                <figcaption class="p-4 text-xs tracking-wider uppercase font-medium text-gray-500">Bespoke Architectural Detailing</figcaption>
-              </figure>
-            </div>
+          <div style="display:flex;gap:1rem;align-items:flex-start;">
+            <div style="width:40px;height:40px;min-width:40px;background:var(--bg-alt);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;color:var(--navy);">U</div>
+            <div><strong style="font-size:0.95rem;">UHPC</strong><br><span style="font-size:0.85rem;color:var(--muted);">Ultra-high strength — &gt;130MPa, 12–15mm panels</span></div>
+          </div>
+          <div style="display:flex;gap:1rem;align-items:flex-start;">
+            <div style="width:40px;height:40px;min-width:40px;background:var(--bg-alt);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;color:var(--navy);">F</div>
+            <div><strong style="font-size:0.95rem;">GFRP / GRP</strong><br><span style="font-size:0.85rem;color:var(--muted);">Resin composites — seamless domes, sculptural forms</span></div>
+          </div>
+          <div style="display:flex;gap:1rem;align-items:flex-start;">
+            <div style="width:40px;height:40px;min-width:40px;background:var(--bg-alt);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;color:var(--navy);">R</div>
+            <div><strong style="font-size:0.95rem;">GFRG / GRG</strong><br><span style="font-size:0.85rem;color:var(--muted);">Gypsum composites — interior luxury detailing</span></div>
           </div>
         </div>
       </div>
-    </section>
+      <div class="fade-up fade-up-delay-2" style="border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;">
+        <img src="https://asgrc.co/assets/img/creek.jpg" alt="ASGRC GFRC Application" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- How We Do It -->
-    <section id="how-we-do-it" class="py-20 md:py-32 border-t line-border bg-white">
-      <div class="container-custom">
-        <div class="grid gap-10 lg:grid-cols-[0.6fr_1.4fr] items-start">
-          <div>
-            <p class="kicker mb-3">How We Do It</p>
-            <h2 class="display-font text-4xl sm:text-5xl font-bold leading-tight">Revolutionary process to execute ambitious projects.</h2>
-            <p class="mt-4 text-gray-500 text-sm">Turnkey model: Design &rarr; Manufacture &rarr; Construct.</p>
-          </div>
-          <div class="lg:border-l line-border lg:pl-10">
-            <p class="text-gray-600 text-lg leading-relaxed">
-              Our integrated Design–Manufacture–Construct model streamlines complexity to deliver elegant, cost-effective outcomes. We combine advanced 3D engineering, high-precision DIC manufacturing, and efficient on-site delivery into a single turnkey solution.
-            </p>
-            <div class="mt-6">
-              <a href="how-we-do-it.html" class="text-blue-900 font-semibold underline underline-offset-4">Discover Our Full Process &rarr;</a>
-            </div>
-            <div class="grid md:grid-cols-3 gap-6 mt-12">
-              <a href="what-we-do.html" class="card-panel group block hover:shadow-lg transition">
-                <img src="https://asgrc.co/assets/img/ahad.jpg" alt="Design Stage" class="card-img">
-                <div class="p-5">
-                  <p class="kicker">01 / Design</p>
-                  <h3 class="display-font text-xl font-bold mt-1 group-hover:text-red-600">Design Assist & BIM &rarr;</h3>
-                </div>
-              </a>
-              <a href="how-we-do-it.html" class="card-panel group block hover:shadow-lg transition">
-                <img src="https://asgrc.co/assets/img/urban.jpg" alt="Manufacture Stage" class="card-img">
-                <div class="p-5">
-                  <p class="kicker">02 / Manufacture</p>
-                  <h3 class="display-font text-xl font-bold mt-1 group-hover:text-red-600">DIC Factory & CNC &rarr;</h3>
-                </div>
-              </a>
-              <a href="construct.html" class="card-panel group block hover:shadow-lg transition">
-                <img src="https://asgrc.co/creek.jpg" alt="Construct Stage" class="card-img">
-                <div class="p-5">
-                  <p class="kicker">03 / Construct</p>
-                  <h3 class="display-font text-xl font-bold mt-1 group-hover:text-red-600">Site Installation &rarr;</h3>
-                </div>
-              </a>
-            </div>
-          </div>
+<!-- Featured Projects -->
+<section style="padding:6rem 0;background:var(--bg-alt);">
+  <div class="container">
+    <p class="kicker fade-up" style="margin-bottom:0.75rem;">Portfolio</p>
+    <h2 class="section-title fade-up" style="font-size:clamp(2.2rem,4vw,3.2rem);margin-bottom:1rem;">Selected Projects</h2>
+    <p class="fade-up" style="color:var(--muted);max-width:500px;margin-bottom:3rem;">Landmark façades across residential towers, commercial hubs, cultural institutions, and hospitality venues.</p>
+    <div class="grid" style="display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));">
+      <a href="portfolio.html" style="text-decoration:none;" class="card fade-up">
+        <div style="aspect-ratio:4/3;overflow:hidden;">
+          <img src="https://asgrc.co/assets/img/ahad.jpg" alt="Residential tower façade" class="img-cover" style="transition:transform 0.5s ease;">
+        </div>
+        <div style="padding:1.5rem;">
+          <p class="kicker" style="margin-bottom:0.3rem;">Residential</p>
+          <h3 style="font-size:1.2rem;font-weight:700;">Premium Tower Façade Systems</h3>
+          <p style="color:var(--muted);font-size:0.9rem;margin-top:0.5rem;">GFRC curtain walling with integrated louvers and sunshades</p>
+        </div>
+      </a>
+      <a href="portfolio.html" style="text-decoration:none;" class="card fade-up fade-up-delay-1">
+        <div style="aspect-ratio:4/3;overflow:hidden;">
+          <img src="https://asgrc.co/assets/img/urban.jpg" alt="Commercial project" class="img-cover" style="transition:transform 0.5s ease;">
+        </div>
+        <div style="padding:1.5rem;">
+          <p class="kicker" style="margin-bottom:0.3rem;">Commercial</p>
+          <h3 style="font-size:1.2rem;font-weight:700;">Mixed-Use Development Cladding</h3>
+          <p style="color:var(--muted);font-size:0.9rem;margin-top:0.5rem;">UHPC panels with parametric geometry and mashrabiya screens</p>
+        </div>
+      </a>
+      <a href="portfolio.html" style="text-decoration:none;" class="card fade-up fade-up-delay-2">
+        <div style="aspect-ratio:4/3;overflow:hidden;">
+          <img src="https://asgrc.co/assets/img/creek.jpg" alt="Hospitality project" class="img-cover" style="transition:transform 0.5s ease;">
+        </div>
+        <div style="padding:1.5rem;">
+          <p class="kicker" style="margin-bottom:0.3rem;">Hospitality</p>
+          <h3 style="font-size:1.2rem;font-weight:700;">Luxury Resort Façade Package</h3>
+          <p style="color:var(--muted);font-size:0.9rem;margin-top:0.5rem;">GRC feature walls, columns, and decorative cornices</p>
+        </div>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:3rem;" class="fade-up">
+      <a href="portfolio.html" class="btn btn-outline">View All Projects &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="dark-section" style="padding:6rem 0;text-align:center;">
+  <div class="container" style="max-width:700px;">
+    <p class="kicker fade-up" style="margin-bottom:1rem;">Start a Conversation</p>
+    <h2 class="section-title fade-up" style="font-size:clamp(2.2rem,4vw,3.5rem);margin-bottom:1.5rem;">Ready to Build Something Extraordinary?</h2>
+    <p class="fade-up" style="color:rgba(255,255,255,0.7);max-width:500px;margin:0 auto 2.5rem;line-height:1.7;">Connect with our design studio for early-stage façade engineering or request a tender consultation with our operations team.</p>
+    <div class="fade-up" style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
+      <a href="contact.html" class="btn btn-gold">Contact Our Team</a>
+      <a href="what-we-do.html" class="btn" style="background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.2);">Our Design Process</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer" style="padding:4rem 0 2rem;">
+  <div class="container">
+    <div class="grid" style="display:grid;gap:3rem;grid-template-columns:2fr 1fr 1fr 1fr;margin-bottom:3rem;">
+      <div>
+        <div class="footer-brand">ASGRC<span class="footer-tag">Building Elegance</span></div>
+        <p style="margin-top:1rem;line-height:1.7;font-size:0.9rem;max-width:320px;">Al Shafar GRC LLC — Advanced cementitious and composite systems for architectural façades across the Middle East.</p>
+      </div>
+      <div>
+        <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.4);margin-bottom:1rem;">Process</p>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="what-we-do.html" class="nav-link" style="color:rgba(255,255,255,0.7);border:none;font-size:0.85rem;text-transform:none;letter-spacing:0;">Design</a>
+          <a href="how-we-do-it.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Manufacture</a>
+          <a href="construct.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Construct</a>
         </div>
       </div>
-    </section>
-
-    <!-- Who We Do It For / Portfolio -->
-    <section id="portfolio" class="py-20 md:py-32 border-t line-border">
-      <div class="container-custom">
-        <div class="grid gap-10 lg:grid-cols-[0.6fr_1.4fr] items-start mb-12">
-          <div>
-            <p class="kicker mb-3">Who We Do It For</p>
-            <h2 class="display-font text-4xl sm:text-5xl font-bold leading-tight">World-class partners to deliver world-class designs.</h2>
-          </div>
-          <div class="lg:border-l line-border lg:pl-10">
-            <p class="text-gray-600 text-lg leading-relaxed">
-              We work with visionary architects, contractors, and developers across the built environment—partners including Emaar Properties, Dar Al Arkan, Select Group, Dubai Holding, and Mercedes-Benz / Gargash Motors.
-            </p>
-          </div>
-        </div>
-
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <figure class="card-panel">
-            <img src="https://asgrc.co/assets/img/creek.jpg" alt="Creek Edge 1 & 2" class="project-img">
-            <figcaption class="p-4">
-              <h3 class="font-bold text-lg">Creek Edge 1 & 2</h3>
-              <p class="text-xs text-gray-500 mt-1">Client: Emaar Properties PJSC</p>
-              <p class="text-xs text-gray-400 mt-0.5">280,000 m² GFRC Façade & Podium</p>
-            </figcaption>
-          </figure>
-          <figure class="card-panel">
-            <img src="https://asgrc.co/assets/img/urban.jpg" alt="Urban Oasis Tower" class="project-img">
-            <figcaption class="p-4">
-              <h3 class="font-bold text-lg">Urban Oasis Tower</h3>
-              <p class="text-xs text-gray-500 mt-1">Client: Dar Al Arkan Real Estate</p>
-              <p class="text-xs text-gray-400 mt-0.5">Missoni-inspired GFRC Cladding</p>
-            </figcaption>
-          </figure>
-          <figure class="card-panel">
-            <img src="https://asgrc.co/assets/img/ahad.jpg" alt="Ahad Residences" class="project-img">
-            <figcaption class="p-4">
-              <h3 class="font-bold text-lg">Ahad Residences</h3>
-              <p class="text-xs text-gray-500 mt-1">Client: Ahad Development</p>
-              <p class="text-xs text-gray-400 mt-0.5">13,000 m² Engineered Cladding</p>
-            </figcaption>
-          </figure>
-          <figure class="card-panel">
-            <img src="https://asgrc.co/assets/img/mosque.jpg" alt="Mercedes Flagship Center" class="project-img">
-            <figcaption class="p-4">
-              <h3 class="font-bold text-lg">Mercedes Flagship Center</h3>
-              <p class="text-xs text-gray-500 mt-1">Client: Gargash Motors / Mercedes</p>
-              <p class="text-xs text-gray-400 mt-0.5">Special Architectural Shell</p>
-            </figcaption>
-          </figure>
-        </div>
-        <div class="mt-10 text-center">
-          <a href="portfolio.html" class="btn-dark">View Complete Project Portfolio &rarr;</a>
+      <div>
+        <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.4);margin-bottom:1rem;">Company</p>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="portfolio.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Portfolio</a>
+          <a href="materials.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Materials</a>
+          <a href="about.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">About</a>
+          <a href="contact.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Contact</a>
         </div>
       </div>
-    </section>
-
-    <!-- Why We Do It / Materials -->
-    <section id="why-we-do-it" class="py-20 md:py-32 border-t line-border bg-white">
-      <div class="container-custom">
-        <div class="grid gap-10 lg:grid-cols-[0.6fr_1.4fr] items-start mb-12">
-          <div>
-            <p class="kicker mb-3">Why We Do It</p>
-            <h2 class="display-font text-4xl sm:text-5xl font-bold leading-tight">Superior solutions to drive superior outcomes.</h2>
-          </div>
-          <div class="lg:border-l line-border lg:pl-10">
-            <p class="text-gray-600 text-lg leading-relaxed">
-              Our façade systems leverage advanced cementitious materials—GRC and UHPC—engineered for strength, durability, and design flexibility. Each component is optimized for structural efficiency, weather resistance, and long-term performance through controlled DIC manufacturing.
-            </p>
-          </div>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="p-8 border line-border rounded-2xl bg-[#faf8f4]">
-            <p class="kicker">GFRC System</p>
-            <h3 class="display-font text-3xl font-bold mt-2">Glass Fiber Reinforced Concrete</h3>
-            <p class="mt-4 text-gray-600 text-sm leading-relaxed">
-              Thin concrete shell of cement, silica sand, and alkali-resistant glass fibers supported by a secondary steel frame for large-format architectural envelopes.
-            </p>
-            <ul class="mt-6 space-y-2.5 text-sm text-gray-600">
-              <li class="flex items-center gap-2"><span class="text-green-600 font-bold">&check;</span> Enables complex sculptural geometry with thin sections (18–20 mm)</li>
-              <li class="flex items-center gap-2"><span class="text-green-600 font-bold">&check;</span> Lightweight yet high-strength, ideal for high-rise envelopes</li>
-              <li class="flex items-center gap-2"><span class="text-green-600 font-bold">&check;</span> Extreme durability — resists UAE heat, UV, and marine humidity</li>
-            </ul>
-          </div>
-          <div class="p-8 border line-border rounded-2xl bg-[#f5f3ed]">
-            <p class="kicker">UHPC System</p>
-            <h3 class="display-font text-3xl font-bold mt-2">Ultra High Performance Concrete</h3>
-            <p class="mt-4 text-gray-600 text-sm leading-relaxed">
-              Thin-walled cladding made of high-performance cement, fine aggregates, and specialized fibers with exceptional compressive and flexural strength.
-            </p>
-            <ul class="mt-6 space-y-2.5 text-sm text-gray-600">
-              <li class="flex items-center gap-2"><span class="text-green-600 font-bold">&check;</span> Ultra-thin, high-strength panels (12–15 mm) with structural rigidity</li>
-              <li class="flex items-center gap-2"><span class="text-green-600 font-bold">&check;</span> Dense material matrix for ultra-smooth surface and tight tolerances</li>
-              <li class="flex items-center gap-2"><span class="text-green-600 font-bold">&check;</span> Superior resistance to chloride penetration, abrasion, and weathering</li>
-            </ul>
-          </div>
-        </div>
-        <div class="mt-10 text-center">
-          <a href="materials.html" class="btn-light">Compare All Material Technologies &rarr;</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 md:py-32 border-t line-border">
-      <div class="container-custom">
-        <div class="grid gap-10 lg:grid-cols-[0.6fr_1.4fr] items-start">
-          <div>
-            <p class="kicker mb-3">About ASGRC</p>
-            <h2 class="display-font text-4xl sm:text-5xl font-bold leading-tight">Building Elegance since 2003.</h2>
-          </div>
-          <div class="lg:border-l line-border lg:pl-10">
-            <p class="text-gray-700 text-lg leading-relaxed">
-              With over two decades of expertise in crafting custom glass fibre-reinforced products, ASGRC operates from a cutting-edge manufacturing facility in Dubai Industrial City (DIC), noted as the largest in the UAE. From an initial capacity of 100 m²/day in 2003, our production now exceeds 1,000 m²/day.
-            </p>
-            <div class="grid sm:grid-cols-3 gap-6 mt-10">
-              <div class="p-5 bg-white border line-border rounded-xl">
-                <div class="display-font text-3xl font-bold text-blue-900">20+</div>
-                <div class="text-xs uppercase tracking-wider text-gray-500 mt-1">Years Experience</div>
-              </div>
-              <div class="p-5 bg-white border line-border rounded-xl">
-                <div class="display-font text-3xl font-bold text-blue-900">1000+ m²</div>
-                <div class="text-xs uppercase tracking-wider text-gray-500 mt-1">Daily Capacity</div>
-              </div>
-              <div class="p-5 bg-white border line-border rounded-xl">
-                <div class="display-font text-3xl font-bold text-blue-900">GRCA & ISO</div>
-                <div class="text-xs uppercase tracking-wider text-gray-500 mt-1">Dual Certified</div>
-              </div>
-            </div>
-            <div class="mt-8">
-              <a href="about.html" class="btn-light">Read Our Full Story &rarr;</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact CTA Section -->
-    <section id="contact" class="py-20 md:py-32 border-t line-border bg-[#faf9f6]">
-      <div class="container-custom">
-        <div class="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] items-start">
-          <div>
-            <p class="kicker mb-3">Ready to Build Smarter?</p>
-            <h2 class="display-font text-4xl sm:text-5xl font-bold leading-tight">Connect with our team to elevate your next project.</h2>
-            <p class="mt-6 text-gray-600 leading-relaxed">
-              Whether you need early design assistance, BIM engineering, sample finishes, or a turnkey façade package, our technical team is ready to collaborate.
-            </p>
-            <div class="mt-8 space-y-3 text-sm text-gray-700">
-              <div><strong>Phone:</strong> +971 4 320 1288 / +971 4 320 1299</div>
-              <div><strong>Email:</strong> info@asgrc.ae / info@asgrc.co</div>
-              <div><strong>Headquarters:</strong> Saih Suhaib 04, Plot 533-193, Dubai Industrial City (DIC), UAE</div>
-            </div>
-          </div>
-
-          <form class="card-panel p-8 bg-white" onsubmit="event.preventDefault(); alert('Inquiry sent! Our technical engineering team will review your brief.'); this.reset();">
-            <h3 class="display-font text-2xl font-bold mb-6">Request Project Consultation</h3>
-            <div class="grid gap-4 sm:grid-cols-2">
-              <input class="field" type="text" placeholder="Full name *" required>
-              <input class="field" type="text" placeholder="Company / Studio *" required>
-              <input class="field" type="email" placeholder="Email address *" required>
-              <input class="field" type="tel" placeholder="Phone number">
-              <select class="select sm:col-span-2" required>
-                <option value="">Select Material System *</option>
-                <option>GFRC Façade Systems</option>
-                <option>UHPC Ultra-Thin Cladding</option>
-                <option>GFRP Curved Mouldings</option>
-                <option>GFRG Luxury Interior Systems</option>
-              </select>
-              <textarea class="textarea sm:col-span-2" placeholder="Brief description of your project requirements, scope, and timeline..." required></textarea>
-              <button type="submit" class="btn-dark sm:col-span-2 justify-center py-3 text-base">Submit Project Brief</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Complete Standard Footer -->
-  <footer class="border-t line-border bg-white pt-16 pb-8">
-    <div class="container-custom">
-      <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-5 pb-12 border-b line-border">
-        <div class="lg:col-span-2">
-          <div class="brand-block">
-            <div class="asgrc text-3xl">ASGRC</div>
-            <div class="tag text-sm">Building Elegance</div>
-          </div>
-          <p class="mt-4 text-gray-500 text-sm max-w-sm leading-relaxed">
-            Pioneering glass fiber reinforced concrete, composites, and high-performance cementitious systems across the UAE and Middle East since 2003.
-          </p>
-        </div>
-        <div>
-          <p class="kicker mb-4">Solutions</p>
-          <ul class="space-y-2.5 text-sm">
-            <li><a href="what-we-do.html" class="text-gray-600 hover:text-blue-900">Design Assist & BIM</a></li>
-            <li><a href="how-we-do-it.html" class="text-gray-600 hover:text-blue-900">DIC Manufacturing</a></li>
-            <li><a href="construct.html" class="text-gray-600 hover:text-blue-900">Site Installation</a></li>
-            <li><a href="materials.html" class="text-gray-600 hover:text-blue-900">GFRC & UHPC Materials</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="kicker mb-4">Company</p>
-          <ul class="space-y-2.5 text-sm">
-            <li><a href="about.html" class="text-gray-600 hover:text-blue-900">About ASGRC</a></li>
-            <li><a href="portfolio.html" class="text-gray-600 hover:text-blue-900">Project Portfolio</a></li>
-            <li><a href="how-we-do-it.html" class="text-gray-600 hover:text-blue-900">Process & Quality</a></li>
-            <li><a href="contact.html" class="text-gray-600 hover:text-blue-900">Contact Us</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="kicker mb-4">Connect</p>
-          <ul class="space-y-2.5 text-sm">
-            <li><a href="https://asgrc.co/" target="_blank" class="text-gray-600 hover:text-blue-900">Official Website</a></li>
-            <li><a href="mailto:info@asgrc.ae" class="text-gray-600 hover:text-blue-900">info@asgrc.ae</a></li>
-            <li><a href="tel:+97143201288" class="text-gray-600 hover:text-blue-900">+971 4 320 1288</a></li>
-            <li class="text-gray-400 text-xs mt-2">Dubai Industrial City, UAE</li>
-          </ul>
-        </div>
-      </div>
-      <div class="pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-4">
-        <div>&copy; 2026 Al Shafar GRC LLC (ASGRC). All rights reserved.</div>
-        <div>Certified for excellence: ISO 9001 | ISO 14001 | ISO 45001 | GRCA Approved</div>
-        <div class="flex gap-4">
-          <a href="#" class="hover:underline">Privacy Policy</a>
-          <a href="#" class="hover:underline">Terms of Service</a>
+      <div>
+        <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.4);margin-bottom:1rem;">Connect</p>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="mailto:info@asgrc.co" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">info@asgrc.co</a>
+          <a href="tel:+97144295500" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">+971 4 429 5500</a>
         </div>
       </div>
     </div>
-  </footer>
+    <hr class="divider" style="border-color:rgba(255,255,255,0.1);">
+    <p style="text-align:center;margin-top:1.5rem;font-size:0.8rem;color:rgba(255,255,255,0.4);">&copy; 2026 Al Shafar GRC LLC. All rights reserved.</p>
+  </div>
+</footer>
 
-  <script>
-    const menuScreen = document.getElementById('menuScreen');
-    const menuOpen = document.getElementById('menuOpen');
-    const menuClose = document.getElementById('menuClose');
-
-    menuOpen.addEventListener('click', () => {
-      menuScreen.classList.add('open');
-      menuScreen.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    });
-
-    menuClose.addEventListener('click', () => {
-      menuScreen.classList.remove('open');
-      menuScreen.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    });
-
-    document.querySelectorAll('.menu-links a').forEach(a => {
-      a.addEventListener('click', () => {
-        menuScreen.classList.remove('open');
-        menuScreen.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-      });
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && menuScreen.classList.contains('open')) {
-        menuScreen.classList.remove('open');
-        menuScreen.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-      }
-    });
-  </script>
+<script src="js/animations.js"></script>
+<script src="js/mobile-nav.js"></script>
 </body>
 </html>

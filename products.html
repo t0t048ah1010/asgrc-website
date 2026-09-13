@@ -1,139 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASGRC – Products</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
-    <style>
-        :root {
-            --asgrc-blue: #0A2A66;
-            --asgrc-grey: #BFC4CC;
-        }
-
-        /* Improved fade-in animation */
-        .fade {
-            opacity: 0;
-            animation: fadeIn 2.5s ease-out forwards;
-            animation-delay: 0.2s;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products — ASGRC Building Elegance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
 </head>
+<body>
+<nav class="navbar">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;height:64px;">
+    <a href="index.html" class="logo">ASGRC <span>BUILDING ELEGANCE</span><span class="logo-tag">Advanced Cementitious</span></a>
+    <div class="desktop-nav" style="display:flex;align-items:center;gap:2rem;">
+      <a href="what-we-do.html" class="nav-link">Design</a>
+      <a href="how-we-do-it.html" class="nav-link">Manufacture</a>
+      <a href="construct.html" class="nav-link">Construct</a>
+      <a href="portfolio.html" class="nav-link">Portfolio</a>
+      <a href="materials.html" class="nav-link">Materials</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link active">Contact</a>
+    </div>
+    <button id="hamburger" class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div id="mobileMenu" class="mobile-menu">
+  <a href="what-we-do.html">Design</a><a href="how-we-do-it.html">Manufacture</a><a href="construct.html">Construct</a>
+  <a href="portfolio.html">Portfolio</a><a href="materials.html">Materials</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+</div>
 
-<body class="bg-gray-50 text-gray-800 fade">
+<section style="padding:7rem 0 4rem;text-align:center;">
+  <div class="container">
+    <p class="kicker fade-up">Product Range</p>
+    <h1 class="section-title fade-up" style="font-size:clamp(2.8rem,6vw,4.5rem);margin:1rem 0;">Our Product Systems</h1>
+    <p class="fade-up" style="color:var(--muted);max-width:640px;margin:1.5rem auto 0;font-size:1.1rem;line-height:1.8;">From standard panel systems to bespoke architectural features — we deliver the full spectrum of advanced façade solutions.</p>
+  </div>
+</section>
+<hr class="divider">
 
-<!-- NAVBAR -->
-<header class="bg-white shadow">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row md:justify-between md:items-center">
-
-        <!-- Text Logo -->
-        <div class="flex flex-col leading-tight text-center md:text-left mb-4 md:mb-0">
-            <span class="font-extrabold tracking-wider"
-                  style="color:#0A2A66; font-size:36px;">
-                ASGRC
-            </span>
-            <span class="italic"
-                  style="color:#0A2A66; font-size:16px; margin-top:-4px;">
-                Building Elegance
-            </span>
+<section style="padding:5rem 0;">
+  <div class="container">
+    <div class="grid" style="display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));">
+      <!-- GFRC Panels -->
+      <div class="card fade-up">
+        <div style="aspect-ratio:4/3;overflow:hidden;">
+          <img src="https://asgrc.co/assets/img/creek.jpg" alt="GFRC Panels" class="img-cover">
         </div>
+        <div style="padding:1.75rem;">
+          <span class="kicker" style="margin-bottom:0.5rem;display:block;">GFRC / GRC</span>
+          <h3 style="font-size:1.4rem;font-weight:700;margin-bottom:0.75rem;">Façade Panels</h3>
+          <p style="color:var(--muted);font-size:0.9rem;line-height:1.7;">Flat, curved, and sculptural GFRC panels for building envelopes. Available in a wide range of finishes, colors, and textures.</p>
+          <a href="materials.html" style="color:var(--navy);font-weight:600;font-size:0.9rem;text-decoration:none;margin-top:1rem;display:inline-flex;align-items:center;gap:0.4rem;">Learn more &rarr;</a>
+        </div>
+      </div>
 
-        <!-- Navigation -->
-        <nav class="flex flex-wrap justify-center gap-4 text-lg font-medium">
-            <a href="index.html" class="hover:text-blue-600">Home</a>
-            <a href="products.html" class="hover:text-blue-600">Products</a>
-            <a href="projects.html" class="hover:text-blue-600">Projects</a>
-            <a href="about.html" class="hover:text-blue-600">About</a>
-            <a href="contact.html" class="hover:text-blue-600">Contact</a>
-        </nav>
+      <!-- UHPC Louvers -->
+      <div class="card fade-up fade-up-delay-1">
+        <div style="aspect-ratio:4/3;overflow:hidden;">
+          <img src="https://asgrc.co/assets/img/urban.jpg" alt="UHPC Louvers" class="img-cover">
+        </div>
+        <div style="padding:1.75rem;">
+          <span class="kicker" style="margin-bottom:0.5rem;display:block;">UHPC</span>
+          <h3 style="font-size:1.4rem;font-weight:700;margin-bottom:0.75rem;">Louvers &amp; Screens</h3>
+          <p style="color:var(--muted);font-size:0.9rem;line-height:1.7;">Ultra-thin UHPC louvers, sunshades, and perforated mashrabiya screens with parametric patterns and high durability.</p>
+          <a href="materials.html" style="color:var(--navy);font-weight:600;font-size:0.9rem;text-decoration:none;margin-top:1rem;display:inline-flex;align-items:center;gap:0.4rem;">Learn more &rarr;</a>
+        </div>
+      </div>
 
+      <!-- GFRP Sculptures -->
+      <div class="card fade-up">
+        <div style="aspect-ratio:4/3;overflow:hidden;">
+          <img src="https://asgrc.co/assets/img/ahad.jpg" alt="GFRP Sculptures" class="img-cover">
+        </div>
+        <div style="padding:1.75rem;">
+          <span class="kicker" style="margin-bottom:0.5rem;display:block;">GFRP / GRP</span>
+          <h3 style="font-size:1.4rem;font-weight:700;margin-bottom:0.75rem;">Sculptural Features</h3>
+          <p style="color:var(--muted);font-size:0.9rem;line-height:1.7;">Lightweight GFRP domes, building caps, canopies, and expressive sculptural elements for architectural statement pieces.</p>
+          <a href="materials.html" style="color:var(--navy);font-weight:600;font-size:0.9rem;text-decoration:none;margin-top:1rem;display:inline-flex;align-items:center;gap:0.4rem;">Learn more &rarr;</a>
+        </div>
+      </div>
+
+      <!-- GRG Interiors -->
+      <div class="card fade-up fade-up-delay-1">
+        <div style="aspect-ratio:4/3;overflow:hidden;">
+          <img src="https://asgrc.co/assets/img/creek.jpg" alt="GRG Interiors" class="img-cover">
+        </div>
+        <div style="padding:1.75rem;">
+          <span class="kicker" style="margin-bottom:0.5rem;display:block;">GFRG / GRG</span>
+          <h3 style="font-size:1.4rem;font-weight:700;margin-bottom:0.75rem;">Interior Features</h3>
+          <p style="color:var(--muted);font-size:0.9rem;line-height:1.7;">Gypsum-based interior panels, ceiling roses, columns, cornices, and acoustic feature walls for luxury interiors.</p>
+          <a href="materials.html" style="color:var(--navy);font-weight:600;font-size:0.9rem;text-decoration:none;margin-top:1rem;display:inline-flex;align-items:center;gap:0.4rem;">Learn more &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Sunscreens -->
+      <div class="card fade-up">
+        <div style="aspect-ratio:4/3;overflow:hidden;">
+          <img src="https://asgrc.co/assets/img/urban.jpg" alt="Sunscreens" class="img-cover">
+        </div>
+        <div style="padding:1.75rem;">
+          <span class="kicker" style="margin-bottom:0.5rem;display:block;">Façade Systems</span>
+          <h3 style="font-size:1.4rem;font-weight:700;margin-bottom:0.75rem;">Sunscreens &amp; Fins</h3>
+          <p style="color:var(--muted);font-size:0.9rem;line-height:1.7;">Architectural sunscreens, vertical fins, and horizontal brise-soleil for solar control and aesthetic enhancement.</p>
+          <a href="materials.html" style="color:var(--navy);font-weight:600;font-size:0.9rem;text-decoration:none;margin-top:1rem;display:inline-flex;align-items:center;gap:0.4rem;">Learn more &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Custom -->
+      <div class="card fade-up fade-up-delay-1">
+        <div style="aspect-ratio:4/3;overflow:hidden;background:var(--navy);display:flex;align-items:center;justify-content:center;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <div style="padding:1.75rem;">
+          <span class="kicker" style="margin-bottom:0.5rem;display:block;">Bespoke</span>
+          <h3 style="font-size:1.4rem;font-weight:700;margin-bottom:0.75rem;">Custom Features</h3>
+          <p style="color:var(--muted);font-size:0.9rem;line-height:1.7;">Tailored façade elements, unique decorative features, and custom-molded architectural details to your specifications.</p>
+          <a href="contact.html" style="color:var(--navy);font-weight:600;font-size:0.9rem;text-decoration:none;margin-top:1rem;display:inline-flex;align-items:center;gap:0.4rem;">Discuss your project &rarr;</a>
+        </div>
+      </div>
     </div>
-</header>
-
-<!-- PAGE TITLE -->
-<section class="py-16 bg-white fade">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-        <h1 class="text-5xl font-bold mb-4" style="color: var(--asgrc-blue);">Our Products</h1>
-        <p class="text-lg max-w-3xl mx-auto">
-            ASGRC manufactures high‑performance composite materials including GRC, GRP and GRG,
-            engineered for architectural façades, interior features and complex structural designs.
-        </p>
-    </div>
+  </div>
 </section>
 
-<!-- PRODUCTS GRID WITH BLURRED ARCHITECTURAL BACKGROUND -->
-<section class="py-20 fade"
-style="
-    background: url('assets/img/creek.jpg') center/cover no-repeat fixed;
-    backdrop-filter: blur(6px);
-    background-color: rgba(255,255,255,0.85);
-">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
-
-        <!-- GRC -->
-        <div class="bg-white shadow-xl rounded p-8 fade">
-            <h2 class="text-3xl font-bold mb-4" style="color: var(--asgrc-blue);">GRC</h2>
-            <p class="text-lg mb-4">
-                Glass Reinforced Concrete (GRC) is a lightweight, durable material ideal for
-                architectural façades, cladding, screens, cornices, domes and decorative elements.
-            </p>
-            <p class="text-lg mb-4">
-                ASGRC produces GRC using advanced spray and premix techniques, ensuring high strength,
-                weather resistance and long‑term performance.
-            </p>
-        </div>
-
-        <!-- GRP -->
-        <div class="bg-white shadow-xl rounded p-8 fade">
-            <h2 class="text-3xl font-bold mb-4" style="color: var(--asgrc-blue);">GRP</h2>
-            <p class="text-lg mb-4">
-                Glass Reinforced Plastic (GRP) is a high‑strength composite used for domes, canopies,
-                complex curved structures, moulded shapes and lightweight architectural features.
-            </p>
-            <p class="text-lg mb-4">
-                GRP offers excellent flexibility, corrosion resistance and design freedom,
-                making it ideal for custom architectural applications.
-            </p>
-        </div>
-
-        <!-- GRG -->
-        <div class="bg-white shadow-xl rounded p-8 fade">
-            <h2 class="text-3xl font-bold mb-4" style="color: var(--asgrc-blue);">GRG</h2>
-            <p class="text-lg mb-4">
-                Glass Reinforced Gypsum (GRG) is designed for interior applications such as ceilings,
-                wall panels, cornices, columns and decorative interior features.
-            </p>
-            <p class="text-lg mb-4">
-                GRG provides smooth finishes, precise detailing and fire‑resistant performance,
-                making it ideal for luxury interior environments.
-            </p>
-        </div>
-
-    </div>
+<section style="padding:5rem 0;text-align:center;">
+  <div class="container" style="max-width:600px;">
+    <p class="kicker fade-up" style="margin-bottom:0.75rem;">Need the Right Product?</p>
+    <h2 class="section-title fade-up" style="font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1rem;">Let's Find Your Solution</h2>
+    <p class="fade-up" style="color:var(--muted);margin-bottom:2rem;">Our technical team can help you select the right product system for your specific requirements.</p>
+    <a href="contact.html" class="btn btn-primary fade-up">Contact Our Team</a>
+  </div>
 </section>
 
-<!-- FOOTER -->
-<footer style="background-color: var(--asgrc-blue); color: white;" class="py-10 fade">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
-        <div>
-            <h4 class="text-xl font-bold mb-4">ASGRC</h4>
-            <p>Delivering engineered GRC, GRP & GRG solutions with precision, innovation and excellence.</p>
-        </div>
-        <div>
-            <h4 class="text-xl font-bold mb-4">Quick Links</h4>
-            <ul class="space-y-2">
-                <li><a href="products.html" class="hover:text-gray-200">Products</a></li>
-                <li><a href="projects.html" class="hover:text-gray-200">Projects</a></li>
-                <li><a href="about.html" class="hover:text-gray-200">About</a></li>
-                <li><a href="contact.html" class="hover:text-gray-200">Contact</a></li>
-            </ul>
-        </div>
-        <div>
-            <h4 class="text-xl font-bold mb-4">Contact</h4>
-            <p>Email: info@asgrc.com</p>
+<footer class="footer" style="padding:4rem 0 2rem;">
+  <div class="container">
+    <div class="grid" style="display:grid;gap:3rem;grid-template-columns:2fr 1fr 1fr 1fr;margin-bottom:3rem;">
+      <div><div class="footer-brand">ASGRC<span class="footer-tag">Building Elegance</span></div><p style="margin-top:1rem;line-height:1.7;font-size:0.9rem;max-width:320px;">Al Shafar GRC LLC — Advanced cementitious and composite systems for architectural façades across the Middle East.</p></div>
+      <div><p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.4);margin-bottom:1rem;">Process</p><div style="display:flex;flex-direction:column;gap:0.6rem;"><a href="what-we-do.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Design</a><a href="how-we-do-it.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Manufacture</a><a href="construct.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Construct</a></div></div>
+      <div><p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.4);margin-bottom:1rem;">Company</p><div style="display:flex;flex-direction:column;gap:0.6rem;"><a href="portfolio.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Portfolio</a><a href="materials.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Materials</a><a href="about.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">About</a><a href="contact.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Contact</a></div></div>
+      <div><p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.4);margin-bottom:1rem;">Connect</p><div style="display:flex;flex-direction:column;gap:0.6rem;"><a href="mailto:info@asgrc.co" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">info@asgrc.co</a><a href="tel:+97144295500" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">+971 4 429 5500</a></div></div>
+    </div>
+    <hr class="divider" style="border-color:rgba(255,255,255,0.1);">
+    <p style="text-align:center;margin-top:1.5rem;font-size:0.8rem;color:rgba(255,255,255,0.4);">&copy; 2026 Al Shafar GRC LLC. All rights reserved.</p>
+  </div>
+</footer>
+<script src="js/animations.js"></script>
+<script src="js/mobile-nav.js"></script>
+</body>
+</html>
