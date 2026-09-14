@@ -13,23 +13,24 @@
 <body>
 
   <!-- ========== NAVIGATION ========== -->
-  <nav class="navbar">
-    <div class="container nav-container">
+  <nav class="navbar" id="navbar">
+    <div class="nav-container container">
       <a href="index.html" class="nav-brand">
-        <img src="assets/img/asgrc-logo.png" alt="ASGRC" style="height: 40px; width: auto;">
+        <img src="assets/img/asgrc-logo.png" alt="ASGRC" class="brand-mark" style="width:40px;height:40px;border-radius:8px;">
+        <span class="brand-text">ASGRC</span>
       </a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="what-we-do.html" class="nav-link">What We Do</a></li>
-        <li><a href="how-we-do-it.html" class="nav-link">How We Do It</a></li>
-        <li><a href="products.html" class="nav-link">Materials</a></li>
-        <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-        <li><a href="materials.html" class="nav-link">Finishes</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
-      </ul>
+      <div class="nav-links">
+        <a href="what-we-do.html" class="nav-link">What We Do</a>
+        <a href="how-we-do-it.html" class="nav-link">How We Do It</a>
+        <a href="products.html" class="nav-link">Materials</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="materials.html" class="nav-link">Finishes</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
       <div class="nav-right">
         <a href="mailto:info@asgrc.ae" class="nav-email">info@asgrc.ae</a>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
+        <button class="hamburger" id="mobile-menu-btn" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -37,7 +38,10 @@
   </nav>
 
   <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="nav-brand" style="margin-bottom:2rem;">
+      <img src="assets/img/asgrc-logo.png" alt="ASGRC" style="width:32px;height:32px;border-radius:6px;">
+    </div>
     <a href="what-we-do.html" class="mobile-link">What We Do</a>
     <a href="how-we-do-it.html" class="mobile-link">How We Do It</a>
     <a href="products.html" class="mobile-link">Materials</a>
@@ -47,19 +51,18 @@
     <a href="contact.html" class="mobile-link">Contact</a>
   </div>
 
-  <!-- ========== HERO SECTION ========== -->
+  <!-- ========== HERO ========== -->
   <section class="hero">
-    <div class="hero-bg" style="background-image: url('assets/img/creek.jpg')"></div>
+    <div class="hero-bg" style="background-image:url('assets/img/creek.jpg')"></div>
     <div class="hero-overlay"></div>
-    <div class="container hero-content">
-      <h1>We Build<br><em>Smart</em> Solutions</h1>
-      <p class="hero-sub">
-        Advanced façade systems — GRC, GRP, UHPC, GRG — engineered from concept to completion.
-        20+ years. 400+ projects. 1000 m²/day capacity.
-      </p>
-      <div class="hero-ctas">
-        <a href="contact.html" class="btn btn-primary">Start Your Project</a>
-        <a href="products.html" class="btn btn-outline btn-light">Explore Our Materials</a>
+    <div class="container">
+      <div class="hero-content">
+        <h1>We Build<br><em>Smart</em> Solutions</h1>
+        <p class="hero-sub">Advanced façade systems — GRC, GRP, UHPC, GRG — engineered from concept to completion. <strong style="color:#fff">20+ years. 400+ projects. 1000 m²/day capacity.</strong></p>
+        <div class="hero-ctas">
+          <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+          <a href="products.html" class="btn btn-light">Explore Materials</a>
+        </div>
       </div>
     </div>
     <div class="scroll-indicator">
@@ -67,29 +70,24 @@
     </div>
   </section>
 
-  <!-- ========== WHAT WE DO — Split Image/Text ========== -->
-  <section class="section-split section-split--alt">
-    <div class="container section-split__inner">
-      <div class="section-split__image">
-        <div class="image-wrapper">
-          <img src="assets/img/urban.jpg" alt="The Urban Oasis Tower — ASGRC façade installation" loading="lazy">
+  <!-- ========== WHAT WE DO — Split ========== -->
+  <section class="section-split">
+    <div class="container">
+      <div class="section-split__inner">
+        <div class="section-split__image fade-up">
+          <div class="image-wrapper">
+            <img src="assets/img/urban.jpg" alt="The Urban Oasis Tower">
+          </div>
         </div>
-      </div>
-      <div class="section-split__content">
-        <span class="section-label">What We Do</span>
-        <h2>Cutting-edge materials for cutting-edge designs.</h2>
-        <p>
-          We bring ambitious architectural visions to life through a vertically integrated approach —
-          designing, manufacturing, and constructing with advanced materials and processes. Our work
-          centres on <strong>UHPC and GFRC</strong>, advanced cementitious technologies that enable
-          complex forms, thin profiles, and exceptional durability.
-        </p>
-        <p>
-          From <em>The Creek Edge</em> at Dubai Harbour to the <em>Urban Oasis Tower</em> in Business Bay,
-          our systems span high-rise towers, luxury villas, mosques, commercial centres, and heritage landmarks —
-          all certified to ISO 9001, ISO 14001, ISO 45001 and GRCA standards.
-        </p>
-        <a href="what-we-do.html" class="link-arrow">Explore Our Materials <span>→</span></a>
+        <div class="section-split__content fade-up">
+          <span style="color:var(--gold);font-weight:600;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;">What We Do</span>
+          <h2>Cutting-edge materials for<br>cutting-edge designs.</h2>
+          <p>We bring ambitious architectural visions to life through a vertically integrated approach — designing, manufacturing, and constructing with advanced materials and processes. Our work centres on <strong>UHPC and GFRC</strong>, advanced cementitious technologies that enable complex forms, thin profiles, and exceptional durability.</p>
+          <p>From <em>The Creek Edge</em> at Dubai Harbour to the <em>Urban Oasis Tower</em> in Business Bay, our systems span high-rise towers, luxury villas, mosques, commercial centres, and heritage landmarks — all certified to ISO 9001, ISO 14001, ISO 45001 and GRCA standards.</p>
+          <a href="what-we-do.html" class="link-arrow" style="color:var(--gold);font-weight:500;">
+            Explore Our Materials <span>→</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -97,66 +95,59 @@
   <!-- ========== HOW WE DO IT — Pipeline ========== -->
   <section class="section-dark">
     <div class="container">
-      <div class="section-header section-header--center">
-        <span class="section-label">How We Do It</span>
+      <div class="section-header section-header--center fade-up">
+        <span style="color:var(--gold);font-weight:600;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;">How We Do It</span>
         <h2>Revolutionary process to execute<br>revolutionary projects.</h2>
       </div>
       <div class="pipeline">
+        <!-- Step 1 -->
         <div class="pipeline__card fade-up">
-          <span class="pipeline__number">01</span>
+          <div class="pipeline__number">01</div>
           <h3>Design</h3>
-          <p>
-            Advanced 3D modelling and BIM integration (Rhino, Revit, SketchUp, Navisworks).
-            High-end façade system design, structural analysis, constructability-driven
-            shop drawings, and method engineering for complex geometries.
-          </p>
-          <a href="what-we-do.html#engineering" class="link-arrow">Our Engineering Services <span>→</span></a>
+          <p>Advanced 3D modelling and BIM integration (Rhino, Revit, SketchUp, Navisworks). High-end façade system design, structural analysis, constructability-driven shop drawings, and method engineering for complex geometries.</p>
+          <a href="what-we-do.html#engineering" class="link-arrow" style="color:var(--gold);">
+            Our Engineering Services <span>→</span>
+          </a>
         </div>
+        <!-- Step 2 -->
         <div class="pipeline__card fade-up fade-up-delay-1">
-          <span class="pipeline__number">02</span>
+          <div class="pipeline__number">02</div>
           <h3>Manufacture</h3>
-          <p>
-            Fully automatic CNC mould engineering. A1-quality production of GRC, GRP, GRG,
-            and UHPC systems with superior process control. Custom surface engineering,
-            textures, finishes, and end-to-end quality assurance.
-          </p>
-          <a href="how-we-do-it.html" class="link-arrow">Our Manufacturing <span>→</span></a>
+          <p>Fully automatic CNC mould engineering. A1-quality production of GRC, GRP, GRG, and UHPC systems with superior process control. Custom surface engineering, textures, finishes, and end-to-end quality assurance.</p>
+          <a href="how-we-do-it.html" class="link-arrow" style="color:var(--gold);">
+            Our Manufacturing <span>→</span>
+          </a>
         </div>
+        <!-- Step 3 -->
         <div class="pipeline__card fade-up fade-up-delay-2">
-          <span class="pipeline__number">03</span>
+          <div class="pipeline__number">03</div>
           <h3>Construct</h3>
-          <p>
-            Multi-stakeholder coordination, digital setting-out, precision framing,
-            engineered façade panel installation, advanced jointing and sealing systems,
-            systematic snagging, and digital close-out documentation.
-          </p>
-          <a href="construct.html" class="link-arrow">Installation Process <span>→</span></a>
+          <p>Multi-stakeholder coordination, digital setting-out, precision framing, engineered façade panel installation, advanced jointing and sealing systems, systematic snagging, and digital close-out documentation.</p>
+          <a href="construct.html" class="link-arrow" style="color:var(--gold);">
+            Installation Process <span>→</span>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== WHY WE DO IT — Reverse Split ========== -->
-  <section class="section-split section-split--reverse">
-    <div class="container section-split__inner">
-      <div class="section-split__content">
-        <span class="section-label">Who We Work With</span>
-        <h2>World-class partners to deliver world-class designs.</h2>
-        <p>
-          We collaborate with visionary architects, developers, contractors, and consultants
-          across the built environment — from Emaar Properties and Dar Al Arkan to Binghatti,
-          Select Group, and Dubai Holding. Partners who value innovation, execution, and excellence.
-        </p>
-        <p>
-          Anchored in the UAE with an international footprint, we've delivered 400+ projects
-          across the Middle East — high-rise towers, luxury villas, mosques, malls, hotels,
-          commercial centres, and special buildings.
-        </p>
-        <a href="portfolio.html" class="link-arrow">View Our Portfolio <span>→</span></a>
-      </div>
-      <div class="section-split__image">
-        <div class="image-wrapper">
-          <img src="assets/img/mosque.jpg" alt="The Palace Beach Residence — Emaar Properties" loading="lazy">
+  <!-- ========== WHO WE WORK WITH — Split (reversed) ========== -->
+  <section class="section-split section-split--alt section-split--reverse">
+    <div class="container">
+      <div class="section-split__inner">
+        <div class="section-split__image fade-up">
+          <div class="image-wrapper">
+            <img src="assets/img/mosque.jpg" alt="The Palace Beach Residence">
+          </div>
+        </div>
+        <div class="section-split__content fade-up">
+          <span style="color:var(--gold);font-weight:600;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;">Who We Work With</span>
+          <h2>World-class partners to deliver<br>world-class designs.</h2>
+          <p>We collaborate with visionary architects, developers, contractors, and consultants across the built environment — from Emaar Properties and Dar Al Arkan to Binghatti, Select Group, and Dubai Holding. Partners who value innovation, execution, and excellence.</p>
+          <p>Anchored in the UAE with an international footprint, we've delivered 400+ projects across the Middle East — high-rise towers, luxury villas, mosques, malls, hotels, commercial centres, and special buildings.</p>
+          <a href="portfolio.html" class="link-arrow" style="color:var(--gold);font-weight:500;">
+            View Our Portfolio <span>→</span>
+          </a>
         </div>
       </div>
     </div>
@@ -166,53 +157,52 @@
   <section class="clients-strip">
     <div class="container">
       <div class="clients-strip__grid">
-        <div class="client-logo">Emaar Properties</div>
+        <div class="client-logo">Emaar</div>
         <div class="client-logo">Dar Al Arkan</div>
         <div class="client-logo">Dubai Holding</div>
         <div class="client-logo">Binghatti</div>
         <div class="client-logo">Select Group</div>
-        <div class="client-logo">Aldar Properties</div>
-        <div class="client-logo">Marriott Int'l</div>
+        <div class="client-logo">Aldar</div>
+        <div class="client-logo">Marriott</div>
         <div class="client-logo">Visa Inc.</div>
         <div class="client-logo">RTA</div>
-        <div class="client-logo">Gargash Motors</div>
+        <div class="client-logo">Gargash</div>
       </div>
     </div>
   </section>
 
-  <!-- ========== ADVANCED MATERIALS — Grid Cards ========== -->
-  <section class="section-materials">
+  <!-- ========== MATERIALS ========== -->
+  <section class="section-materials section-split--alt">
     <div class="container">
-      <div class="section-header section-header--center">
-        <span class="section-label">Our Materials</span>
-        <h2>Advanced Materials &<br>Advanced Systems</h2>
-        <p class="section-header__sub">
-          Our façade systems leverage advanced cementitious materials — UHPC and GFRC —
-          engineered for strength, durability, and design flexibility.
-        </p>
+      <div class="section-header section-header--center fade-up">
+        <span style="color:var(--gold);font-weight:600;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;">Our Materials</span>
+        <h2>Advanced Materials &amp;<br>Advanced Systems</h2>
+        <p class="section-header__sub">Our façade systems leverage advanced cementitious materials — UHPC and GFRC — engineered for strength, durability, and design flexibility.</p>
       </div>
       <div class="materials-grid">
+        <!-- GRC -->
         <div class="material-card fade-up">
           <div class="material-card__image">
-            <img src="assets/img/ahad.jpg" alt="GFRC facade panel" loading="lazy">
+            <img src="assets/img/ahad.jpg" alt="GFRC">
           </div>
           <div class="material-card__body">
-            <span class="material-tag">GRC</span>
+            <div class="material-tag">GRC</div>
             <h3>Glass Fiber Reinforced Concrete</h3>
             <p>A thin concrete shell of cement, sand, and alkali-resistant glass fibers supported by a secondary steel frame.</p>
             <ul class="material-features">
-              <li>Enables complex, sculptural geometry with thin sections (1–1½ in)</li>
+              <li>Complex, sculptural geometry with thin sections (1–1½ in)</li>
               <li>Lightweight yet strong, ideal for expressive façade applications</li>
               <li>Excellent durability — resists corrosion, UV, and freeze–thaw cycles</li>
             </ul>
           </div>
         </div>
+        <!-- UHPC -->
         <div class="material-card fade-up fade-up-delay-1">
           <div class="material-card__image">
-            <img src="assets/img/mosque.jpg" alt="Ultra-thin UHPC panel" loading="lazy">
+            <img src="assets/img/mosque.jpg" alt="UHPC">
           </div>
           <div class="material-card__body">
-            <span class="material-tag">UHPC</span>
+            <div class="material-tag">UHPC</div>
             <h3>Ultra High Performance Concrete</h3>
             <p>A thin-walled cladding of high-performance cement, fine aggregates, and steel or synthetic fibers with exceptionally high strength.</p>
             <ul class="material-features">
@@ -222,12 +212,13 @@
             </ul>
           </div>
         </div>
+        <!-- GRP -->
         <div class="material-card fade-up fade-up-delay-2">
           <div class="material-card__image">
-            <img src="assets/img/urban.jpg" alt="GRP composite panel" loading="lazy">
+            <img src="assets/img/urban.jpg" alt="GRP">
           </div>
           <div class="material-card__body">
-            <span class="material-tag">GRP</span>
+            <div class="material-tag">GRP</div>
             <h3>Glass Fiber Reinforced Plastic</h3>
             <p>Composite panels from 3mm to 8mm thick with non-combustible layer configurations for versatile architectural applications.</p>
             <ul class="material-features">
@@ -237,12 +228,13 @@
             </ul>
           </div>
         </div>
+        <!-- GRG -->
         <div class="material-card fade-up fade-up-delay-3">
           <div class="material-card__image">
-            <img src="assets/img/ahad.jpg" alt="GRG interior element" loading="lazy">
+            <img src="assets/img/ahad.jpg" alt="GRG">
           </div>
           <div class="material-card__body">
-            <span class="material-tag">GRG</span>
+            <div class="material-tag">GRG</div>
             <h3>Glass Fiber Reinforced Gypsum</h3>
             <p>Interior decorative elements, cornices, columns, and intricate gypsum-based architectural features.</p>
             <ul class="material-features">
@@ -256,19 +248,16 @@
     </div>
   </section>
 
-  <!-- ========== CTA SECTION ========== -->
+  <!-- ========== CTA ========== -->
   <section class="section-cta">
     <div class="container">
-      <div class="cta-box">
-        <span class="section-label">Let's Talk</span>
+      <div class="cta-box fade-up">
+        <span style="color:var(--muted);font-weight:600;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;">Let's Talk</span>
         <h2>Ready to Build Smarter?</h2>
-        <p class="cta-sub">
-          From concept to installation, we deliver advanced façade systems with precision,
-          speed, and uncompromising quality. Let's discuss your next project.
-        </p>
+        <p class="cta-sub">From concept to installation, we deliver advanced façade systems with precision, speed, and uncompromising quality. Let's discuss your next project.</p>
         <div class="cta-ctas">
           <a href="contact.html" class="btn btn-primary">Discuss Your Project</a>
-          <a href="portfolio.html" class="btn btn-outline btn-white">View Our Work</a>
+          <a href="portfolio.html" class="btn btn-outline">View Our Work</a>
         </div>
       </div>
     </div>
@@ -278,13 +267,11 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__grid">
-        <div class="footer__col">
+        <div>
           <a href="index.html" class="footer-brand">
-            <span class="brand-mark">AS</span><span class="brand-text">GRC</span>
+            <img src="assets/img/asgrc-logo.png" alt="ASGRC" style="width:32px;height:32px;border-radius:6px;">
           </a>
-          <p class="footer-brand-desc">
-            Al Shafar GRC LLC — Advanced façade systems design, manufacture, and installation.
-          </p>
+          <p class="footer-brand-desc">Al Shafar GRC LLC — Advanced façade systems design, manufacture, and installation.</p>
           <div class="footer-certifications">
             <span class="cert-badge">ISO 9001</span>
             <span class="cert-badge">ISO 14001</span>
@@ -292,7 +279,7 @@
             <span class="cert-badge">GRCA</span>
           </div>
         </div>
-        <div class="footer__col">
+        <div>
           <h4>Process</h4>
           <ul class="footer-links">
             <li><a href="what-we-do.html">What We Do</a></li>
@@ -302,7 +289,7 @@
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
-        <div class="footer__col">
+        <div>
           <h4>Company</h4>
           <ul class="footer-links">
             <li><a href="about.html">About Us</a></li>
@@ -311,17 +298,12 @@
             <li><a href="contact.html">Certifications</a></li>
           </ul>
         </div>
-        <div class="footer__col">
+        <div>
           <h4>Contact</h4>
-          <address>
-            Plot No. 533-193<br>
-            Saih Suhaib 04, Dubai<br>
-            Industrial City, P.O. Box 117717<br>
-            Dubai, UAE
-          </address>
-          <p><a href="tel:+97143201288">+971 4 320 1288</a></p>
-          <p><a href="mailto:info@asgrc.ae">info@asgrc.ae</a></p>
-          <p><a href="https://www.asgrc.ae" target="_blank">www.asgrc.ae</a></p>
+          <address>Plot No. 533-193<br>Saih Suhaib 04, Dubai<br>Industrial City, P.O. Box 117717<br>Dubai, UAE</address>
+          <p><a href="tel:+97143201288" style="color:rgba(255,255,255,0.7);text-decoration:none;">+971 4 320 1288</a></p>
+          <p><a href="mailto:info@asgrc.ae" style="color:rgba(255,255,255,0.7);text-decoration:none;">info@asgrc.ae</a></p>
+          <p><a href="https://www.asgrc.ae" target="_blank" style="color:rgba(255,255,255,0.7);text-decoration:none;">www.asgrc.ae</a></p>
         </div>
       </div>
       <div class="footer__bottom">
@@ -331,103 +313,87 @@
   </footer>
 
   <!-- ========== FLOATING AI CHAT WIDGET ========== -->
-  <div class="chat-widget" id="chatWidget">
-    <button class="chat-toggle" id="chatToggle" aria-label="Open chat">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+  <div class="chat-widget">
+    <button class="chat-toggle" id="chat-toggle" aria-label="Open chat">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:24px;height:24px;">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
       </svg>
     </button>
-    <div class="chat-window" id="chatWindow">
+    <div class="chat-window" id="chat-window">
       <div class="chat-header">
         <span>ASGRC Assistant</span>
-        <button class="chat-close" id="chatClose" aria-label="Close chat">&times;</button>
+        <button class="chat-close" id="chat-close" aria-label="Close chat">×</button>
       </div>
-      <div class="chat-body" id="chatBody">
-        <div class="chat-msg bot">
-          <p>Hello! 👋 How can I help you today? Ask about our materials, projects, or request a quote.</p>
-        </div>
+      <div class="chat-body" id="chat-body">
+        <div class="chat-msg bot">Hello! 👋 How can I help you today? Ask about our materials, projects, or request a quote.</div>
       </div>
       <div class="chat-input-area">
-        <input type="text" id="chatInput" placeholder="Type your message..." aria-label="Chat message">
-        <button id="chatSend" aria-label="Send message">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+        <input type="text" id="chat-input" placeholder="Type your message...">
+        <button id="chat-send" aria-label="Send">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:16px;height:16px;">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
           </svg>
         </button>
       </div>
     </div>
   </div>
 
-  <script src="js/mobile-nav.js"></script>
+  <!-- ========== SCRIPTS ========== -->
   <script src="js/animations.js"></script>
-  <!--
-    ========================================
-    FLOATING AI CHAT WIDGET
-    ========================================
-    Replace the placeholder logic below with your
-    Chatbase / Typebot / Crisp / Tidio embed script.
-    Example for Chatbase:
-    <script defer src="https://www.chatbase.co/embed.min.js" data-bot-id="YOUR_BOT_ID"></script>
-
-    Placeholder logic for now: routes to info@asgrc.ae
-    ========================================
-  -->
+  <script src="js/mobile-nav.js"></script>
   <script>
-  (function() {
-    const chatWidget   = document.getElementById('chatWidget');
-    const chatToggle   = document.getElementById('chatToggle');
-    const chatWindow   = document.getElementById('chatWindow');
-    const chatClose    = document.getElementById('chatClose');
-    const chatInput    = document.getElementById('chatInput');
-    const chatSend     = document.getElementById('chatSend');
-    const chatBody     = document.getElementById('chatBody');
+  // Chat widget
+  (function(){
+    var toggle = document.getElementById('chat-toggle');
+    var win = document.getElementById('chat-window');
+    var close = document.getElementById('chat-close');
+    var input = document.getElementById('chat-input');
+    var send = document.getElementById('chat-send');
+    var body = document.getElementById('chat-body');
 
-    function toggleChat() {
-      chatWindow.classList.toggle('chat-window--open');
+    if(!toggle || !win || !close || !input || !send || !body) return;
+
+    function openChat() { win.classList.add('chat-window--open'); }
+    function closeChat() { win.classList.remove('chat-window--open'); }
+
+    toggle.addEventListener('click', openChat);
+    close.addEventListener('click', closeChat);
+
+    function addMsg(text, type) {
+      var div = document.createElement('div');
+      div.className = 'chat-msg ' + type;
+      div.innerHTML = text;
+      body.appendChild(div);
+      body.scrollTop = body.scrollHeight;
     }
 
-    function addMsg(text, sender) {
-      const div = document.createElement('div');
-      div.className = 'chat-msg ' + sender;
-      div.innerHTML = '<p>' + text + '</p>';
-      chatBody.appendChild(div);
-      chatBody.scrollTop = chatBody.scrollHeight;
-    }
-
-    function getBotReply(msg) {
-      const m = msg.toLowerCase();
-      if (m.includes('material') || m.includes('grc') || m.includes('uhpc'))
-        return 'We manufacture GRC, GRP, UHPC, and GRG façade systems. Each material is engineered for specific applications — click <a href="products.html">Our Materials</a> to explore. Or email info@asgrc.ae for spec sheets.';
-      if (m.includes('project') || m.includes('portfolio'))
+    function getReply(msg) {
+      var m = msg.toLowerCase();
+      if (m.indexOf('material') > -1 || m.indexOf('grc') > -1 || m.indexOf('uhpc') > -1)
+        return 'We manufacture GRC, GRP, UHPC, and GRG façade systems. Each material is engineered for specific applications — click <a href="products.html">Our Materials</a> to explore.';
+      if (m.indexOf('project') > -1 || m.indexOf('portfolio') > -1)
         return 'We\'ve completed 400+ projects across the UAE — from The Creek Edge at Dubai Harbour to the Urban Oasis Tower. View our <a href="portfolio.html">Portfolio</a>.';
-      if (m.includes('price') || m.includes('cost') || m.includes('quote'))
-        return 'Project pricing depends on scope, materials, and timeline. Email us at <a href="mailto:info@asgrc.ae?subject=Project Quote Request">info@asgrc.ae</a> with details and we\'ll respond promptly.';
-      if (m.includes('contact') || m.includes('phone') || m.includes('email') || m.includes('reach'))
-        return 'You can reach us at <a href="tel:+97143201288">+971 4 320 1288</a> or <a href="mailto:info@asgrc.ae">info@asgrc.ae</a>. Our team is based in Dubai Industrial City.';
-      if (m.includes('certificate') || m.includes('iso') || m.includes('certif'))
-        return 'ASGRC is certified to ISO 9001:2015 (Quality), ISO 14001:2015 (Environment), ISO 45001:2018 (Safety), and GRCA (UK). See our <a href="about.html">About</a> page for details.';
-      if (m.includes('hello') || m.includes('hi') || m.includes('hey'))
-        return 'Hello! Welcome to ASGRC. How can I assist you? Ask about our materials, projects, certifications, or how to get started.';
-      return 'Thank you for your message! For detailed assistance, please email us at <a href="mailto:info@asgrc.ae">info@asgrc.ae</a> or call <a href="tel:+97143201288">+971 4 320 1288</a>. Our team will respond promptly.';
+      if (m.indexOf('price') > -1 || m.indexOf('cost') > -1 || m.indexOf('quote') > -1)
+        return 'Project pricing depends on scope, materials, and timeline. Email us at <a href="mailto:info@asgrc.ae">info@asgrc.ae</a> with details.';
+      if (m.indexOf('contact') > -1 || m.indexOf('phone') > -1 || m.indexOf('email') > -1)
+        return 'You can reach us at <a href="tel:+97143201288">+971 4 320 1288</a> or <a href="mailto:info@asgrc.ae">info@asgrc.ae</a>.';
+      if (m.indexOf('certificate') > -1 || m.indexOf('iso') > -1)
+        return 'ASGRC is certified to ISO 9001:2015, ISO 14001:2015, ISO 45001:2018, and GRCA (UK). See our <a href="about.html">About</a> page for details.';
+      if (m.indexOf('hello') > -1 || m.indexOf('hi') > -1)
+        return 'Hello! Welcome to ASGRC. How can I assist you?';
+      return 'Thank you! For detailed assistance, email <a href="mailto:info@asgrc.ae">info@asgrc.ae</a>.';
     }
-
-    chatToggle.addEventListener('click', toggleChat);
-    chatClose.addEventListener('click', toggleChat);
 
     function sendMsg() {
-      const text = chatInput.value.trim();
-      if (!text) return;
+      var text = input.value.trim();
+      if(!text) return;
       addMsg(text, 'user');
-      chatInput.value = '';
-      setTimeout(function() {
-        addMsg(getBotReply(text), 'bot');
-      }, 600);
+      input.value = '';
+      setTimeout(function(){ addMsg(getReply(text), 'bot'); }, 600);
     }
 
-    chatSend.addEventListener('click', sendMsg);
-    chatInput.addEventListener('keypress', function(e) {
-      if (e.key === 'Enter') sendMsg();
-    });
+    send.addEventListener('click', sendMsg);
+    input.addEventListener('keypress', function(e){ if(e.key==='Enter') sendMsg(); });
   })();
   </script>
 
