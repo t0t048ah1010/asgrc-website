@@ -3,413 +3,328 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ASGRC — Building Elegance in Advanced Façade Systems</title>
+  <title>ASGRC — Advanced Façade Systems Design. Manufacture. Construct.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/components.css">
-  <meta name="description" content="Al Shafar GRC LLC — Design, manufacture and construct advanced cementitious and composite façade systems for landmark projects across the Middle East.">
 </head>
 <body>
 
-<!-- Navigation -->
-<nav class="navbar">
-  <div class="container" style="display:flex;align-items:center;justify-content:space-between;height:64px;">
-    <a href="index.html" class="logo">ASGRC<span class="logo-dot"></span><span>BUILDING ELEGANCE</span></a>
-    <div class="desktop-nav">
-      <a href="what-we-do.html" class="nav-link">Design</a>
-      <a href="how-we-do-it.html" class="nav-link">Manufacture</a>
-      <a href="construct.html" class="nav-link">Construct</a>
-      <a href="portfolio.html" class="nav-link">Portfolio</a>
-      <a href="materials.html" class="nav-link">Materials</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="contact.html" class="nav-link cta">Contact</a>
-    </div>
-    <button id="hamburger" class="hamburger" aria-label="Toggle menu" style="display:none;">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<div id="mobileMenu" class="mobile-menu">
-  <a href="what-we-do.html">Design</a>
-  <a href="how-we-do-it.html">Manufacture</a>
-  <a href="construct.html">Construct</a>
-  <a href="portfolio.html">Portfolio</a>
-  <a href="materials.html">Materials</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-</div>
-
-<!-- Hero -->
-<section class="hero" style="position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;">
-  <img src="https://asgrc.co/assets/img/ahad.jpg" alt="ASGRC Façade Project" class="hero-image" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(0.5) saturate(0.9);">
-  <div class="hero-overlay" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(19,35,55,0.25) 0%,rgba(19,35,55,0.75) 100%);"></div>
-  <div class="container" style="position:relative;z-index:2;text-align:left;width:100%;">
-    <div style="max-width:720px;">
-      <p class="kicker" style="color:rgba(255,255,255,0.75);font-size:0.75rem;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:1.5rem;" data-animate="fade-up">Advanced Cementitious Systems</p>
-      <h1 style="font-family:'DM Serif Display','Inter',serif;font-size:clamp(3rem,7vw,5.5rem);font-weight:400;line-height:1.02;color:#fff;margin-bottom:1.5rem;" data-animate="fade-up" data-animate-delay="100">
-        Design.<br>Manufacture.<br>Construct.
-      </h1>
-      <p style="color:rgba(255,255,255,0.7);font-size:1.15rem;line-height:1.75;max-width:540px;margin-bottom:2.5rem;" data-animate="fade-up" data-animate-delay="200">
-        We design, engineer and install advanced façade systems for the world's most demanding architectural projects across the Middle East.
-      </p>
-      <div style="display:flex;flex-wrap:wrap;gap:1rem;" data-animate="fade-up" data-animate-delay="300">
-        <a href="what-we-do.html" class="btn btn-gold">Explore Our Process</a>
-        <a href="contact.html" class="btn" style="background:rgba(255,255,255,0.12);color:#fff;backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.2);">Get in Touch</a>
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <span class="brand-mark">AS</span><span class="brand-text">GRC</span>
+      </a>
+      <div class="nav-links">
+        <a href="what-we-do.html" class="nav-link">Design</a>
+        <a href="how-we-do-it.html" class="nav-link">Manufacture</a>
+        <a href="construct.html" class="nav-link">Construct</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link nav-link--accent">Contact</a>
       </div>
-    </div>
-  </div>
-  <div style="position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:2;text-align:center;">
-    <a href="#clients" style="display:inline-block;">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="animation:float 2.5s ease-in-out infinite;"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-    </a>
-  </div>
-  <style>@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}</style>
-</section>
-
-<!-- Clients Strip -->
-<section id="clients" style="padding:5rem 0;background:var(--bg);border-bottom:1px solid var(--line);">
-  <div class="container">
-    <p class="kicker" style="text-align:center;margin-bottom:0.5rem;font-size:0.65rem;" data-animate="fade-up">Trusted by Industry Leaders</p>
-    <p style="text-align:center;color:var(--muted);font-size:0.8rem;margin-bottom:2.5rem;" data-animate="fade-up">Emaar · Dubai Municipality · Aldar · Meraas · Dar Al-Handasah</p>
-    <div class="logo-strip" style="display:flex;flex-wrap:wrap;gap:2rem;align-items:center;justify-content:center;opacity:0.5;" data-animate="fade-up">
-      <div style="display:flex;align-items:center;gap:0.5rem;font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--text);">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-        Emaar Properties
-      </div>
-      <div style="display:flex;align-items:center;gap:0.5rem;font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--text);">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg>
-        Dubai Municipality
-      </div>
-      <div style="display:flex;align-items:center;gap:0.5rem;font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--text);">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        Aldar Properties
-      </div>
-      <div style="display:flex;align-items:center;gap:0.5rem;font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--text);">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        Meraas
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Stats -->
-<section style="padding:5rem 0;background:var(--bg-alt);">
-  <div class="container">
-    <div style="display:grid;gap:2.5rem;grid-template-columns:repeat(4,1fr);text-align:center;">
-      <div data-animate="fade-up">
-        <div class="stat-num" style="font-family:'DM Serif Display',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:400;color:var(--navy);line-height:1;">200<span style="font-size:0.6em;color:var(--gold);">+</span></div>
-        <p style="font-size:0.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.5rem;">Projects Delivered</p>
-      </div>
-      <div data-animate="fade-up" data-animate-delay="100">
-        <div class="stat-num" style="font-family:'DM Serif Display',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:400;color:var(--navy);line-height:1;">15<span style="font-size:0.6em;color:var(--gold);">+</span></div>
-        <p style="font-size:0.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.5rem;">Countries</p>
-      </div>
-      <div data-animate="fade-up" data-animate-delay="200">
-        <div class="stat-num" style="font-family:'DM Serif Display',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:400;color:var(--navy);line-height:1;">20<span style="font-size:0.6em;color:var(--gold);">+</span></div>
-        <p style="font-size:0.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.5rem;">Years Experience</p>
-      </div>
-      <div data-animate="fade-up" data-animate-delay="300">
-        <div class="stat-num" style="font-family:'DM Serif Display',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:400;color:var(--navy);line-height:1;">ISO</div>
-        <p style="font-size:0.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.5rem;">Certified</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Process Pipeline -->
-<section style="padding:6rem 0;background:var(--navy);color:#fff;">
-  <div class="container">
-    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:3rem;">
-      <!-- Step 1 -->
-      <div style="flex:1;min-width:220px;" data-animate="fade-up">
-        <div style="font-family:'DM Serif Display',serif;font-size:clamp(5rem,10vw,8rem);font-weight:400;line-height:1;color:rgba(255,255,255,0.08);margin-bottom:-1rem;">01</div>
-        <h3 style="font-family:'DM Serif Display',serif;font-size:1.8rem;font-weight:400;margin-bottom:0.75rem;">Design</h3>
-        <p style="color:rgba(255,255,255,0.65);font-size:0.95rem;line-height:1.7;margin-bottom:1.25rem;">We translate architect's vision into buildable façade solutions through computational design, structural engineering and material science.</p>
-        <a href="what-we-do.html" style="color:var(--gold);font-size:0.85rem;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      </div>
-      <!-- Connector -->
-      <div class="process-connector" style="display:none;"><svg width="48" height="24" viewBox="0 0 48 24" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"><path d="M0 12h40M38 6l6 6-6 6"/></svg></div>
-      <!-- Step 2 -->
-      <div style="flex:1;min-width:220px;" data-animate="fade-up" data-animate-delay="100">
-        <div style="font-family:'DM Serif Display',serif;font-size:clamp(5rem,10vw,8rem);font-weight:400;line-height:1;color:rgba(255,255,255,0.08);margin-bottom:-1rem;">02</div>
-        <h3 style="font-family:'DM Serif Display',serif;font-size:1.8rem;font-weight:400;margin-bottom:0.75rem;">Manufacture</h3>
-        <p style="color:rgba(255,255,255,0.65);font-size:0.95rem;line-height:1.7;margin-bottom:1.25rem;">Precision manufacturing using CNC-milled moulds, robotic vibratory compaction and steam curing for repeatable quality at scale.</p>
-        <a href="how-we-do-it.html" style="color:var(--gold);font-size:0.85rem;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      </div>
-      <!-- Connector -->
-      <div class="process-connector" style="display:none;"><svg width="48" height="24" viewBox="0 0 48 24" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"><path d="M0 12h40M38 6l6 6-6 6"/></svg></div>
-      <!-- Step 3 -->
-      <div style="flex:1;min-width:220px;" data-animate="fade-up" data-animate-delay="200">
-        <div style="font-family:'DM Serif Display',serif;font-size:clamp(5rem,10vw,8rem);font-weight:400;line-height:1;color:rgba(255,255,255,0.08);margin-bottom:-1rem;">03</div>
-        <h3 style="font-family:'DM Serif Display',serif;font-size:1.8rem;font-weight:400;margin-bottom:0.75rem;">Construct</h3>
-        <p style="color:rgba(255,255,255,0.65);font-size:0.95rem;line-height:1.7;margin-bottom:1.25rem;">Engineered site delivery, 3D-scanned framing, and certified installation teams for seamless project handover.</p>
-        <a href="construct.html" style="color:var(--gold);font-size:0.85rem;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Featured Projects -->
-<section style="padding:6rem 0;background:var(--bg);">
-  <div class="container">
-    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:3.5rem;">
-      <div>
-        <p class="kicker" data-animate="fade-up">Portfolio</p>
-        <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:400;margin-top:0.5rem;" data-animate="fade-up" data-animate-delay="100">Featured Projects</h2>
-      </div>
-      <a href="portfolio.html" class="btn btn-outline" data-animate="fade-up" data-animate-delay="200">View All Projects</a>
-    </div>
-    <div style="display:grid;gap:1.5rem;grid-template-columns:repeat(3,1fr);">
-      <!-- Project 1 -->
-      <div class="card" data-animate="fade-up" data-animate-delay="100">
-        <div style="aspect-ratio:4/3;overflow:hidden;">
-          <img src="https://asgrc.co/assets/img/ahad.jpg" alt="Al Ahad Mosque" style="width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-        </div>
-        <div style="padding:1.5rem;">
-          <p style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);margin-bottom:0.5rem;">Hospitality</p>
-          <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:0.4rem;">Al Ahad Mosque</h3>
-          <p style="color:var(--muted);font-size:0.85rem;line-height:1.6;">Ornate GRC façade panels and decorative elements for a landmark mosque project.</p>
-        </div>
-      </div>
-      <!-- Project 2 -->
-      <div class="card" data-animate="fade-up" data-animate-delay="200">
-        <div style="aspect-ratio:4/3;overflow:hidden;">
-          <img src="https://asgrc.co/assets/img/creek.jpg" alt="Dubai Creek Harbour" style="width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-        </div>
-        <div style="padding:1.5rem;">
-          <p style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);margin-bottom:0.5rem;">Residential</p>
-          <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:0.4rem;">Dubai Creek Harbour</h3>
-          <p style="color:var(--muted);font-size:0.85rem;line-height:1.6;">Curved GFRC panels and sunscreens for a premium waterfront residential tower.</p>
-        </div>
-      </div>
-      <!-- Project 3 -->
-      <div class="card" data-animate="fade-up" data-animate-delay="300">
-        <div style="aspect-ratio:4/3;overflow:hidden;">
-          <img src="https://asgrc.co/assets/img/urban.jpg" alt="Urban Oasis Tower" style="width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-        </div>
-        <div style="padding:1.5rem;">
-          <p style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);margin-bottom:0.5rem;">Commercial</p>
-          <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:0.4rem;">Urban Oasis Tower</h3>
-          <p style="color:var(--muted);font-size:0.85rem;line-height:1.6;">UHPC louvers and perforated screens providing solar control with architectural expression.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Materials Overview -->
-<section style="padding:6rem 0;background:var(--bg-alt);">
-  <div class="container">
-    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:3.5rem;">
-      <div>
-        <p class="kicker" data-animate="fade-up">Materials & Systems</p>
-        <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:400;margin-top:0.5rem;" data-animate="fade-up" data-animate-delay="100">Engineered for Performance</h2>
-      </div>
-      <a href="materials.html" class="btn btn-outline" data-animate="fade-up" data-animate-delay="200">Explore Materials</a>
-    </div>
-    <div style="display:grid;gap:1.5rem;grid-template-columns:repeat(4,1fr);">
-      <div class="card" data-animate="fade-up" data-animate-delay="100" style="padding:2rem;text-align:center;">
-        <div style="width:56px;height:56px;background:var(--navy);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-        </div>
-        <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:0.5rem;">GFRC / GRC</h3>
-        <p style="color:var(--muted);font-size:0.85rem;line-height:1.7;">Lightweight, high-strength panels for façades, cladding and sculptural elements.</p>
-      </div>
-      <div class="card" data-animate="fade-up" data-animate-delay="200" style="padding:2rem;text-align:center;">
-        <div style="width:56px;height:56px;background:var(--navy);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-        </div>
-        <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:0.5rem;">UHPC</h3>
-        <p style="color:var(--muted);font-size:0.85rem;line-height:1.7;">Ultra-high performance concrete for ultra-thin panels and high-wear applications.</p>
-      </div>
-      <div class="card" data-animate="fade-up" data-animate-delay="300" style="padding:2rem;text-align:center;">
-        <div style="width:56px;height:56px;background:var(--navy);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
-        </div>
-        <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:0.5rem;">GFRP / GRP</h3>
-        <p style="color:var(--muted);font-size:0.85rem;line-height:1.7;">Ultra-lightweight composites for domes, canopies and sculptural features.</p>
-      </div>
-      <div class="card" data-animate="fade-up" data-animate-delay="400" style="padding:2rem;text-align:center;">
-        <div style="width:56px;height:56px;background:var(--navy);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:0.5rem;">GFRG / GRG</h3>
-        <p style="color:var(--muted);font-size:0.85rem;line-height:1.7;">Interior gypsum systems for ceilings, columns and luxury architectural detailing.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA Section -->
-<section style="padding:6rem 0;background:var(--bg);">
-  <div class="container" style="max-width:700px;text-align:center;">
-    <p class="kicker" data-animate="fade-up">Ready to Build?</p>
-    <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:400;margin:1rem 0 1.5rem;" data-animate="fade-up" data-animate-delay="100">Let's Create Something Remarkable</h2>
-    <p style="color:var(--muted);font-size:1.05rem;line-height:1.7;margin-bottom:2.5rem;" data-animate="fade-up" data-animate-delay="200">
-      Whether you're in early design stages or need a complete façade package — our team is ready to discuss your project.
-    </p>
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;" data-animate="fade-up" data-animate-delay="300">
-      <a href="contact.html" class="btn btn-primary">Contact Our Team</a>
-      <a href="portfolio.html" class="btn btn-outline">View Our Work</a>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer" style="padding:5rem 0 2.5rem;background:var(--navy);">
-  <div class="container">
-    <div style="display:grid;gap:3rem;grid-template-columns:2fr 1fr 1fr 1fr;margin-bottom:3rem;">
-      <div>
-        <div style="font-family:'DM Serif Display',serif;font-size:1.5rem;font-weight:400;color:#fff;margin-bottom:1rem;">ASGRC<span style="font-size:0.7rem;color:rgba(255,255,255,0.5);margin-left:8px;">Building Elegance</span></div>
-        <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.7;max-width:300px;">Al Shafar GRC LLC — Advanced cementitious and composite systems for architectural façades across the Middle East.</p>
-      </div>
-      <div>
-        <p style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.35);margin-bottom:1rem;">Process</p>
-        <div style="display:flex;flex-direction:column;gap:0.6rem;">
-          <a href="what-we-do.html" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;">Design</a>
-          <a href="how-we-do-it.html" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;">Manufacture</a>
-          <a href="construct.html" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;">Construct</a>
-        </div>
-      </div>
-      <div>
-        <p style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.35);margin-bottom:1rem;">Company</p>
-        <div style="display:flex;flex-direction:column;gap:0.6rem;">
-          <a href="portfolio.html" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;">Portfolio</a>
-          <a href="materials.html" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;">Materials</a>
-          <a href="about.html" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;">About</a>
-          <a href="contact.html" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;">Contact</a>
-        </div>
-      </div>
-      <div>
-        <p style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.35);margin-bottom:1rem;">Connect</p>
-        <div style="display:flex;flex-direction:column;gap:0.6rem;">
-          <a href="mailto:info@asgrc.co" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;">info@asgrc.co</a>
-          <a href="tel:+97144295500" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;">+971 4 429 5500</a>
-        </div>
-      </div>
-    </div>
-    <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:1.5rem;text-align:center;">
-      <p style="font-size:0.75rem;color:rgba(255,255,255,0.3);">© 2026 Al Shafar GRC LLC. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
-
-<!-- Scroll Animations -->
-<script src="js/animations.js"></script>
-
-<!-- Floating AI Chat Widget Placeholder -->
-<!-- ============================================================
-  FLOATING AI CHAT WIDGET
-  Replace the content below with your actual chat widget script
-  (Chatbase, Typebot, Crisp, etc.)
-  ============================================================ -->
-<script>
-(function() {
-  // ====================================================
-  // AI CHAT WIDGET — Placeholder
-  // Swap this block with your Chatbase / Typebot / Crisp
-  // embed script. Keep the #chat-widget container in the
-  // HTML below for the floating bubble UI.
-  // ====================================================
-
-  // Example integration point:
-  // <script src="https://www.chatbase.co/embed.min.js" ...></script>
-  // <script src="https://cdn.typebot.io/preset.js" ...></script>
-
-  // Placeholder bubble behavior (remove when widget is added):
-  // The bubble is rendered by the HTML/CSS below.
-})();
-</script>
-
-<!-- Floating Chat Bubble UI -->
-<div id="chat-widget" style="position:fixed;bottom:24px;right:24px;z-index:9999;">
-  <button id="chat-toggle" style="width:60px;height:60px;border-radius:50%;background:var(--navy);border:none;cursor:pointer;box-shadow:0 4px 24px rgba(0,0,0,0.2);display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
-    </svg>
-  </button>
-  <div id="chat-window" style="position:absolute;bottom:72px;right:0;width:360px;height:500px;background:#fff;border-radius:20px;box-shadow:0 8px 40px rgba(0,0,0,0.15);display:none;flex-direction:column;overflow:hidden;border:1px solid var(--line);">
-    <!-- Header -->
-    <div style="background:var(--navy);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;">
-      <div>
-        <p style="color:#fff;font-size:0.95rem;font-weight:600;">ASGRC Assistant</p>
-        <p style="color:rgba(255,255,255,0.6);font-size:0.75rem;">Typically replies instantly</p>
-      </div>
-      <button id="chat-close" style="background:none;border:none;cursor:pointer;color:rgba(255,255,255,0.6);padding:4px;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      <button class="nav-toggle" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
       </button>
     </div>
-    <!-- Chat Content Area -->
-    <div id="chat-messages" style="flex:1;overflow-y:auto;padding:1.25rem;background:var(--bg);">
-      <div style="background:#fff;border-radius:16px 16px 16px 4px;padding:0.85rem 1rem;max-width:85%;box-shadow:0 1px 3px rgba(0,0,0,0.05);">
-        <p style="font-size:0.9rem;line-height:1.6;color:var(--text);">Hi there! 👋 How can I help you today? Ask me about our materials, projects, or request a quote.</p>
+  </nav>
+
+  <div id="mobileMenu" class="mobile-menu">
+    <a href="what-we-do.html" class="mobile-link">Design</a>
+    <a href="how-we-do-it.html" class="mobile-link">Manufacture</a>
+    <a href="construct.html" class="mobile-link">Construct</a>
+    <a href="portfolio.html" class="mobile-link">Portfolio</a>
+    <a href="about.html" class="mobile-link">About</a>
+    <a href="contact.html" class="mobile-link">Contact</a>
+    <a href="mailto:info@asgrc.co" class="mobile-email">info@asgrc.co</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="https://asgrc.co/assets/img/hero-facade.jpg" alt="ASGRC Advanced Façade Systems" loading="eager">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-heading">We Build <span class="text-accent">Smart</span> Solutions</h1>
+        <p class="hero-subheading">Advanced materials. Intelligent processes. Exceptional outcomes.</p>
+        <div class="hero-buttons">
+          <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+          <a href="what-we-do.html" class="btn btn-outline">Explore Our Materials</a>
+        </div>
+      </div>
+      <a href="#section-what" class="scroll-indicator">
+        <span class="scroll-line"></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- SECTION: WHAT WE DO -->
+  <section id="section-what" class="section-what">
+    <div class="container">
+      <div class="section-header">
+        <span class="kicker">What We Do</span>
+        <h2 class="section-title">Cutting-edge materials for cutting-edge designs.</h2>
+      </div>
+      <div class="split-content">
+        <div class="split-image">
+          <img src="https://asgrc.co/assets/img/gfrc-panel.jpg" alt="GFRC Façade Panels" loading="lazy">
+        </div>
+        <div class="split-text">
+          <p>We bring ambitious architectural visions to life through a vertically integrated approach&mdash;designing, manufacturing, and constructing with cutting-edge materials and processes. Our work centers on <strong>UHPC</strong> and <strong>GFRC</strong>, advanced cementitious technologies that enable complex forms, thin profiles, and exceptional durability.</p>
+          <p>From initial concept through BIM modelling and structural analysis, to precision manufacturing and seamless site delivery, ASGRC delivers the entire building envelope with unmatched quality and engineering precision.</p>
+          <a href="products.html" class="btn btn-link">Explore Our Materials <span class="link-arrow">&rarr;</span></a>
+        </div>
       </div>
     </div>
-    <!-- Input Area -->
-    <div style="padding:0.75rem 1rem;border-top:1px solid var(--line);background:#fff;display:flex;gap:0.5rem;align-items:center;">
-      <input id="chat-input" type="text" placeholder="Type a message..." style="flex:1;border:1.5px solid var(--line);border-radius:999px;padding:0.65rem 1rem;font-size:0.85rem;outline:none;font-family:inherit;">
-      <button id="chat-send" style="width:36px;height:36px;border-radius:50%;background:var(--navy);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-      </button>
+  </section>
+
+  <!-- SECTION: HOW WE DO IT -->
+  <section class="section-how">
+    <div class="container">
+      <div class="section-header section-header--centered">
+        <span class="kicker">How We Do It</span>
+        <h2 class="section-title">Revolutionary process to execute revolutionary projects.</h2>
+        <p class="section-subtitle">Our integrated Design&ndash;Manufacture&ndash;Construct model streamlines complexity to deliver elegant, cost-effective outcomes.</p>
+      </div>
+      <div class="pipeline">
+        <div class="pipeline-step fade-up">
+          <span class="step-number">01</span>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+          </div>
+          <h3 class="step-title">Design</h3>
+          <p>BIM &amp; 3D computational modelling, structural optimization, and value engineering. We translate bold architectural intent into buildable systems.</p>
+          <a href="what-we-do.html" class="btn btn-outline btn-sm">Learn More</a>
+        </div>
+        <div class="pipeline-step fade-up fade-up-delay-2">
+          <span class="step-number">02</span>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3 class="step-title">Manufacture</h3>
+          <p>CNC-milled steel moulds, robotic vibratory compaction, and steam curing. Every panel is precision-engineered to exacting tolerances.</p>
+          <a href="how-we-do-it.html" class="btn btn-outline btn-sm">Learn More</a>
+        </div>
+        <div class="pipeline-step fade-up fade-up-delay-4">
+          <span class="step-number">03</span>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3 class="step-title">Construct</h3>
+          <p>3D laser scanning, precision framing, engineered lifting, and seamless site integration. Turnkey delivery from factory to façade.</p>
+          <a href="construct.html" class="btn btn-outline btn-sm">Learn More</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- Chat Widget Script -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const toggle = document.getElementById('chat-toggle');
-  const window = document.getElementById('chat-window');
-  const close = document.getElementById('chat-close');
-  const input = document.getElementById('chat-input');
-  const send = document.getElementById('chat-send');
+  <!-- SECTION: WHY WE DO IT -->
+  <section class="section-why">
+    <div class="container">
+      <div class="section-header section-header--centered">
+        <span class="kicker">Why We Do It</span>
+        <h2 class="section-title">With a passion for design and a commitment to innovation.</h2>
+      </div>
+      <div class="split-content split-content--reverse">
+        <div class="split-text">
+          <p>Our work spans the entire building envelope&mdash;blending architectural insight, engineering precision, and creative problem-solving. Backed by experience across disciplines, we approach each project as builders and collaborators with a shared vision: to unlock the full potential of the built environment through bold ideas, smart solutions, and purposeful design.</p>
+          <p>From our headquarters in the UAE, we deliver world-class façade systems to visionary architects, contractors, and developers across 15+ countries.</p>
+        </div>
+        <div class="split-image">
+          <img src="https://asgrc.co/assets/img/about-asgrc.jpg" alt="ASGRC Manufacturing Facility" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
 
-  toggle.addEventListener('click', function() {
-    const isVisible = window.style.display === 'flex';
-    window.style.display = isVisible ? 'none' : 'flex';
-    if (!isVisible) input.focus();
-  });
+  <!-- SECTION: WHO WE DO IT FOR -->
+  <section class="section-who">
+    <div class="container">
+      <div class="section-header section-header--centered">
+        <span class="kicker">Who We Work With</span>
+        <h2 class="section-title">World-class partners to deliver world-class designs.</h2>
+        <p class="section-subtitle">We collaborate with visionary architects, contractors, and developers who value innovation, execution, and excellence.</p>
+      </div>
+      <div class="logo-strip">
+        <div class="logo-item fade-up"><span>Emaar</span></div>
+        <div class="logo-item fade-up fade-up-delay-1"><span>Dubai Municipality</span></div>
+        <div class="logo-item fade-up fade-up-delay-2"><span>Aldar Properties</span></div>
+        <div class="logo-item fade-up fade-up-delay-3"><span>Meraas</span></div>
+        <div class="logo-item fade-up fade-up-delay-4"><span>Dar Al-Handasah</span></div>
+        <div class="logo-item fade-up fade-up-delay-4"><span>Benoy</span></div>
+      </div>
+    </div>
+  </section>
 
-  close.addEventListener('click', function() {
-    window.style.display = 'none';
-  });
+  <!-- SECTION: MATERIALS -->
+  <section class="section-materials">
+    <div class="container">
+      <div class="section-header section-header--centered">
+        <span class="kicker">Advanced Materials &amp; Systems</span>
+        <h2 class="section-title">Engineered for strength, durability, and design flexibility.</h2>
+        <p class="section-subtitle">Each component is optimized for structural efficiency, weather resistance, and long-term performance through controlled manufacturing and rigorous testing.</p>
+      </div>
+      <div class="materials-grid">
+        <div class="material-card fade-up">
+          <div class="material-card__image">
+            <img src="https://asgrc.co/assets/img/gfrc-texture.jpg" alt="GFRC Panels" loading="lazy">
+          </div>
+          <div class="material-card__content">
+            <h3 class="material-card__title">GFRC / GRC</h3>
+            <p>Glass Fiber Reinforced Concrete&mdash;a thin concrete shell with alkali-resistant glass fibers, engineered for complex, sculptural geometry in sections as thin as 1&ndash;1½ in.</p>
+            <ul class="material-list">
+              <li>Enables complex, sculptural geometry with thin sections</li>
+              <li>Lightweight yet strong, ideal for expressive façades</li>
+              <li>Excellent durability&mdash;resists corrosion, UV, and freeze&ndash;thaw</li>
+              <li>Creative form freedom with efficient installation</li>
+            </ul>
+          </div>
+        </div>
+        <div class="material-card fade-up fade-up-delay-2">
+          <div class="material-card__image">
+            <img src="https://asgrc.co/assets/img/uhpc-louver.jpg" alt="UHPC Louvers" loading="lazy">
+          </div>
+          <div class="material-card__content">
+            <h3 class="material-card__title">UHPC</h3>
+            <p>Ultra High Performance Concrete&mdash;ultra-thin, high-strength panels (½&ndash;¾ in) with dense material matrix for smooth, precise surfaces and tight dimensional tolerances.</p>
+            <ul class="material-list">
+              <li>Ultra-thin, high-strength panels with structural-grade performance</li>
+              <li>Dense material matrix for smooth, precise surfaces</li>
+              <li>Exceptional durability&mdash;resists freeze&ndash;thaw, abrasion, chloride</li>
+              <li>Advanced material system delivering longevity and refinement</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  send.addEventListener('click', function() {
-    const text = input.value.trim();
-    if (!text) return;
-    appendMessage(text, 'user');
-    input.value = '';
-    // Placeholder: remove when integrating real chatbot
-    setTimeout(function() {
-      appendMessage('Thanks for your message! Our team will respond shortly. For immediate assistance, please email <a href="mailto:info@asgrc.co" style="color:var(--navy);">info@asgrc.co</a>.', 'bot');
-    }, 800);
-  });
+  <!-- SECTION: CTA -->
+  <section class="section-cta">
+    <div class="container">
+      <div class="cta-content">
+        <span class="kicker">Ready to Build Smarter?</span>
+        <h2 class="cta-heading">Let's create something remarkable.</h2>
+        <p class="cta-subheading">From concept to completion, we bring your vision to life with precision engineering and advanced materials.</p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn btn-primary">Discuss Your Project</a>
+          <a href="portfolio.html" class="btn btn-outline">View Our Work</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  input.addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') send.click();
-  });
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-mark brand-mark--large">AS</a>
+          <p class="footer-tagline">Building Elegance in Advanced Façade Systems</p>
+          <p class="footer-email"><a href="mailto:info@asgrc.co">info@asgrc.co</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>Process</h4>
+          <a href="what-we-do.html" class="footer-link">Design</a>
+          <a href="how-we-do-it.html" class="footer-link">Manufacture</a>
+          <a href="construct.html" class="footer-link">Construct</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html" class="footer-link">About</a>
+          <a href="portfolio.html" class="footer-link">Portfolio</a>
+          <a href="materials.html" class="footer-link">Materials</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:info@asgrc.co" class="footer-link">info@asgrc.co</a>
+          <a href="contact.html" class="btn btn-primary btn-sm">Get in Touch</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 ASGRC. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
-  function appendMessage(text, type) {
-    const msg = document.createElement('div');
-    msg.style.cssText = type === 'user'
-      ? 'background:var(--navy);color:#fff;border-radius:16px 16px 4px 16px;padding:0.85rem 1rem;margin:0.5rem 0 0.5rem auto;max-width:85%;font-size:0.9rem;line-height:1.6;'
-      : 'background:#fff;border-radius:16px 16px 16px 4px;padding:0.85rem 1rem;max-width:85%;box-shadow:0 1px 3px rgba(0,0,0,0.05);font-size:0.9rem;line-height:1.6;';
-    msg.innerHTML = text;
-    const container = document.getElementById('chat-messages');
-    container.appendChild(msg);
-    container.scrollTop = container.scrollHeight;
-  }
+  <script src="js/animations.js"></script>
+  <script src="js/mobile-nav.js"></script>
 
-  // Close on outside click
-  document.addEventListener('click', function(e) {
-    if (!e.target.closest('#chat-widget')) {
-      window.style.display = 'none';
-    }
-  });
-});
-</script>
+  <!-- AI CHAT WIDGET PLACEHOLDER -->
+  <script>
+    // Floating AI Chat Assistant
+    // Drop in your Chatbase / Typebot / Crisp embed script here
+    // Example (Chatbase):
+    // <script src="https://www.chatbase.co/embed.min.js" data-bot-id="YOUR_BOT_ID" defer></script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const chatBubble = document.createElement('div');
+      chatBubble.className = 'chat-bubble';
+      chatBubble.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1.07A7.001 7.001 0 0 1 13 22h-2a7.001 7.001 0 0 1-6.93-6H3a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z"/></svg>`;
+      
+      const chatWindow = document.createElement('div');
+      chatWindow.className = 'chat-window';
+      chatWindow.innerHTML = `
+        <div class="chat-header">
+          <span>ASGRC Assistant</span>
+          <button class="chat-close" aria-label="Close chat">&times;</button>
+        </div>
+        <div class="chat-messages">
+          <div class="chat-msg bot">Hello! How can I help you today?</div>
+        </div>
+        <div class="chat-input-area">
+          <input type="text" placeholder="Ask about our materials, process, or projects..." class="chat-input">
+          <button class="chat-send">&rarr;</button>
+        </div>
+      `;
+
+      const chatContainer = document.createElement('div');
+      chatContainer.className = 'chat-container';
+      chatContainer.appendChild(chatBubble);
+      chatContainer.appendChild(chatWindow);
+      document.body.appendChild(chatContainer);
+
+      let open = false;
+      chatBubble.addEventListener('click', function() {
+        open = !open;
+        chatWindow.style.transform = open ? 'translateY(0)' : 'translateY(20px)';
+        chatWindow.style.opacity = open ? '1' : '0';
+        chatWindow.style.pointerEvents = open ? 'auto' : 'none';
+        chatBubble.style.transform = open ? 'scale(0.95)' : 'scale(1)';
+      });
+
+      chatWindow.querySelector('.chat-close').addEventListener('click', function() {
+        open = false;
+        chatWindow.style.transform = 'translateY(20px)';
+        chatWindow.style.opacity = '0';
+        chatWindow.style.pointerEvents = 'none';
+        chatBubble.style.transform = 'scale(1)';
+      });
+
+      chatWindow.querySelector('.chat-send').addEventListener('click', function() {
+        const input = chatWindow.querySelector('.chat-input');
+        const msg = input.value.trim();
+        if (!msg) return;
+        const messages = chatWindow.querySelector('.chat-messages');
+        messages.innerHTML += `<div class="chat-msg user">${msg}</div>`;
+        input.value = '';
+        messages.scrollTop = messages.scrollHeight;
+        setTimeout(function() {
+          messages.innerHTML += `<div class="chat-msg bot">Thank you for your interest in ASGRC. An expert from our team will respond shortly. For immediate assistance, email <a href="mailto:info@asgrc.co">info@asgrc.co</a>.</div>`;
+          messages.scrollTop = messages.scrollHeight;
+        }, 800);
+      });
+
+      chatWindow.querySelector('.chat-input').addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') chatWindow.querySelector('.chat-send').click();
+      });
+    });
+  </script>
 
 </body>
 </html>
