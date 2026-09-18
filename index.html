@@ -200,7 +200,7 @@
     /* ========================================
        HERO
        ======================================== */
-    .hero {
+        .hero {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -209,6 +209,86 @@
       text-align: center;
       padding: 128px 32px 96px;
       position: relative;
+      overflow: hidden;
+    }
+
+    .hero-text {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-visual-spacer {
+      width: 100%;
+      max-width: 960px;
+      margin: 48px auto 0;
+      height: 12px;
+    }
+
+    /* ========== HERO BACKGROUND SLIDESHOW (CSS only) ========== */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-bg-layer {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+    .hero-bg-layer:nth-child(1) {
+      background-image: url('assets/img/header-bg.jpg');
+      animation: heroSlide1 20s infinite;
+    }
+    .hero-bg-layer:nth-child(2) {
+      background-image: url('assets/img/urban.jpg');
+      animation: heroSlide2 20s infinite;
+    }
+    .hero-bg-layer:nth-child(3) {
+      background-image: url('assets/img/creek.jpg');
+      animation: heroSlide3 20s infinite;
+    }
+    .hero-bg-layer:nth-child(4) {
+      background-image: url('assets/img/ahad.jpg');
+      animation: heroSlide4 20s infinite;
+    }
+
+    @keyframes heroSlide1 {
+      0%, 25% { opacity: 1; }
+      25.01%, 100% { opacity: 0; }
+    }
+    @keyframes heroSlide2 {
+      0%, 24.99% { opacity: 0; }
+      25%, 50% { opacity: 1; }
+      50.01%, 100% { opacity: 0; }
+    }
+    @keyframes heroSlide3 {
+      0%, 49.99% { opacity: 0; }
+      50%, 75% { opacity: 1; }
+      75.01%, 100% { opacity: 0; }
+    }
+    @keyframes heroSlide4 {
+      0%, 74.99% { opacity: 0; }
+      75%, 100% { opacity: 1; }
+    }
+
+    /* Dark overlay for text readability */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(180deg,
+        rgba(8, 9, 10, 0.55) 0%,
+        rgba(8, 9, 10, 0.35) 40%,
+        rgba(8, 9, 10, 0.45) 100%
+      );
+      pointer-events: none;
     }
 
     .hero::before {
@@ -217,6 +297,7 @@
       inset: 0;
       background: radial-gradient(ellipse at 50% 30%, rgba(94, 106, 210, 0.06) 0%, transparent 60%);
       pointer-events: none;
+      z-index: 2;
     }
 
     .hero-eyebrow {
@@ -283,13 +364,7 @@
     .hero-actions .btn-primary { padding: 12px 24px; font-size: 15px; }
     .hero-actions .btn-ghost { padding: 12px 24px; font-size: 15px; }
 
-    .hero-visual {
-      position: relative;
-      width: 100%;
-      max-width: 960px;
-      margin: 0 auto;
-      z-index: 1;
-    }
+    
 
     .hero-visual-frame {
       position: relative;
@@ -306,42 +381,16 @@
       object-fit: cover;
     }
 
-    .hero-visual-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 30%, rgba(8,9,10,0.7) 100%);
-      pointer-events: none;
-    }
+    
 
     /* ========================================
        HERO SLIDESHOW
        ======================================== */
-    .hero-slideshow {
-      position: relative;
-      width: 100%;
-      max-width: 960px;
-      margin: 0 auto;
-      overflow: hidden;
-      border-radius: var(--radius-panel);
-      border: 1px solid var(--border-secondary);
-      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2), 0 4px 16px rgba(0, 0, 0, 0.4);
-    }
+    
 
-    .slideshow-img {
-      width: 100%;
-      height: 480px;
-      object-fit: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      transition: opacity 1.5s ease-in-out;
-    }
+    
 
-    .slideshow-img.active {
-      opacity: 1;
-      z-index: 2;
-    }
+    
 
     /* ========================================
        LOGO STRIP
@@ -1413,33 +1462,35 @@
        HERO
        ============================================ -->
   <section class="hero">
-    <div class="hero-eyebrow animate-fade-up delay-1">
-      <span class="hero-eyebrow-dot"></span>
-      Design. Manufacture. Deliver.
+    <div class="hero-bg">
+      <div class="hero-bg-layer"></div>
+      <div class="hero-bg-layer"></div>
+      <div class="hero-bg-layer"></div>
+      <div class="hero-bg-layer"></div>
     </div>
+    <div class="hero-overlay"></div>
 
-    <h1 class="animate-fade-up delay-2">
-      Smart façades.<br>Smart solutions.
-    </h1>
-
-    <p class="hero-subtitle animate-fade-up delay-3">
-      Advanced Structural Glass &amp; Façade Systems — from digital concept to installed reality. We design, engineer, and manufacture high-performance building envelopes for the world's most ambitious projects.
-    </p>
-
-    <div class="hero-actions animate-fade-up delay-4">
-      <a href="#materials" class="btn-primary">Explore materials</a>
-      <a href="#projects" class="btn-ghost">View projects</a>
-    </div>
-
-    <div class="hero-visual animate-fade-up delay-5">
-      <div class="hero-slideshow">
-        <img src="assets/img/header-bg.jpg" alt="ASGRC Façade Projects" class="slideshow-img" style="z-index:3;">
-        <img src="assets/img/urban.jpg" alt="Urban Oasis Tower" class="slideshow-img">
-        <img src="assets/img/creek.jpg" alt="The Creek Edge" class="slideshow-img">
-        <img src="assets/img/ahad.jpg" alt="Al Hadaf Residences" class="slideshow-img">
+    <div class="hero-text">
+      <div class="hero-eyebrow animate-fade-up delay-1">
+        <span class="hero-eyebrow-dot"></span>
+        Design. Manufacture. Deliver.
       </div>
-      <div class="hero-visual-overlay"></div>
+
+      <h1 class="animate-fade-up delay-2">
+        Smart façades.<br>Smart solutions.
+      </h1>
+
+      <p class="hero-subtitle animate-fade-up delay-3">
+        Advanced Structural Glass &amp; Façade Systems — from digital concept to installed reality. We design, engineer, and manufacture high-performance building envelopes for the world's most ambitious projects.
+      </p>
+
+      <div class="hero-actions animate-fade-up delay-4">
+        <a href="#materials" class="btn-primary">Explore materials</a>
+        <a href="#projects" class="btn-ghost">View projects</a>
+      </div>
     </div>
+
+    <div class="hero-visual-spacer"></div>
   </section>
 
   <!-- ============================================
@@ -1866,16 +1917,7 @@
   <script>
     // Hero slideshow — CSS crossfade, no particles
     (function() {
-      const slides = document.querySelectorAll('.slideshow-img');
-      if (!slides.length) return;
-      let current = 0;
-      slides[0].classList.add('active');
-
-      setInterval(function() {
-        slides[current].classList.remove('active');
-        current = (current + 1) % slides.length;
-        slides[current].classList.add('active');
-      }, 5000);
+      const slides = document.querySelectorAll(', 5000);
     })();
   </script>
 
