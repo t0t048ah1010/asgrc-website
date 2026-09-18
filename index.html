@@ -419,14 +419,25 @@
       flex-wrap: wrap;
       max-width: 900px;
       margin: 0 auto;
-      opacity: 0.4;
     }
 
     .logo-item {
-      font-size: 18px;
-      font-weight: 510;
-      color: var(--text-secondary);
-      letter-spacing: -0.1px;
+      display: inline-block;
+      max-height: 40px;
+      opacity: 0.5;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      filter: brightness(0) invert(1);
+    }
+
+    .logo-item:hover {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    .logo-svg {
+      height: 40px;
+      width: auto;
+      display: block;
     }
 
     /* ========================================
@@ -1499,12 +1510,24 @@
   <div class="logos">
     <p class="logos-label">Trusted by leading developers</p>
     <div class="logos-strip">
-      <span class="logo-item">Emaar</span>
-      <span class="logo-item">Dar Al Arkan</span>
-      <span class="logo-item">Dubai Holding</span>
-      <span class="logo-item">Binghatti</span>
-      <span class="logo-item">Select Group</span>
-      <span class="logo-item">Aldar</span>
+      <a href="https://www.emaar.com/en" target="_blank" rel="noopener noreferrer" class="logo-item" aria-label="Emaar">
+        <img src="assets/img/logos/emaar.svg" alt="Emaar" class="logo-svg">
+      </a>
+      <a href="https://www.daralarkan.com/en" target="_blank" rel="noopener noreferrer" class="logo-item" aria-label="Dar Al Arkan">
+        <img src="assets/img/logos/dar-alarkan.svg" alt="Dar Al Arkan" class="logo-svg">
+      </a>
+      <a href="https://www.dubaiholding.com/en" target="_blank" rel="noopener noreferrer" class="logo-item" aria-label="Dubai Holding">
+        <img src="assets/img/logos/dubai-holding.svg" alt="Dubai Holding" class="logo-svg">
+      </a>
+      <a href="https://www.binghatti.com/" target="_blank" rel="noopener noreferrer" class="logo-item" aria-label="Binghatti">
+        <img src="assets/img/logos/binghatti.svg" alt="Binghatti" class="logo-svg">
+      </a>
+      <a href="https://www.select-group.ae" target="_blank" rel="noopener noreferrer" class="logo-item" aria-label="Select Group">
+        <img src="assets/img/logos/select-group.svg" alt="Select Group" class="logo-svg">
+      </a>
+      <a href="https://www.aldar.com" target="_blank" rel="noopener noreferrer" class="logo-item" aria-label="Aldar">
+        <img src="assets/img/logos/aldar.svg" alt="Aldar" class="logo-svg">
+      </a>
     </div>
   </div>
 
