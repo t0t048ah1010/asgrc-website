@@ -3,455 +3,2117 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ASGRC — Building Elegance</title>
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=cabinet-grotesk@500,700,800&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>ASGRC — Advanced Structural Glass & Façade Systems</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f8f6f0;
-      --card: #ffffff;
-      --text: #111827;
-      --muted: #6b7280;
-      --line: #ded8ce;
-      --blue: #12377f;
-      --red: #e51d49;
+      --bg-canvas: #08090a;
+      --bg-panel: #0f1011;
+      --bg-surface: #191a1b;
+      --bg-secondary: #28282c;
+      --bg-hover: #1e1f20;
+      --text-primary: #f7f8f8;
+      --text-secondary: #d0d6e0;
+      --text-tertiary: #8a8f98;
+      --text-quaternary: #62666d;
+      --accent-brand: #5e6ad2;
+      --accent-violet: #7170ff;
+      --accent-hover: #828fff;
+      --accent-green: #27a644;
+      --accent-emerald: #10b981;
+      --border-primary: rgba(255, 255, 255, 0.05);
+      --border-secondary: rgba(255, 255, 255, 0.08);
+      --border-tertiary: rgba(255, 255, 255, 0.03);
+      --radius-md: 6px;
+      --radius-card: 8px;
+      --radius-panel: 12px;
+      --radius-pill: 9999px;
+      --radius-circle: 50%;
+      --radius-sm: 4px;
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Satoshi', sans-serif; }
-    .container-custom { width: min(1200px, calc(100% - 2rem)); margin: 0 auto; }
-    @media(min-width: 768px) { .container-custom { width: min(1200px, calc(100% - 4rem)); } }
-    .display-font { font-family: 'Cabinet Grotesk', sans-serif; letter-spacing: -0.04em; }
-    .kicker { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
-    .line-border { border-color: var(--line); }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      font-feature-settings: "cv01", "ss03";
+      color: var(--text-secondary);
+      background: var(--bg-canvas);
+      line-height: 1.5;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* ========================================
+       NAVIGATION
+       ======================================== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(15, 16, 17, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-primary);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 510;
+      font-size: 15px;
+      letter-spacing: -0.165px;
+    }
+
+    .nav-logo {
+      height: 44px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-logo img {
+      height: 100%;
+      width: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 510;
+      letter-spacing: -0.13px;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover { color: var(--text-primary); }
+
+    .nav-cta { display: flex; align-items: center; gap: 12px; }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 510;
+      font-family: inherit;
+      font-feature-settings: "cv01", "ss03";
+      color: var(--text-secondary);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(36, 40, 44, 1);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-primary);
+      border-color: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.03);
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 510;
+      font-family: inherit;
+      font-feature-settings: "cv01", "ss03";
+      color: white;
+      background: var(--accent-brand);
+      border: none;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      white-space: nowrap;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(94, 106, 210, 0.35);
+    }
+
+    .btn-primary:hover::before {
+      opacity: 1;
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(94, 106, 210, 0.25);
+    }
+
+    .nav-mobile-toggle {
+      display: none;
+      width: 32px; height: 32px;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-secondary);
+    }
+
+    /* ========================================
+       HERO
+       ======================================== */
+        .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 128px 32px 96px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-text {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-visual-spacer {
+      width: 100%;
+      max-width: 960px;
+      margin: 48px auto 0;
+      height: 12px;
+    }
+
+    /* ========== HERO BACKGROUND SLIDESHOW (CSS only) ========== */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-bg-layer {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+    .hero-bg-layer:nth-child(1) {
+      background-image: url('assets/img/header-bg.jpg');
+      animation: heroSlide1 20s infinite;
+    }
+    .hero-bg-layer:nth-child(2) {
+      background-image: url('assets/img/urban.jpg');
+      animation: heroSlide2 20s infinite;
+    }
+    .hero-bg-layer:nth-child(3) {
+      background-image: url('assets/img/creek.jpg');
+      animation: heroSlide3 20s infinite;
+    }
+    .hero-bg-layer:nth-child(4) {
+      background-image: url('assets/img/ahad.jpg');
+      animation: heroSlide4 20s infinite;
+    }
+
+    @keyframes heroSlide1 {
+      0%, 25% { opacity: 1; }
+      25.01%, 100% { opacity: 0; }
+    }
+    @keyframes heroSlide2 {
+      0%, 24.99% { opacity: 0; }
+      25%, 50% { opacity: 1; }
+      50.01%, 100% { opacity: 0; }
+    }
+    @keyframes heroSlide3 {
+      0%, 49.99% { opacity: 0; }
+      50%, 75% { opacity: 1; }
+      75.01%, 100% { opacity: 0; }
+    }
+    @keyframes heroSlide4 {
+      0%, 74.99% { opacity: 0; }
+      75%, 100% { opacity: 1; }
+    }
+
+    /* Dark overlay for text readability */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(180deg,
+        rgba(8, 9, 10, 0.55) 0%,
+        rgba(8, 9, 10, 0.35) 40%,
+        rgba(8, 9, 10, 0.45) 100%
+      );
+      pointer-events: none;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 30%, rgba(94, 106, 210, 0.06) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: 510;
+      color: var(--text-secondary);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-primary);
+      border-radius: var(--radius-pill);
+      margin-bottom: 32px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow-dot {
+      width: 6px; height: 6px;
+      background: var(--accent-green);
+      border-radius: var(--radius-circle);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .hero h1 {
+      font-size: 72px;
+      font-weight: 510;
+      line-height: 1.00;
+      letter-spacing: -1.584px;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+      max-width: 800px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.60;
+      letter-spacing: -0.165px;
+      color: var(--text-tertiary);
+      max-width: 560px;
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-actions .btn-primary { padding: 12px 24px; font-size: 15px; }
+    .hero-actions .btn-ghost { padding: 12px 24px; font-size: 15px; }
+
     
-    /* Top Bar */
-    .top-bar { position: absolute; top: 0; left: 0; right: 0; z-index: 30; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(0,0,0,0.06); height: 38px; }
-    .top-bar-inner { height: 38px; display: flex; align-items: center; justify-content: space-between; font-weight: 800; font-size: 14px; }
-    .top-logo { text-decoration: none; color: var(--text); font-weight: 800; letter-spacing: -0.03em; }
-    .top-logo span { color: var(--red); }
+
+    .hero-visual-frame {
+      position: relative;
+      border: 1px solid var(--border-secondary);
+      border-radius: var(--radius-panel);
+      overflow: hidden;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-visual-img {
+      width: 100%;
+      display: block;
+      min-height: 320px;
+      object-fit: cover;
+    }
+
     
-    /* Hero */
-    .hero-section { position: relative; min-height: 100svh; overflow: hidden; background: #c2d7eb; display: flex; align-items: center; justify-content: center; text-align: center; }
-    .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.95); z-index: 1; }
-    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.25) 100%); z-index: 2; }
-    .hero-content { position: relative; z-index: 10; padding: 5rem 1rem 7rem; max-width: 900px; }
-    .hero-title { font-size: clamp(2.8rem, 6.8vw, 6rem); line-height: 0.95; text-transform: uppercase; font-weight: 800; color: #ffffff; text-shadow: 0 4px 20px rgba(0,0,0,0.3); }
-    .hero-title span { color: var(--red); }
-    .hero-sub { margin-top: 1.25rem; font-size: clamp(1.1rem, 2vw, 1.6rem); color: #f3f4f6; text-shadow: 0 2px 10px rgba(0,0,0,0.4); }
-    .hero-arrow { position: absolute; left: 50%; bottom: 2rem; transform: translateX(-50%); z-index: 10; width: 34px; height: 60px; border-radius: 999px; border: 1.5px solid rgba(255,255,255,0.9); display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none; font-size: 1.2rem; }
+
+    /* ========================================
+       HERO SLIDESHOW
+       ======================================== */
     
-    /* Overlay Menu */
-    .menu-screen { position: fixed; inset: 0; z-index: 60; background: rgba(248,246,240,0.98); backdrop-filter: blur(12px); opacity: 0; pointer-events: none; transition: opacity 0.25s ease; }
-    .menu-screen.open { opacity: 1; pointer-events: auto; }
-    .menu-layout { min-height: 100svh; display: grid; grid-template-columns: 1fr; align-items: center; padding: 4rem 0; }
-    @media(min-width: 960px) { .menu-layout { grid-template-columns: 1fr 1fr; } }
-    .brand-block .asgrc { font-size: clamp(3rem, 5vw, 5.5rem); font-weight: 800; line-height: 0.85; color: var(--blue); font-style: italic; }
-    .brand-block .tag { font-family: Georgia, serif; font-size: clamp(1.2rem, 1.8vw, 1.8rem); font-style: italic; font-weight: 700; color: var(--blue); margin-top: 0.5rem; }
-    .menu-links a { display: block; text-decoration: none; color: var(--text); font-family: 'Cabinet Grotesk', sans-serif; font-size: clamp(2.2rem, 4vw, 3.8rem); line-height: 1.1; margin-bottom: 0.75rem; transition: color 0.2s; }
-    .menu-links a:hover { color: var(--red); }
-    .close-btn { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: transparent; display: inline-flex; align-items: center; justify-content: center; font-size: 1.25rem; cursor: pointer; }
+
     
-    /* Cards & Components */
-    .card-panel { background: var(--card); border: 1px solid var(--line); border-radius: 1.5rem; overflow: hidden; }
-    .card-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
-    .project-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
-    .btn-dark { background: var(--text); color: #fff; padding: 0.75rem 1.75rem; border-radius: 999px; text-decoration: none; display: inline-flex; align-items: center; font-weight: 500; transition: opacity 0.2s; }
-    .btn-dark:hover { opacity: 0.9; }
-    .btn-light { border: 1px solid var(--line); color: var(--text); padding: 0.75rem 1.75rem; border-radius: 999px; text-decoration: none; display: inline-flex; align-items: center; }
-    .btn-light:hover { background: rgba(0,0,0,0.03); }
+
     
-    .field, .select, .textarea { width: 100%; padding: 0.85rem 1.25rem; border: 1px solid var(--line); border-radius: 999px; background: transparent; outline: none; font-family: inherit; }
-    .textarea { border-radius: 1.25rem; min-height: 140px; resize: vertical; }
-    .field:focus, .select:focus, .textarea:focus { border-color: var(--blue); }
+
+    /* ========================================
+       LOGO STRIP
+       ======================================== */
+    .logos {
+      padding: 80px 32px;
+      text-align: center;
+      border-top: 1px solid var(--border-tertiary);
+      border-bottom: 1px solid var(--border-tertiary);
+    }
+
+    .logos-label {
+      font-size: 12px;
+      font-weight: 510;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-quaternary);
+      margin-bottom: 32px;
+    }
+
+    .logos-strip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 64px;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .logo-item {
+      display: inline-block;
+      max-height: 40px;
+      opacity: 0.5;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      filter: brightness(0) invert(1);
+    }
+
+    .logo-item:hover {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    .logo-svg {
+      height: 40px;
+      width: auto;
+      display: block;
+    }
+
+    /* ========================================
+       SECTION SHARED
+       ======================================== */
+    .section {
+      padding: 128px 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .section-eyebrow {
+      font-size: 12px;
+      font-weight: 510;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-violet);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: 48px;
+      font-weight: 510;
+      line-height: 1.00;
+      letter-spacing: -1.056px;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.60;
+      letter-spacing: -0.165px;
+      color: var(--text-tertiary);
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* ========================================
+       CAPABILITIES SPLIT LAYOUT
+       ======================================== */
+    .capabilities-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .capabilities-left {
+      max-width: 600px;
+    }
+
+    .capabilities-left .section-header {
+      text-align: left;
+      margin-bottom: 48px;
+    }
+
+    .capabilities-left .section-eyebrow {
+      text-align: left;
+    }
+
+    .capabilities-left .bento {
+      max-width: 600px;
+    }
+
+    .capabilities-right {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .capabilities-visual {
+      width: 100%;
+      max-width: 500px;
+      border-radius: var(--radius-panel);
+      overflow: hidden;
+      border: 1px solid var(--border-secondary);
+    }
+
+    .capabilities-visual img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 1024px) {
+      .capabilities-split {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .capabilities-left .section-header {
+        text-align: center;
+      }
+      .capabilities-left .section-eyebrow {
+        text-align: center;
+      }
+      .capabilities-left .bento {
+        margin: 0 auto;
+      }
+      .capabilities-right {
+        order: -1;
+      }
+    }
+
+    /* ========================================
+       BENTO GRID
+       ======================================== */
+    .bento {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .bento-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-secondary);
+      border-radius: var(--radius-card);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bento-card:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.12);
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(94, 106, 210, 0.06);
+    }
+
+    .bento-card::after {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      background: radial-gradient(ellipse at 50% 0%, rgba(94, 106, 210, 0.08) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+
+    .bento-card:hover::after {
+      opacity: 1;
+    }
+
+    .bento-card.span-2 { grid-column: span 2; }
+    .bento-card.span-3 { grid-column: span 3; }
+    .bento-card.row-2 { grid-row: span 2; }
+
+    .bento-icon {
+      width: 40px; height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-primary);
+      border-radius: var(--radius-md);
+      margin-bottom: 24px;
+      color: var(--accent-violet);
+    }
+
+    .bento-icon svg { width: 20px; height: 20px; }
+
+    .bento-title {
+      font-size: 20px;
+      font-weight: 590;
+      line-height: 1.33;
+      letter-spacing: -0.24px;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .bento-desc {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.60;
+      letter-spacing: -0.165px;
+      color: var(--text-tertiary);
+      flex: 1;
+    }
+
+    .bento-visual {
+      margin-top: 24px;
+      padding: 16px;
+      background: var(--bg-panel);
+      border: 1px solid var(--border-primary);
+      border-radius: var(--radius-md);
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ========================================
+       HOW IT WORKS
+       ======================================== */
+    .split-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .split-visual {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-secondary);
+      border-radius: var(--radius-panel);
+      padding: 32px;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+    }
+
+    .split-content h2 {
+      font-size: 48px;
+      font-weight: 510;
+      line-height: 1.00;
+      letter-spacing: -1.056px;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+    }
+
+    .split-content p {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.60;
+      color: var(--text-tertiary);
+      margin-bottom: 32px;
+    }
+
+    .feature-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .feature-check {
+      flex-shrink: 0;
+      width: 20px; height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      border-radius: var(--radius-sm);
+      color: var(--accent-emerald);
+      margin-top: 2px;
+    }
+
+    .feature-check svg { width: 12px; height: 12px; }
+
+    .feature-item-text h4 {
+      font-size: 16px;
+      font-weight: 510;
+      line-height: 1.50;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .feature-item-text p {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.60;
+      color: var(--text-tertiary);
+      margin-bottom: 0;
+    }
+
+    /* ========================================
+       MATERIALS
+       ======================================== */
+    .materials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .material-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-secondary);
+      border-radius: var(--radius-card);
+      padding: 0;
+      transition: all 0.2s ease;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .material-card:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(94, 106, 210, 0.2);
+      box-shadow: 0 0 40px rgba(94, 106, 210, 0.05);
+    }
+
+    .material-card:hover .material-card-img {
+      transform: scale(1.05);
+    }
+
+    .material-card-img {
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .material-card:hover .material-tag {
+      background: rgba(113, 112, 255, 0.2);
+      border-color: rgba(113, 112, 255, 0.4);
+    }
+
+    .material-card:hover .material-spec-value {
+      color: var(--accent-brand);
+      transition: color 0.3s ease;
+    }
+
+    .material-card-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .material-card-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .material-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 510;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent-violet);
+      background: rgba(113, 112, 255, 0.1);
+      border: 1px solid rgba(113, 112, 255, 0.2);
+      border-radius: var(--radius-pill);
+      padding: 2px 8px;
+      margin-bottom: 16px;
+    }
+
+    .material-card h3 {
+      font-size: 20px;
+      font-weight: 590;
+      line-height: 1.33;
+      letter-spacing: -0.24px;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .material-card p {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.60;
+      color: var(--text-tertiary);
+    }
+
+    .material-specs {
+      display: flex;
+      gap: 32px;
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-primary);
+    }
+
+    .material-spec {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .material-spec-value {
+      font-size: 16px;
+      font-weight: 510;
+      color: var(--text-primary);
+    }
+
+    .material-spec-label {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-quaternary);
+    }
+
+    /* ========================================
+       STATS
+       ======================================== */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      padding: 80px 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+      border-top: 1px solid var(--border-tertiary);
+      border-bottom: 1px solid var(--border-tertiary);
+    }
+
+    .stat { text-align: center; }
+
+    .stat-number {
+      font-size: 48px;
+      font-weight: 510;
+      line-height: 1.00;
+      letter-spacing: -1.056px;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text-tertiary);
+    }
+
+    /* ========================================
+       CTA
+       ======================================== */
+    .cta {
+      text-align: center;
+      padding: 128px 32px;
+      position: relative;
+    }
+
+    .cta-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 50%, rgba(94, 106, 210, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-content { position: relative; z-index: 1; }
+
+    .cta h2 {
+      font-size: 48px;
+      font-weight: 510;
+      line-height: 1.00;
+      letter-spacing: -1.056px;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .cta p {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.60;
+      color: var(--text-tertiary);
+      max-width: 480px;
+      margin: 0 auto 40px;
+    }
+
+    .cta-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .cta-actions .btn-primary { padding: 12px 24px; font-size: 15px; }
+    .cta-actions .btn-ghost { padding: 12px 24px; font-size: 15px; }
+
+    /* ========================================
+       FOOTER
+       ======================================== */
+    .footer {
+      border-top: 1px solid var(--border-tertiary);
+      padding: 80px 32px 48px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr repeat(3, 1fr);
+      gap: 64px;
+    }
+
+    .footer-brand-desc {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.60;
+      color: var(--text-tertiary);
+      margin-top: 16px;
+      max-width: 280px;
+    }
+
+    .footer-col-title {
+      font-size: 13px;
+      font-weight: 510;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-quaternary);
+      margin-bottom: 24px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.15s ease;
+    }
+
+    .footer-links a:hover { color: var(--text-primary); }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 48px auto 0;
+      padding-top: 32px;
+      border-top: 1px solid var(--border-tertiary);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-copy { font-size: 13px; color: var(--text-quaternary); }
+
+    .footer-social { display: flex; gap: 16px; }
+
+    .footer-social a {
+      width: 32px; height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-primary);
+      border-radius: var(--radius-md);
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .footer-social a:hover {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text-primary);
+    }
+
+    .footer-social svg { width: 16px; height: 16px; }
+
+    /* ========================================
+       RESPONSIVE
+       ======================================== */
+    @media (max-width: 1024px) {
+      .hero h1 { font-size: 56px; letter-spacing: -1.12px; }
+      .section-title, .split-content h2, .cta h2 { font-size: 36px; letter-spacing: -0.72px; }
+      .stat-number { font-size: 36px; }
+      .bento { grid-template-columns: repeat(2, 1fr); }
+      .bento-card.span-3 { grid-column: span 2; }
+      .split-layout { gap: 48px; }
+      .footer-inner { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-mobile-toggle { display: flex; }
+      .hero { padding: 96px 24px 64px; min-height: auto; }
+      .hero h1 { font-size: 40px; letter-spacing: -0.8px; }
+      .hero-subtitle { font-size: 16px; }
+      .hero-actions { flex-direction: column; width: 100%; }
+      .hero-actions .btn-primary,
+      .hero-actions .btn-ghost { width: 100%; }
+      .section { padding: 80px 24px; }
+      .bento { grid-template-columns: 1fr; }
+      .bento-card.span-2, .bento-card.span-3 { grid-column: span 1; }
+      .split-layout { grid-template-columns: 1fr; }
+      .materials-grid { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+      .cta { padding: 80px 24px; }
+      .cta-actions { flex-direction: column; width: 100%; }
+      .cta-actions .btn-primary,
+      .cta-actions .btn-ghost { width: 100%; }
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 24px; align-items: flex-start; }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 32px; }
+      .section-title, .split-content h2, .cta h2 { font-size: 28px; }
+      .stat-number { font-size: 32px; }
+      .logos-strip { gap: 32px; }
+    }
+
+    /* ========================================
+       ANIMATIONS
+       ======================================== */
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fade-up { animation: fade-up 0.6s ease-out forwards; }
+    .delay-1 { animation-delay: 0.1s; opacity: 0; }
+    .delay-2 { animation-delay: 0.2s; opacity: 0; }
+    .delay-3 { animation-delay: 0.3s; opacity: 0; }
+    .delay-4 { animation-delay: 0.4s; opacity: 0; }
+    .delay-5 { animation-delay: 0.5s; opacity: 0; }
+
+    /* ========================================
+       CHAT WIDGET
+       ======================================== */
+    .chat-toggle {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--accent-brand);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(94, 106, 210, 0.4);
+      transition: all 0.2s ease;
+    }
+
+    .chat-toggle:hover {
+      background: var(--accent-hover);
+      transform: scale(1.05);
+      box-shadow: 0 6px 24px rgba(94, 106, 210, 0.5);
+    }
+
+    .chat-toggle svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+      transition: transform 0.2s ease;
+    }
+
+    .chat-toggle.active svg {
+      transform: rotate(90deg);
+    }
+
+    .chat-panel {
+      position: fixed;
+      bottom: 92px;
+      right: 24px;
+      z-index: 998;
+      width: 380px;
+      max-height: 520px;
+      background: var(--bg-panel);
+      border: 1px solid var(--border-secondary);
+      border-radius: var(--radius-panel);
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2), 0 8px 32px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(16px) scale(0.96);
+      transform-origin: bottom right;
+      pointer-events: none;
+      transition: all 0.25s ease;
+    }
+
+    .chat-panel.open {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: all;
+    }
+
+    .chat-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border-primary);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .chat-header-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-sm);
+      background: var(--accent-brand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .chat-header-logo svg {
+      width: 18px;
+      height: 18px;
+      fill: white;
+    }
+
+    .chat-header-text h4 {
+      font-size: 14px;
+      font-weight: 510;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+
+    .chat-header-text p {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      line-height: 1.4;
+    }
+
+    .chat-header-close {
+      margin-left: auto;
+      width: 28px;
+      height: 28px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-primary);
+      background: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-tertiary);
+      transition: all 0.15s ease;
+    }
+
+    .chat-header-close:hover {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-primary);
+    }
+
+    .chat-header-close svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .chat-body {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-height: 280px;
+    }
+
+    .chat-message {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    .chat-message-avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: var(--radius-sm);
+      background: var(--accent-brand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .chat-message-avatar svg {
+      width: 12px;
+      height: 12px;
+      fill: white;
+    }
+
+    .chat-message-bubble {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-primary);
+      border-radius: var(--radius-md);
+      border-top-left-radius: 2px;
+      padding: 12px 14px;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--text-secondary);
+    }
+
+    .chat-quick-replies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .chat-quick-reply {
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 510;
+      font-family: inherit;
+      color: var(--text-secondary);
+      background: rgba(94, 106, 210, 0.1);
+      border: 1px solid rgba(94, 106, 210, 0.2);
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .chat-quick-reply:hover {
+      background: rgba(94, 106, 210, 0.2);
+      color: var(--text-primary);
+      border-color: rgba(94, 106, 210, 0.4);
+    }
+
+    .chat-footer {
+      padding: 12px 16px;
+      border-top: 1px solid var(--border-primary);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .chat-footer-inner {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .chat-input {
+      flex: 1;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-family: inherit;
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-primary);
+      border-radius: var(--radius-md);
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+
+    .chat-input::placeholder {
+      color: var(--text-quaternary);
+    }
+
+    .chat-input:focus {
+      border-color: rgba(94, 106, 210, 0.4);
+    }
+
+    .chat-send {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-md);
+      border: none;
+      background: var(--accent-brand);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      transition: background 0.15s ease;
+      flex-shrink: 0;
+    }
+
+    .chat-send:hover {
+      background: var(--accent-hover);
+    }
+
+    .chat-send svg {
+      width: 16px;
+      height: 16px;
+      fill: white;
+    }
+
+    .chat-disclaimer {
+      font-size: 10px;
+      color: var(--text-quaternary);
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 480px) {
+      .chat-panel {
+        right: 8px;
+        left: 8px;
+        bottom: auto;
+        top: auto;
+        width: calc(100% - 16px);
+        max-height: 70vh;
+        bottom: 88px;
+      }
+      .chat-toggle {
+        bottom: 16px;
+        right: 16px;
+        width: 52px;
+        height: 52px;
+      }
+    }
+
+    /* ========================================
+       MICRO-ANIMATIONS
+       ======================================== */
+    .btn-primary {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s ease, height 0.6s ease;
+    }
+
+    .btn-primary:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 0 30px rgba(94, 106, 210, 0.3), 0 0 60px rgba(94, 106, 210, 0.1);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    .btn-ghost {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .btn-ghost::after {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: var(--radius-panel);
+      opacity: 0;
+      border: 1px solid transparent;
+      background: linear-gradient(135deg, rgba(94, 106, 210, 0.4), transparent, rgba(94, 106, 210, 0.2)) border-box;
+      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      transition: opacity 0.3s ease;
+    }
+
+    .btn-ghost:hover::after {
+      opacity: 1;
+    }
+
+    .btn-ghost:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 80%;
+      left: 10%;
+    }
+
+    .bento-card, .material-card, .feature-item, .stat-counter {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .bento-card:hover {
+      box-shadow: 0 0 40px rgba(94, 106, 210, 0.08), 0 8px 32px rgba(0, 0, 0, 0.3);
+      transform: translateY(-4px);
+    }
+
+    .bento-card:active {
+      transform: translateY(-2px) scale(0.99);
+    }
+
+    .stat-counter:hover {
+      border-color: rgba(94, 106, 210, 0.3);
+      transform: scale(1.02);
+      box-shadow: 0 0 30px rgba(94, 106, 210, 0.06);
+    }
+
+    .feature-item:hover {
+      background: rgba(255, 255, 255, 0.01);
+      border-color: rgba(94, 106, 210, 0.15);
+      padding-left: calc(var(--card-padding) + 8px);
+    }
+
+    .chat-toggle:hover {
+      animation: none;
+      transform: scale(1.1);
+    }
+
+    .chat-toggle:active {
+      transform: scale(0.95);
+    }
+
+    .scroll-top-btn:hover {
+      background: rgba(94, 106, 210, 0.3) !important;
+      transform: translateY(-2px);
+    }
+
+    /* Keyframe Animations */
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(94, 106, 210, 0.15); }
+      50% { box-shadow: 0 0 40px rgba(94, 106, 210, 0.3), 0 0 80px rgba(94, 106, 210, 0.1); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+
+    /* Loading Shimmer */
+    .shimmer-overlay {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shimmer-overlay::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+      background-size: 200% 100%;
+      animation: shimmer 3s infinite;
+      pointer-events: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
+
 </head>
 <body>
 
-  <!-- Top Navigation Bar -->
-  <header class="top-bar">
-    <div class="container-custom top-bar-inner">
-      <a href="index.html" class="top-logo display-font">ASGRC <span>BUILDING ELEGANCE</span></a>
-      <button id="menuOpen" class="text-sm uppercase tracking-wider font-bold flex items-center gap-2 cursor-pointer" aria-label="Open menu">
-        <span>MENU</span>
-        <svg width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2"><line y1="1" x2="18" y2="1"></line><line y1="6" x2="18" y2="6"></line><line y1="11" x2="18" y2="11"></line></svg>
+  <!-- ============================================
+       NAVIGATION
+       ============================================ -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">
+        <div class="nav-logo">
+          <img src="assets/img/asgrc-logo.png" alt="ASGRC">
+        </div>
+        ASGRC
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#capabilities">Capabilities</a></li>
+        <li><a href="#materials">Materials</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="mailto:info@asgrc.co" class="btn-ghost">Contact</a>
+        <a href="#capabilities" class="btn-primary">Explore</a>
+      </div>
+
+      <button class="nav-mobile-toggle" aria-label="Toggle menu">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
       </button>
     </div>
-  </header>
+  </nav>
 
-  <!-- Fullscreen Hero Intro -->
-  <section class="hero-section">
-    <img src="https://asgrc.co/assets/img/creek.jpg" alt="ASGRC Creek Edge Tower GFRC Façade" class="hero-bg">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1 class="hero-title display-font">We Build <span>Smart</span> Solutions</h1>
-      <p class="hero-sub">Advanced materials. Intelligent processes. Exceptional outcomes.</p>
+  <!-- ============================================
+       HERO
+       ============================================ -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-bg-layer"></div>
+      <div class="hero-bg-layer"></div>
+      <div class="hero-bg-layer"></div>
+      <div class="hero-bg-layer"></div>
     </div>
-    <a href="#what-we-do" class="hero-arrow" aria-label="Scroll to What We Do">↓</a>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-text">
+      <div class="hero-eyebrow animate-fade-up delay-1">
+        <span class="hero-eyebrow-dot"></span>
+        Design. Manufacture. Deliver.
+      </div>
+
+      <h1 class="animate-fade-up delay-2">
+        Smart façades.<br>Smart solutions.
+      </h1>
+
+      <p class="hero-subtitle animate-fade-up delay-3">
+        Advanced Structural Glass &amp; Façade Systems — from digital concept to installed reality. We design, engineer, and manufacture high-performance building envelopes for the world's most ambitious projects.
+      </p>
+
+      <div class="hero-actions animate-fade-up delay-4">
+        <a href="#materials" class="btn-primary">Explore materials</a>
+        <a href="#projects" class="btn-ghost">View projects</a>
+      </div>
+    </div>
+
+    <div class="hero-visual-spacer"></div>
   </section>
 
-  <!-- Fullscreen Modal Menu -->
-  <div id="menuScreen" class="menu-screen" aria-hidden="true">
-    <div class="container-custom menu-layout">
-      <div class="brand-block">
-        <div class="asgrc">ASGRC</div>
-        <div class="tag">Building Elegance</div>
-        <p class="mt-4 text-gray-500 max-w-sm text-sm">Engineered GRC, GFRG, GFRP and UHPC solutions for façades, interiors, and architectural landmarks across the UAE.</p>
-      </div>
-      <div class="menu-links md:pl-12">
-        <div class="flex justify-end mb-6">
-          <button id="menuClose" class="close-btn" aria-label="Close menu">✕</button>
-        </div>
-        <nav>
-          <a href="what-we-do.html">Design</a>
-          <a href="how-we-do-it.html">Manufacture</a>
-          <a href="construct.html">Construct</a>
-          <a href="portfolio.html">Portfolio</a>
-          <a href="materials.html">Materials</a>
-          <a href="about.html">About ASGRC</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-      </div>
+  <!-- ============================================
+       CLIENTS / LOGOS
+       ============================================ -->
+  <div class="logos">
+    <p class="logos-label">Trusted by leading developers</p>
+    <div class="logos-strip">
+      <a href="https://www.emaar.com/en" target="_blank" rel="noopener noreferrer" class="logo-item" aria-label="Emaar">
+        <img src="assets/img/logos/emaar.svg" alt="Emaar" class="logo-svg">
+      </a>
+      <a href="https://www.daralarkan.com/en" target="_blank" rel="noopener noreferrer" class="logo-item" aria-label="Dar Al Arkan">
+        <img src="assets/img/logos/dar-alarkan.svg" alt="Dar Al Arkan" class="logo-svg">
+      </a>
+      <a href="https://www.dubaiholding.com/en" target="_blank" rel="noopener noreferrer" class="logo-item" aria-label="Dubai Holding">
+        <img src="assets/img/logos/dubai-holding.svg" alt="Dubai Holding" class="logo-svg">
+      </a>
+      <a href="https://www.binghatti.com/" target="_blank" rel="noopener noreferrer" class="logo-item" aria-label="Binghatti">
+        <img src="assets/img/logos/binghatti.svg" alt="Binghatti" class="logo-svg">
+      </a>
+      <a href="https://www.select-group.ae" target="_blank" rel="noopener noreferrer" class="logo-item" aria-label="Select Group">
+        <img src="assets/img/logos/select-group.svg" alt="Select Group" class="logo-svg">
+      </a>
+      <a href="https://www.aldar.com" target="_blank" rel="noopener noreferrer" class="logo-item" aria-label="Aldar">
+        <img src="assets/img/logos/aldar.svg" alt="Aldar" class="logo-svg">
+      </a>
     </div>
   </div>
 
-  <main>
-    <!-- What We Do -->
-    <section id="what-we-do" class="py-20 md:py-32 border-t line-border">
-      <div class="container-custom">
-        <div class="grid gap-10 lg:grid-cols-[0.6fr_1.4fr] items-start">
-          <div>
-            <p class="kicker mb-3">What We Do</p>
-            <h2 class="display-font text-4xl sm:text-5xl font-bold leading-tight">Cutting-edge materials for cutting-edge designs.</h2>
-            <p class="mt-4 text-gray-500 text-sm">A vertically integrated façade and composite engineering model.</p>
+  <!-- ============================================
+       BENTO CAPABILITIES
+       ============================================ -->
+  <section class="section capabilities-split" id="capabilities">
+    <div class="capabilities-left">
+      <div class="section-header">
+        <p class="section-eyebrow">Capabilities</p>
+        <h2 class="section-title">Design. Manufacture.<br>Deliver.</h2>
+        <p class="section-subtitle">End-to-end façades, from digital concept through CNC-milled production to site installation and digital close-out.</p>
+      </div>
+
+      <div class="bento">
+        <!-- Card 1: Wide — BIM & Design -->
+        <div class="bento-card span-2">
+          <div class="bento-icon">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 17V7l7-5 7 5v10a1 1 0 01-1 1H4a1 1 0 01-1-1z"/>
+              <path d="M8 17v-5h4v5"/>
+            </svg>
           </div>
-          <div class="lg:border-l line-border lg:pl-10">
-            <p class="text-gray-600 text-lg leading-relaxed">
-              We bring ambitious architectural visions to life through a vertically integrated approach—designing, manufacturing, and constructing with cutting-edge materials and processes. Our work centers on GRC, UHPC, GFRP and GFRG, advanced cementitious technologies that enable complex forms, thin profiles, and exceptional durability.
-            </p>
-            <div class="mt-6">
-              <a href="materials.html" class="text-blue-900 font-semibold underline underline-offset-4">Explore Our Materials &rarr;</a>
-            </div>
-            <div class="grid sm:grid-cols-2 gap-6 mt-12">
-              <figure class="card-panel">
-                <img src="https://asgrc.co/assets/img/creek.jpg" alt="GFRC Façade Panels" class="card-img">
-                <figcaption class="p-4 text-xs tracking-wider uppercase font-medium text-gray-500">GFRC Façade Panels with Custom Finish</figcaption>
-              </figure>
-              <figure class="card-panel">
-                <img src="https://asgrc.co/assets/img/mosque.jpg" alt="Architectural GRC Details" class="card-img">
-                <figcaption class="p-4 text-xs tracking-wider uppercase font-medium text-gray-500">Bespoke Architectural Detailing</figcaption>
-              </figure>
-            </div>
+          <h3 class="bento-title">BIM &amp; Design engineering</h3>
+          <p class="bento-desc">Parametric façade modelling in Rhino and Revit. Full BIM coordination with structural, MEP, and architectural teams. Shop drawings, fixings calculations, and wind-load analysis at delivery.</p>
+          <div class="bento-visual" style="overflow:hidden;padding:0;background:transparent;">
+            <img src="assets/img/urban.jpg" alt="Urban Oasis Tower" style="width:100%;height:100%;min-height:160px;object-fit:cover;display:block;">
           </div>
         </div>
-      </div>
-    </section>
+        </div>
 
-    <!-- How We Do It -->
-    <section id="how-we-do-it" class="py-20 md:py-32 border-t line-border bg-white">
-      <div class="container-custom">
-        <div class="grid gap-10 lg:grid-cols-[0.6fr_1.4fr] items-start">
-          <div>
-            <p class="kicker mb-3">How We Do It</p>
-            <h2 class="display-font text-4xl sm:text-5xl font-bold leading-tight">Revolutionary process to execute ambitious projects.</h2>
-            <p class="mt-4 text-gray-500 text-sm">Turnkey model: Design &rarr; Manufacture &rarr; Construct.</p>
+        <!-- Card 2: Tall — Manufacturing -->
+        <div class="bento-card row-2">
+          <div class="bento-icon">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="8" width="14" height="10" rx="2"/>
+              <path d="M7 8V5a3 3 0 016 0v3"/>
+              <circle cx="10" cy="13" r="2"/>
+            </svg>
           </div>
-          <div class="lg:border-l line-border lg:pl-10">
-            <p class="text-gray-600 text-lg leading-relaxed">
-              Our integrated Design–Manufacture–Construct model streamlines complexity to deliver elegant, cost-effective outcomes. We combine advanced 3D engineering, high-precision DIC manufacturing, and efficient on-site delivery into a single turnkey solution.
-            </p>
-            <div class="mt-6">
-              <a href="how-we-do-it.html" class="text-blue-900 font-semibold underline underline-offset-4">Discover Our Full Process &rarr;</a>
+          <h3 class="bento-title">CNC manufacturing</h3>
+          <p class="bento-desc">Precision-cut GFRC, UHPC, GRP, and GRG panels. Digital close-out with full quality records. Our production capacity handles 1,000+ m² per day with tight tolerances.</p>
+          <div class="bento-visual" style="flex-direction: column; gap: 12px; align-items: stretch;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <div style="font-size: 10px; color: var(--text-quaternary); font-family: 'JetBrains Mono', monospace; width: 48px;">GFRC</div>
+              <div style="height: 4px; flex: 1; border-radius: 2px; background: linear-gradient(90deg, rgba(94,106,210,0.5) 72%, rgba(255,255,255,0.06) 28%);"></div>
+              <div style="font-size: 10px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">72%</div>
             </div>
-            <div class="grid md:grid-cols-3 gap-6 mt-12">
-              <a href="what-we-do.html" class="card-panel group block hover:shadow-lg transition">
-                <img src="https://asgrc.co/assets/img/ahad.jpg" alt="Design Stage" class="card-img">
-                <div class="p-5">
-                  <p class="kicker">01 / Design</p>
-                  <h3 class="display-font text-xl font-bold mt-1 group-hover:text-red-600">Design Assist & BIM &rarr;</h3>
-                </div>
-              </a>
-              <a href="how-we-do-it.html" class="card-panel group block hover:shadow-lg transition">
-                <img src="https://asgrc.co/assets/img/urban.jpg" alt="Manufacture Stage" class="card-img">
-                <div class="p-5">
-                  <p class="kicker">02 / Manufacture</p>
-                  <h3 class="display-font text-xl font-bold mt-1 group-hover:text-red-600">DIC Factory & CNC &rarr;</h3>
-                </div>
-              </a>
-              <a href="construct.html" class="card-panel group block hover:shadow-lg transition">
-                <img src="https://asgrc.co/creek.jpg" alt="Construct Stage" class="card-img">
-                <div class="p-5">
-                  <p class="kicker">03 / Construct</p>
-                  <h3 class="display-font text-xl font-bold mt-1 group-hover:text-red-600">Site Installation &rarr;</h3>
-                </div>
-              </a>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <div style="font-size: 10px; color: var(--text-quaternary); font-family: 'JetBrains Mono', monospace; width: 48px;">UHPC</div>
+              <div style="height: 4px; flex: 1; border-radius: 2px; background: linear-gradient(90deg, rgba(94,106,210,0.4) 55%, rgba(255,255,255,0.06) 45%);"></div>
+              <div style="font-size: 10px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">55%</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <div style="font-size: 10px; color: var(--text-quaternary); font-family: 'JetBrains Mono', monospace; width: 48px;">GRP</div>
+              <div style="height: 4px; flex: 1; border-radius: 2px; background: linear-gradient(90deg, rgba(94,106,210,0.3) 38%, rgba(255,255,255,0.06) 62%);"></div>
+              <div style="font-size: 10px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">38%</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <div style="font-size: 10px; color: var(--text-quaternary); font-family: 'JetBrains Mono', monospace; width: 48px;">GRG</div>
+              <div style="height: 4px; flex: 1; border-radius: 2px; background: linear-gradient(90deg, rgba(94,106,210,0.2) 25%, rgba(255,255,255,0.06) 75%);"></div>
+              <div style="font-size: 10px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">25%</div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Who We Do It For / Portfolio -->
-    <section id="portfolio" class="py-20 md:py-32 border-t line-border">
-      <div class="container-custom">
-        <div class="grid gap-10 lg:grid-cols-[0.6fr_1.4fr] items-start mb-12">
-          <div>
-            <p class="kicker mb-3">Who We Do It For</p>
-            <h2 class="display-font text-4xl sm:text-5xl font-bold leading-tight">World-class partners to deliver world-class designs.</h2>
+        <!-- Card 3: Installation -->
+        <div class="bento-card">
+          <div class="bento-icon">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 2v16M2 10h16"/>
+            </svg>
           </div>
-          <div class="lg:border-l line-border lg:pl-10">
-            <p class="text-gray-600 text-lg leading-relaxed">
-              We work with visionary architects, contractors, and developers across the built environment—partners including Emaar Properties, Dar Al Arkan, Select Group, Dubai Holding, and Mercedes-Benz / Gargash Motors.
-            </p>
-          </div>
+          <h3 class="bento-title">Site installation</h3>
+          <p class="bento-desc">Full erection, fixings, and weatherproofing by our trained crews. Safety-compliant, programme-aligned delivery on site.</p>
         </div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <figure class="card-panel">
-            <img src="https://asgrc.co/assets/img/creek.jpg" alt="Creek Edge 1 & 2" class="project-img">
-            <figcaption class="p-4">
-              <h3 class="font-bold text-lg">Creek Edge 1 & 2</h3>
-              <p class="text-xs text-gray-500 mt-1">Client: Emaar Properties PJSC</p>
-              <p class="text-xs text-gray-400 mt-0.5">280,000 m² GFRC Façade & Podium</p>
-            </figcaption>
-          </figure>
-          <figure class="card-panel">
-            <img src="https://asgrc.co/assets/img/urban.jpg" alt="Urban Oasis Tower" class="project-img">
-            <figcaption class="p-4">
-              <h3 class="font-bold text-lg">Urban Oasis Tower</h3>
-              <p class="text-xs text-gray-500 mt-1">Client: Dar Al Arkan Real Estate</p>
-              <p class="text-xs text-gray-400 mt-0.5">Missoni-inspired GFRC Cladding</p>
-            </figcaption>
-          </figure>
-          <figure class="card-panel">
-            <img src="https://asgrc.co/assets/img/ahad.jpg" alt="Ahad Residences" class="project-img">
-            <figcaption class="p-4">
-              <h3 class="font-bold text-lg">Ahad Residences</h3>
-              <p class="text-xs text-gray-500 mt-1">Client: Ahad Development</p>
-              <p class="text-xs text-gray-400 mt-0.5">13,000 m² Engineered Cladding</p>
-            </figcaption>
-          </figure>
-          <figure class="card-panel">
-            <img src="https://asgrc.co/assets/img/mosque.jpg" alt="Mercedes Flagship Center" class="project-img">
-            <figcaption class="p-4">
-              <h3 class="font-bold text-lg">Mercedes Flagship Center</h3>
-              <p class="text-xs text-gray-500 mt-1">Client: Gargash Motors / Mercedes</p>
-              <p class="text-xs text-gray-400 mt-0.5">Special Architectural Shell</p>
-            </figcaption>
-          </figure>
-        </div>
-        <div class="mt-10 text-center">
-          <a href="portfolio.html" class="btn-dark">View Complete Project Portfolio &rarr;</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why We Do It / Materials -->
-    <section id="why-we-do-it" class="py-20 md:py-32 border-t line-border bg-white">
-      <div class="container-custom">
-        <div class="grid gap-10 lg:grid-cols-[0.6fr_1.4fr] items-start mb-12">
-          <div>
-            <p class="kicker mb-3">Why We Do It</p>
-            <h2 class="display-font text-4xl sm:text-5xl font-bold leading-tight">Superior solutions to drive superior outcomes.</h2>
+        <!-- Card 4 -->
+        <div class="bento-card">
+          <div class="bento-icon">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="10" cy="10" r="7"/>
+              <path d="M10 7v3l2 2"/>
+            </svg>
           </div>
-          <div class="lg:border-l line-border lg:pl-10">
-            <p class="text-gray-600 text-lg leading-relaxed">
-              Our façade systems leverage advanced cementitious materials—GRC and UHPC—engineered for strength, durability, and design flexibility. Each component is optimized for structural efficiency, weather resistance, and long-term performance through controlled DIC manufacturing.
-            </p>
-          </div>
+          <h3 class="bento-title">Digital close-out</h3>
+          <p class="bento-desc">As-built documentation, QA records, and digital handover — everything the client needs for commissioning.</p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="p-8 border line-border rounded-2xl bg-[#faf8f4]">
-            <p class="kicker">GFRC System</p>
-            <h3 class="display-font text-3xl font-bold mt-2">Glass Fiber Reinforced Concrete</h3>
-            <p class="mt-4 text-gray-600 text-sm leading-relaxed">
-              Thin concrete shell of cement, silica sand, and alkali-resistant glass fibers supported by a secondary steel frame for large-format architectural envelopes.
-            </p>
-            <ul class="mt-6 space-y-2.5 text-sm text-gray-600">
-              <li class="flex items-center gap-2"><span class="text-green-600 font-bold">&check;</span> Enables complex sculptural geometry with thin sections (18–20 mm)</li>
-              <li class="flex items-center gap-2"><span class="text-green-600 font-bold">&check;</span> Lightweight yet high-strength, ideal for high-rise envelopes</li>
-              <li class="flex items-center gap-2"><span class="text-green-600 font-bold">&check;</span> Extreme durability — resists UAE heat, UV, and marine humidity</li>
-            </ul>
-          </div>
-          <div class="p-8 border line-border rounded-2xl bg-[#f5f3ed]">
-            <p class="kicker">UHPC System</p>
-            <h3 class="display-font text-3xl font-bold mt-2">Ultra High Performance Concrete</h3>
-            <p class="mt-4 text-gray-600 text-sm leading-relaxed">
-              Thin-walled cladding made of high-performance cement, fine aggregates, and specialized fibers with exceptional compressive and flexural strength.
-            </p>
-            <ul class="mt-6 space-y-2.5 text-sm text-gray-600">
-              <li class="flex items-center gap-2"><span class="text-green-600 font-bold">&check;</span> Ultra-thin, high-strength panels (12–15 mm) with structural rigidity</li>
-              <li class="flex items-center gap-2"><span class="text-green-600 font-bold">&check;</span> Dense material matrix for ultra-smooth surface and tight tolerances</li>
-              <li class="flex items-center gap-2"><span class="text-green-600 font-bold">&check;</span> Superior resistance to chloride penetration, abrasion, and weathering</li>
-            </ul>
-          </div>
-        </div>
-        <div class="mt-10 text-center">
-          <a href="materials.html" class="btn-light">Compare All Material Technologies &rarr;</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 md:py-32 border-t line-border">
-      <div class="container-custom">
-        <div class="grid gap-10 lg:grid-cols-[0.6fr_1.4fr] items-start">
-          <div>
-            <p class="kicker mb-3">About ASGRC</p>
-            <h2 class="display-font text-4xl sm:text-5xl font-bold leading-tight">Building Elegance since 2003.</h2>
-          </div>
-          <div class="lg:border-l line-border lg:pl-10">
-            <p class="text-gray-700 text-lg leading-relaxed">
-              With over two decades of expertise in crafting custom glass fibre-reinforced products, ASGRC operates from a cutting-edge manufacturing facility in Dubai Industrial City (DIC), noted as the largest in the UAE. From an initial capacity of 100 m²/day in 2003, our production now exceeds 1,000 m²/day.
-            </p>
-            <div class="grid sm:grid-cols-3 gap-6 mt-10">
-              <div class="p-5 bg-white border line-border rounded-xl">
-                <div class="display-font text-3xl font-bold text-blue-900">20+</div>
-                <div class="text-xs uppercase tracking-wider text-gray-500 mt-1">Years Experience</div>
-              </div>
-              <div class="p-5 bg-white border line-border rounded-xl">
-                <div class="display-font text-3xl font-bold text-blue-900">1000+ m²</div>
-                <div class="text-xs uppercase tracking-wider text-gray-500 mt-1">Daily Capacity</div>
-              </div>
-              <div class="p-5 bg-white border line-border rounded-xl">
-                <div class="display-font text-3xl font-bold text-blue-900">GRCA & ISO</div>
-                <div class="text-xs uppercase tracking-wider text-gray-500 mt-1">Dual Certified</div>
+        <!-- Card 5: Wide — Projects -->
+        <div class="bento-card span-2" id="projects" style="padding:0;overflow:hidden;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;height:100%;min-height:320px;">
+            <div style="position:relative;overflow:hidden;">
+              <img src="assets/img/creek.jpg" alt="The Creek Edge" style="width:100%;height:100%;min-height:320px;object-fit:cover;display:block;position:absolute;inset:0;">
+              <div style="position:absolute;inset:0;background:linear-gradient(180deg, transparent 40%, rgba(8,9,10,0.8) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;">
+                <div style="font-size:18px;font-weight:590;color:#f7f8f8;line-height:1.33;letter-spacing:-0.24px;margin-bottom:4px;">The Creek Edge</div>
+                <div style="font-size:13px;color:#8a8f98;line-height:1.5;">Waterfront residential · GFRC cladding</div>
               </div>
             </div>
-            <div class="mt-8">
-              <a href="about.html" class="btn-light">Read Our Full Story &rarr;</a>
+            <div style="position:relative;overflow:hidden;">
+              <img src="assets/img/ahad.jpg" alt="Al Hadaf Residences" style="width:100%;height:100%;min-height:320px;object-fit:cover;display:block;position:absolute;inset:0;">
+              <div style="position:absolute;inset:0;background:linear-gradient(180deg, transparent 40%, rgba(8,9,10,0.8) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;">
+                <div style="font-size:18px;font-weight:590;color:#f7f8f8;line-height:1.33;letter-spacing:-0.24px;margin-bottom:4px;">Al Hadaf Residences</div>
+                <div style="font-size:13px;color:#8a8f98;line-height:1.5;">Luxury villas · GRP ornament</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- Contact CTA Section -->
-    <section id="contact" class="py-20 md:py-32 border-t line-border bg-[#faf9f6]">
-      <div class="container-custom">
-        <div class="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] items-start">
-          <div>
-            <p class="kicker mb-3">Ready to Build Smarter?</p>
-            <h2 class="display-font text-4xl sm:text-5xl font-bold leading-tight">Connect with our team to elevate your next project.</h2>
-            <p class="mt-6 text-gray-600 leading-relaxed">
-              Whether you need early design assistance, BIM engineering, sample finishes, or a turnkey façade package, our technical team is ready to collaborate.
-            </p>
-            <div class="mt-8 space-y-3 text-sm text-gray-700">
-              <div><strong>Phone:</strong> +971 4 320 1288 / +971 4 320 1299</div>
-              <div><strong>Email:</strong> info@asgrc.ae / info@asgrc.co</div>
-              <div><strong>Headquarters:</strong> Saih Suhaib 04, Plot 533-193, Dubai Industrial City (DIC), UAE</div>
+    <div class="capabilities-right">
+      <!-- Visual image placeholder -->
+      <div class="capabilities-visual" style="padding:0;border-radius:var(--radius-panel);overflow:hidden;">
+        <img src="assets/img/grc-projects-banner.jpg" alt="ASGRC Projects" style="width:100%;height:auto;display:block;">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       HOW IT WORKS
+       ============================================ -->
+  <section class="section" id="about">
+    <div class="split-layout">
+      <div class="split-visual" style="padding:0;border-radius:var(--radius-panel);overflow:hidden;">
+        <img src="assets/img/grc-projects-banner.jpg" alt="ASGRC Projects" style="width:100%;height:auto;display:block;">
+      </div>
+
+      <div class="split-content">
+        <h2>From concept<br>to installed reality</h2>
+        <p>Every project follows the same proven pipeline — digital precision at every stage, physical excellence at installation.</p>
+
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-check">
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 6l3 3 5-6"/>
+              </svg>
+            </div>
+            <div class="feature-item-text">
+              <h4>BIM / Rhino / Revit modelling</h4>
+              <p>Full parametric design, structural analysis, and multi-discipline coordination.</p>
             </div>
           </div>
-
-          <form class="card-panel p-8 bg-white" onsubmit="event.preventDefault(); alert('Inquiry sent! Our technical engineering team will review your brief.'); this.reset();">
-            <h3 class="display-font text-2xl font-bold mb-6">Request Project Consultation</h3>
-            <div class="grid gap-4 sm:grid-cols-2">
-              <input class="field" type="text" placeholder="Full name *" required>
-              <input class="field" type="text" placeholder="Company / Studio *" required>
-              <input class="field" type="email" placeholder="Email address *" required>
-              <input class="field" type="tel" placeholder="Phone number">
-              <select class="select sm:col-span-2" required>
-                <option value="">Select Material System *</option>
-                <option>GFRC Façade Systems</option>
-                <option>UHPC Ultra-Thin Cladding</option>
-                <option>GFRP Curved Mouldings</option>
-                <option>GFRG Luxury Interior Systems</option>
-              </select>
-              <textarea class="textarea sm:col-span-2" placeholder="Brief description of your project requirements, scope, and timeline..." required></textarea>
-              <button type="submit" class="btn-dark sm:col-span-2 justify-center py-3 text-base">Submit Project Brief</button>
+          <div class="feature-item">
+            <div class="feature-check">
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 6l3 3 5-6"/>
+              </svg>
             </div>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Complete Standard Footer -->
-  <footer class="border-t line-border bg-white pt-16 pb-8">
-    <div class="container-custom">
-      <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-5 pb-12 border-b line-border">
-        <div class="lg:col-span-2">
-          <div class="brand-block">
-            <div class="asgrc text-3xl">ASGRC</div>
-            <div class="tag text-sm">Building Elegance</div>
+            <div class="feature-item-text">
+              <h4>CNC-milled moulds &amp; production</h4>
+              <p>Precision manufacturing in GFRC, UHPC, GRP, GRG with full QA records.</p>
+            </div>
           </div>
-          <p class="mt-4 text-gray-500 text-sm max-w-sm leading-relaxed">
-            Pioneering glass fiber reinforced concrete, composites, and high-performance cementitious systems across the UAE and Middle East since 2003.
-          </p>
-        </div>
-        <div>
-          <p class="kicker mb-4">Solutions</p>
-          <ul class="space-y-2.5 text-sm">
-            <li><a href="what-we-do.html" class="text-gray-600 hover:text-blue-900">Design Assist & BIM</a></li>
-            <li><a href="how-we-do-it.html" class="text-gray-600 hover:text-blue-900">DIC Manufacturing</a></li>
-            <li><a href="construct.html" class="text-gray-600 hover:text-blue-900">Site Installation</a></li>
-            <li><a href="materials.html" class="text-gray-600 hover:text-blue-900">GFRC & UHPC Materials</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="kicker mb-4">Company</p>
-          <ul class="space-y-2.5 text-sm">
-            <li><a href="about.html" class="text-gray-600 hover:text-blue-900">About ASGRC</a></li>
-            <li><a href="portfolio.html" class="text-gray-600 hover:text-blue-900">Project Portfolio</a></li>
-            <li><a href="how-we-do-it.html" class="text-gray-600 hover:text-blue-900">Process & Quality</a></li>
-            <li><a href="contact.html" class="text-gray-600 hover:text-blue-900">Contact Us</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="kicker mb-4">Connect</p>
-          <ul class="space-y-2.5 text-sm">
-            <li><a href="https://asgrc.co/" target="_blank" class="text-gray-600 hover:text-blue-900">Official Website</a></li>
-            <li><a href="mailto:info@asgrc.ae" class="text-gray-600 hover:text-blue-900">info@asgrc.ae</a></li>
-            <li><a href="tel:+97143201288" class="text-gray-600 hover:text-blue-900">+971 4 320 1288</a></li>
-            <li class="text-gray-400 text-xs mt-2">Dubai Industrial City, UAE</li>
-          </ul>
+          <div class="feature-item">
+            <div class="feature-check">
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 6l3 3 5-6"/>
+              </svg>
+            </div>
+            <div class="feature-item-text">
+              <h4>Site erection &amp; digital close-out</h4>
+              <p>Trained installation crews, weatherproofing, and as-built handover documentation.</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-4">
-        <div>&copy; 2026 Al Shafar GRC LLC (ASGRC). All rights reserved.</div>
-        <div>Certified for excellence: ISO 9001 | ISO 14001 | ISO 45001 | GRCA Approved</div>
-        <div class="flex gap-4">
-          <a href="#" class="hover:underline">Privacy Policy</a>
-          <a href="#" class="hover:underline">Terms of Service</a>
+    </div>
+  </section>
+
+  <!-- ============================================
+       MATERIALS
+       ============================================ -->
+  <section class="section" id="materials">
+    <div class="section-header">
+      <p class="section-eyebrow">Materials</p>
+      <h2 class="section-title">Engineered systems.<br>Limitless forms.</h2>
+      <p class="section-subtitle">Four core material systems, each engineered for performance, aesthetics, and durability.</p>
+    </div>
+
+    <div class="materials-grid">
+      <div class="material-card">
+        <span class="material-tag">Core material</span>
+        <h3>GFRC</h3>
+        <p>Glass-fibre reinforced concrete. Lightweight, high-strength panels for cladding, cornices, and ornamental elements. Ideal for complex geometries and curved façades.</p>
+        <div class="material-specs">
+          <div class="material-spec">
+            <span class="material-spec-value">6–12 mm</span>
+            <span class="material-spec-label">Panel thickness</span>
+          </div>
+          <div class="material-spec">
+            <span class="material-spec-value">45–55 MPa</span>
+            <span class="material-spec-label">Compressive strength</span>
+          </div>
         </div>
+      </div>
+
+      <div class="material-card">
+        <img src="assets/img/creek.jpg" alt="UHPC high-rise cladding" class="material-card-img">
+        <div class="material-card-body">
+          <span class="material-tag">Advanced</span>
+          <h3>UHPC</h3>
+          <p>Ultra-high-performance concrete. Exceptional durability and minimal section depth. Used for high-rise cladding, architectural screens, and precision-cut façades.</p>
+          <div class="material-specs">
+            <div class="material-spec">
+              <span class="material-spec-value">8–20 mm</span>
+              <span class="material-spec-label">Panel thickness</span>
+            </div>
+            <div class="material-spec">
+              <span class="material-spec-value">150+ MPa</span>
+              <span class="material-spec-label">Compressive strength</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="material-card">
+        <img src="assets/img/urban.jpg" alt="GRP sculptural façade" class="material-card-img">
+        <div class="material-card-body">
+          <span class="material-tag">Lightweight</span>
+          <h3>GRP</h3>
+          <p>Glass-reinforced plastic. Formable into complex organic shapes. Perfect for sculptural façades, canopies, and decorative screens with weather-resistant finishes.</p>
+          <div class="material-specs">
+            <div class="material-spec">
+              <span class="material-spec-value">3–8 mm</span>
+              <span class="material-spec-label">Panel thickness</span>
+            </div>
+            <div class="material-spec">
+              <span class="material-spec-value">Low weight</span>
+              <span class="material-spec-label">Specific gravity</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="material-card">
+        <img src="assets/img/mosque.jpg" alt="GRG interior ornament" class="material-card-img">
+        <div class="material-card-body">
+          <span class="material-tag">Interior</span>
+          <h3>GRG</h3>
+          <p>Glass-reinforced gypsum. Interior ceilings, cornices, and decorative elements. Seamless joints, paint-ready finish, rapid installation.</p>
+          <div class="material-specs">
+            <div class="material-spec">
+              <span class="material-spec-value">4–10 mm</span>
+              <span class="material-spec-label">Panel thickness</span>
+            </div>
+            <div class="material-spec">
+              <span class="material-spec-value">Fire-rated</span>
+              <span class="material-spec-label">Performance class</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       STATS
+       ============================================ -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-number">20+</div>
+      <div class="stat-label">Years experience</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">400+</div>
+      <div class="stat-label">Projects delivered</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">1,000 m²</div>
+      <div class="stat-label">Daily production</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">6</div>
+      <div class="stat-label">Material systems</div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       CTA
+       ============================================ -->
+  <section class="cta">
+    <div class="cta-bg"></div>
+    <div class="cta-content">
+      <h2>Build the impossible</h2>
+      <p>From concept to installation — let's discuss your next project.</p>
+      <div class="cta-actions">
+        <a href="mailto:info@asgrc.co" class="btn-primary">Get in touch</a>
+        <a href="tel:+97143201288" class="btn-ghost">+971 4 320 1288</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <a href="#" class="nav-brand" style="margin-bottom: 0;">
+          <div class="nav-logo">
+            <img src="assets/img/asgrc-logo.png" alt="ASGRC">
+          </div>
+          ASGRC
+        </a>
+        <p class="footer-brand-desc">Advanced Structural Glass &amp; Façade Systems. Design, manufacture, and delivery of high-performance building envelopes.</p>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Capabilities</h4>
+        <ul class="footer-links">
+          <li><a href="#capabilities">BIM &amp; Design</a></li>
+          <li><a href="#materials">Materials</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">Process</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Materials</h4>
+        <ul class="footer-links">
+          <li><a href="#materials">GFRC</a></li>
+          <li><a href="#materials">UHPC</a></li>
+          <li><a href="#materials">GRP</a></li>
+          <li><a href="#materials">GRG</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Contact</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:info@asgrc.co">info@asgrc.co</a></li>
+          <li><a href="tel:+97143201288">+971 4 320 1288</a></li>
+          <li><a href="#">Plot 533-193, Saih Suhaib 04, DIC, Dubai</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 ASGRC. All rights reserved.</span>
+      <div class="footer-social">
+        <a href="#" aria-label="LinkedIn">
+          <svg viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.48 14V6.14H1V14h2.48zM2.24 5.08A1.44 1.44 0 102.24 2.2a1.44 1.44 0 000 2.88zM15 14V9.42c0-2.44-1.32-3.58-3.08-3.58a2.68 2.68 0 00-2.38 1.22H9.14V6.14H6.72V14h2.48V9.78c0-.66.06-1.32.96-1.32.9 0 .94.86.94 1.54V14H15z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.88 2.16h6.24A2.72 2.72 0 0113.84 4.88v6.24a2.72 2.72 0 01-2.72 2.72H4.88A2.72 2.72 0 012.16 11.12V4.88A2.72 2.72 0 014.88 2.16zm0 1.08a1.64 1.64 0 00-1.64 1.64v6.24a1.64 1.64 0 001.64 1.64h6.24a1.64 1.64 0 001.64-1.64V4.88a1.64 1.64 0 00-1.64-1.64H4.88zM8 4.72a3.28 3.28 0 100 6.56 3.28 3.28 0 000-6.56zm0 1.08a2.2 2.2 0 110 4.4 2.2 2.2 0 010-4.4zm4.08-1.8a.72.72 0 100 1.44.72.72 0 000-1.44z"/>
+          </svg>
+        </a>
       </div>
     </div>
   </footer>
 
+  <!-- ============================================
+       CHAT WIDGET
+       ============================================ -->
+  <button class="chat-toggle" id="chatToggle" aria-label="Open chat">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2zm0 14H5.17L4 17.17V4h16v12z"/>
+      <path d="M7 9h10v2H7zm0-3h10v2H7zm0 6h7v2H7z"/>
+    </svg>
+  </button>
+
+  <div class="chat-panel" id="chatPanel">
+    <div class="chat-header">
+      <div class="chat-header-logo">
+        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 0L16 8L8 16L0 8z"/>
+        </svg>
+      </div>
+      <div class="chat-header-text">
+        <h4>ASGRC Assistant</h4>
+        <p>We usually reply within minutes</p>
+      </div>
+      <button class="chat-header-close" id="chatClose" aria-label="Close chat">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <path d="M4 4l8 8M12 4l-8 8"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="chat-body" id="chatBody">
+      <div class="chat-message">
+        <div class="chat-message-avatar">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 0L16 8L8 16L0 8z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="chat-message-bubble">
+            Hi there! 👋 I'm the ASGRC virtual assistant. How can I help you today?
+          </div>
+          <div class="chat-quick-replies">
+            <button class="chat-quick-reply" data-msg="Tell me about your materials">Materials</button>
+            <button class="chat-quick-reply" data-msg="I need a quote">Get a quote</button>
+            <button class="chat-quick-reply" data-msg="Tell me about your projects">Projects</button>
+            <button class="chat-quick-reply" data-msg="How can I contact ASGRC?">Contact</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-footer">
+      <div class="chat-footer-inner">
+        <input type="text" class="chat-input" id="chatInput" placeholder="Type your message…" aria-label="Chat message">
+        <button class="chat-send" id="chatSend" aria-label="Send message">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+          </svg>
+        </button>
+      </div>
+      <p class="chat-disclaimer">Powered by ASGRC • Powered by email@asgrc.co</p>
+    </div>
+  </div>
+
   <script>
-    const menuScreen = document.getElementById('menuScreen');
-    const menuOpen = document.getElementById('menuOpen');
-    const menuClose = document.getElementById('menuClose');
-
-    menuOpen.addEventListener('click', () => {
-      menuScreen.classList.add('open');
-      menuScreen.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    });
-
-    menuClose.addEventListener('click', () => {
-      menuScreen.classList.remove('open');
-      menuScreen.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    });
-
-    document.querySelectorAll('.menu-links a').forEach(a => {
-      a.addEventListener('click', () => {
-        menuScreen.classList.remove('open');
-        menuScreen.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-      });
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && menuScreen.classList.contains('open')) {
-        menuScreen.classList.remove('open');
-        menuScreen.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-      }
-    });
+    // Hero slideshow — CSS crossfade, no particles
+    (function() {
+      const slides = document.querySelectorAll(', 5000);
+    })();
   </script>
+
+  <script>
+    // Chat widget logic — zero dependencies, GitHub Pages compatible
+    (function() {
+      const toggle = document.getElementById('chatToggle');
+      const panel = document.getElementById('chatPanel');
+      const close = document.getElementById('chatClose');
+      const input = document.getElementById('chatInput');
+      const send = document.getElementById('chatSend');
+      const body = document.getElementById('chatBody');
+
+      const responses = {
+        'materials': 'We work with four core material systems:\n\n🔹 **GFRC** — Glass-fibre reinforced concrete (6–12mm)\n🔹 **UHPC** — Ultra-high-performance concrete (8–20mm)\n🔹 **GRP** — Glass-reinforced plastic (3–8mm)\n🔹 **GRG** — Glass-reinforced gypsum (4–10mm)\n\nEach is engineered for specific performance needs. Want specs on any of these?',
+        'quote': 'Great! For a quote, please email us at <a href="mailto:info@asgrc.co?subject=Quote Request">info@asgrc.co</a> with your project details, or call <a href="tel:+97143201288">+971 4 320 1288</a>. We typically respond within 24 hours.',
+        'projects': 'We\'ve delivered 400+ projects across the Middle East including:\n\n🏗️ **The Creek Edge** — Waterfront residential, GFRC cladding\n🏗️ **Urban Oasis Tower** — High-rise mixed-use, UHPC panels\n🏗️ **Al Hadaf Residences** — Luxury villas, GRP ornament\n\nWant to know about a specific project type?',
+        'contact': 'You can reach ASGRC:\n\n📧 <a href="mailto:info@asgrc.co">info@asgrc.co</a>\n📞 <a href="tel:+97143201288">+971 4 320 1288</a>\n📍 Plot 533-193, Saih Suhaib 04, DIC, Dubai\n\nWe\'d love to hear about your project!',
+      };
+
+      function addMessage(text, isUser) {
+        const msg = document.createElement('div');
+        msg.className = 'chat-message';
+        if (isUser) {
+          msg.style.justifyContent = 'flex-end';
+          const bubble = document.createElement('div');
+          bubble.className = 'chat-message-bubble';
+          bubble.style.background = 'rgba(94, 106, 210, 0.15)';
+          bubble.style.borderColor = 'rgba(94, 106, 210, 0.3)';
+          bubble.style.color = '#f7f8f8';
+          bubble.innerHTML = text;
+          msg.appendChild(bubble);
+        } else {
+          msg.innerHTML = `
+            <div class="chat-message-avatar">
+              <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0L16 8L8 16L0 8z"/></svg>
+            </div>
+            <div class="chat-message-bubble">${text}</div>`;
+        }
+        body.appendChild(msg);
+        body.scrollTop = body.scrollHeight;
+      }
+
+      function handleReply(text) {
+        const key = Object.keys(responses).find(k => text.toLowerCase().includes(k));
+        if (key) {
+          addMessage(responses[key], false);
+        } else {
+          addMessage('Thanks for your message! For detailed inquiries, please email <a href="mailto:info@asgrc.co">info@asgrc.co</a> and our team will respond promptly.', false);
+        }
+      }
+
+      function openChat() {
+        panel.classList.add('open');
+        toggle.classList.add('active');
+        setTimeout(() => input.focus(), 200);
+      }
+
+      function closeChat() {
+        panel.classList.remove('open');
+        toggle.classList.remove('active');
+      }
+
+      toggle.addEventListener('click', function() {
+        if (panel.classList.contains('open')) closeChat();
+        else openChat();
+      });
+
+      close.addEventListener('click', closeChat);
+
+      send.addEventListener('click', function() {
+        const val = input.value.trim();
+        if (!val) return;
+        addMessage(val, true);
+        input.value = '';
+        handleReply(val);
+      });
+
+      input.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          send.click();
+        }
+      });
+
+      // Quick reply buttons
+      body.addEventListener('click', function(e) {
+        if (e.target.classList.contains('chat-quick-reply')) {
+          const msg = e.target.dataset.msg;
+          if (msg) {
+            addMessage(msg, true);
+            e.target.style.display = 'none';
+            handleReply(msg);
+          }
+        }
+      });
+    })();
+  </script>
+
 </body>
 </html>
