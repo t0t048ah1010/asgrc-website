@@ -1608,22 +1608,26 @@
     </div>
 
     <div class="bento">
-      <!-- Card 1: Wide — BIM & Design -->
-      <div class="bento-card span-2">
-        <div class="bento-icon">
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 17V7l7-5 7 5v10a1 1 0 01-1 1H4a1 1 0 01-1-1z"/>
-            <path d="M8 17v-5h4v5"/>
-          </svg>
-        </div>
-        <h3 class="bento-title">BIM &amp; Design engineering</h3>
-        <p class="bento-desc">Parametric façade modelling in Rhino and Revit. Full BIM coordination with structural, MEP, and architectural teams. Shop drawings, fixings calculations, and wind-load analysis at delivery.</p>
-        <div class="bento-visual" style="overflow:hidden;padding:0;background:transparent;">
-          <img src="assets/img/urban.jpg" alt="Urban Oasis Tower" style="width:100%;height:100%;min-height:160px;object-fit:cover;display:block;">
+      <!-- Card 1: Full width — BIM & Design with image -->
+      <div class="bento-card" style="grid-column: 1 / -1;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;">
+          <div>
+            <div class="bento-icon">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 17V7l7-5 7 5v10a1 1 0 01-1 1H4a1 1 0 01-1-1z"/>
+                <path d="M8 17v-5h4v5"/>
+              </svg>
+            </div>
+            <h3 class="bento-title">BIM &amp; Design engineering</h3>
+            <p class="bento-desc">Parametric façade modelling in Rhino and Revit. Full BIM coordination with structural, MEP, and architectural teams. Shop drawings, fixings calculations, and wind-load analysis at delivery.</p>
+          </div>
+          <div style="height:200px;border-radius:var(--radius-md);overflow:hidden;">
+            <img src="assets/img/urban.jpg" alt="Urban Oasis Tower" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
         </div>
       </div>
 
-      <!-- Card 2: Manufacturing -->
+      <!-- Card 2: CNC Manufacturing with material bars -->
       <div class="bento-card">
         <div class="bento-icon">
           <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1633,32 +1637,32 @@
           </svg>
         </div>
         <h3 class="bento-title">CNC manufacturing</h3>
-        <p class="bento-desc">Precision-cut GFRC, UHPC, GRP, and GRG panels. Digital close-out with full quality records. Our production capacity handles 1,000+ m² per day with tight tolerances.</p>
-        <div class="bento-visual" style="flex-direction: column; gap: 12px; align-items: stretch;">
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <div style="font-size: 10px; color: var(--text-quaternary); font-family: 'JetBrains Mono', monospace; width: 48px;">GFRC</div>
-            <div style="height: 4px; flex: 1; border-radius: 2px; background: linear-gradient(90deg, rgba(94,106,210,0.5) 72%, rgba(255,255,255,0.06) 28%);"></div>
-            <div style="font-size: 10px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">72%</div>
+        <p class="bento-desc">Precision-cut panels with full quality records.</p>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span style="font-size:10px;color:var(--text-quaternary);font-family:'JetBrains Mono',monospace;width:40px;">GFRC</span>
+            <div style="height:4px;flex:1;border-radius:2px;background:linear-gradient(90deg,rgba(94,106,210,0.5) 72%,rgba(255,255,255,0.06) 28%);"></div>
+            <span style="font-size:10px;color:var(--text-tertiary);font-family:'JetBrains Mono',monospace;">72%</span>
           </div>
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <div style="font-size: 10px; color: var(--text-quaternary); font-family: 'JetBrains Mono', monospace; width: 48px;">UHPC</div>
-            <div style="height: 4px; flex: 1; border-radius: 2px; background: linear-gradient(90deg, rgba(94,106,210,0.4) 55%, rgba(255,255,255,0.06) 45%);"></div>
-            <div style="font-size: 10px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">55%</div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span style="font-size:10px;color:var(--text-quaternary);font-family:'JetBrains Mono',monospace;width:40px;">UHPC</span>
+            <div style="height:4px;flex:1;border-radius:2px;background:linear-gradient(90deg,rgba(94,106,210,0.4) 55%,rgba(255,255,255,0.06) 45%);"></div>
+            <span style="font-size:10px;color:var(--text-tertiary);font-family:'JetBrains Mono',monospace;">55%</span>
           </div>
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <div style="font-size: 10px; color: var(--text-quaternary); font-family: 'JetBrains Mono', monospace; width: 48px;">GRP</div>
-            <div style="height: 4px; flex: 1; border-radius: 2px; background: linear-gradient(90deg, rgba(94,106,210,0.3) 38%, rgba(255,255,255,0.06) 62%);"></div>
-            <div style="font-size: 10px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">38%</div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span style="font-size:10px;color:var(--text-quaternary);font-family:'JetBrains Mono',monospace;width:40px;">GRP</span>
+            <div style="height:4px;flex:1;border-radius:2px;background:linear-gradient(90deg,rgba(94,106,210,0.3) 38%,rgba(255,255,255,0.06) 62%);"></div>
+            <span style="font-size:10px;color:var(--text-tertiary);font-family:'JetBrains Mono',monospace;">38%</span>
           </div>
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <div style="font-size: 10px; color: var(--text-quaternary); font-family: 'JetBrains Mono', monospace; width: 48px;">GRG</div>
-            <div style="height: 4px; flex: 1; border-radius: 2px; background: linear-gradient(90deg, rgba(94,106,210,0.2) 25%, rgba(255,255,255,0.06) 75%);"></div>
-            <div style="font-size: 10px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">25%</div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span style="font-size:10px;color:var(--text-quaternary);font-family:'JetBrains Mono',monospace;width:40px;">GRG</span>
+            <div style="height:4px;flex:1;border-radius:2px;background:linear-gradient(90deg,rgba(94,106,210,0.2) 25%,rgba(255,255,255,0.06) 75%);"></div>
+            <span style="font-size:10px;color:var(--text-tertiary);font-family:'JetBrains Mono',monospace;">25%</span>
           </div>
         </div>
       </div>
 
-      <!-- Card 3: Installation -->
+      <!-- Card 3: Site installation -->
       <div class="bento-card">
         <div class="bento-icon">
           <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1666,10 +1670,10 @@
           </svg>
         </div>
         <h3 class="bento-title">Site installation</h3>
-        <p class="bento-desc">Full erection, fixings, and weatherproofing by our trained crews. Safety-compliant, programme-aligned delivery on site.</p>
+        <p class="bento-desc">Full erection, fixings, and weatherproofing by our trained crews.</p>
       </div>
 
-      <!-- Card 4 -->
+      <!-- Card 4: Digital close-out -->
       <div class="bento-card">
         <div class="bento-icon">
           <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1678,22 +1682,22 @@
           </svg>
         </div>
         <h3 class="bento-title">Digital close-out</h3>
-        <p class="bento-desc">As-built documentation, QA records, and digital handover — everything the client needs for commissioning.</p>
+        <p class="bento-desc">As-built documentation, QA records, and digital handover.</p>
       </div>
 
-      <!-- Card 5: Wide — Projects -->
-      <div class="bento-card span-3" id="projects" style="padding:0;overflow:hidden;">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;height:100%;min-height:320px;">
+      <!-- Card 5: Projects showcase — full width -->
+      <div class="bento-card" id="projects" style="grid-column:1 / -1;padding:0;overflow:hidden;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;height:280px;">
           <div style="position:relative;overflow:hidden;">
-            <img src="assets/img/creek.jpg" alt="The Creek Edge" style="width:100%;height:100%;min-height:320px;object-fit:cover;display:block;position:absolute;inset:0;">
-            <div style="position:absolute;inset:0;background:linear-gradient(180deg, transparent 40%, rgba(8,9,10,0.8) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;">
+            <img src="assets/img/creek.jpg" alt="The Creek Edge" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(8,9,10,0.8) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;">
               <div style="font-size:18px;font-weight:590;color:#f7f8f8;line-height:1.33;letter-spacing:-0.24px;margin-bottom:4px;">The Creek Edge</div>
               <div style="font-size:13px;color:#8a8f98;line-height:1.5;">Waterfront residential · GFRC cladding</div>
             </div>
           </div>
           <div style="position:relative;overflow:hidden;">
-            <img src="assets/img/ahad.jpg" alt="Al Hadaf Residences" style="width:100%;height:100%;min-height:320px;object-fit:cover;display:block;position:absolute;inset:0;">
-            <div style="position:absolute;inset:0;background:linear-gradient(180deg, transparent 40%, rgba(8,9,10,0.8) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;">
+            <img src="assets/img/ahad.jpg" alt="Al Hadaf Residences" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(8,9,10,0.8) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;">
               <div style="font-size:18px;font-weight:590;color:#f7f8f8;line-height:1.33;letter-spacing:-0.24px;margin-bottom:4px;">Al Hadaf Residences</div>
               <div style="font-size:13px;color:#8a8f98;line-height:1.5;">Luxury villas · GRP ornament</div>
             </div>
