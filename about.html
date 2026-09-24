@@ -3,119 +3,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us — ASGRC Building Elegance</title>
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=cabinet-grotesk@500,700,800&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    :root { --bg: #f8f6f0; --card: #ffffff; --text: #111827; --muted: #6b7280; --line: #ded8ce; --blue: #12377f; --red: #e51d49; }
-    * { box-sizing: border-box; }
-    body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Satoshi', sans-serif; }
-    .container-custom { width: min(1200px, calc(100% - 2rem)); margin: 0 auto; }
-    @media(min-width: 768px) { .container-custom { width: min(1200px, calc(100% - 4rem)); } }
-    .display-font { font-family: 'Cabinet Grotesk', sans-serif; letter-spacing: -0.04em; }
-    .kicker { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
-    .line-border { border-color: var(--line); }
-    .top-bar { position: sticky; top: 0; z-index: 30; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(0,0,0,0.06); height: 42px; }
-    .top-bar-inner { height: 42px; display: flex; align-items: center; justify-content: space-between; font-weight: 800; font-size: 14px; }
-    .card-panel { background: var(--card); border: 1px solid var(--line); border-radius: 1.5rem; overflow: hidden; }
-    .btn-dark { background: var(--text); color: #fff; padding: 0.75rem 1.75rem; border-radius: 999px; text-decoration: none; display: inline-flex; align-items: center; font-weight: 500; }
-  </style>
+  <title>About — ASGRC Building Elegance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
-  <!-- Header -->
-  <header class="top-bar">
-    <div class="container-custom top-bar-inner">
-      <a href="index.html" class="display-font font-extrabold text-gray-900 tracking-tight">ASGRC <span class="text-red-600">BUILDING ELEGANCE</span></a>
-      <nav class="hidden md:flex gap-6 text-xs uppercase tracking-wider font-semibold text-gray-600">
-        <a href="what-we-do.html" class="hover:text-black">Design</a>
-        <a href="how-we-do-it.html" class="hover:text-black">Manufacture</a>
-        <a href="construct.html" class="hover:text-black">Construct</a>
-        <a href="portfolio.html" class="hover:text-black">Portfolio</a>
-        <a href="materials.html" class="hover:text-black">Materials</a>
-        <a href="about.html" class="text-red-600">About</a>
-        <a href="contact.html" class="hover:text-black">Contact</a>
-      </nav>
-      <a href="contact.html" class="text-xs uppercase tracking-wider font-bold text-red-600 md:hidden">Inquire</a>
+<nav class="navbar">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;height:64px;">
+    <a href="index.html" class="logo">ASGRC <span>BUILDING ELEGANCE</span><span class="logo-tag">Advanced Cementitious</span></a>
+    <div class="desktop-nav" style="display:flex;align-items:center;gap:2rem;">
+      <a href="what-we-do.html" class="nav-link">Design</a>
+      <a href="how-we-do-it.html" class="nav-link">Manufacture</a>
+      <a href="construct.html" class="nav-link">Construct</a>
+      <a href="portfolio.html" class="nav-link">Portfolio</a>
+      <a href="materials.html" class="nav-link">Materials</a>
+      <a href="about.html" class="nav-link active">About</a>
+      <a href="contact.html" class="nav-link cta">Contact</a>
     </div>
-  </header>
+    <button id="hamburger" class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div id="mobileMenu" class="mobile-menu">
+  <a href="what-we-do.html">Design</a><a href="how-we-do-it.html">Manufacture</a><a href="construct.html">Construct</a>
+  <a href="portfolio.html">Portfolio</a><a href="materials.html">Materials</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+</div>
 
-  <!-- Hero Header -->
-  <section class="py-16 md:py-24 border-b line-border bg-white">
-    <div class="container-custom">
-      <p class="kicker mb-2">Our Legacy & Mission</p>
-      <h1 class="display-font text-5xl sm:text-6xl font-extrabold tracking-tight">About ASGRC</h1>
-      <p class="mt-4 text-gray-600 text-lg max-w-2xl">Pioneering glass fiber reinforced concrete, composite technologies, and architectural envelopes across the UAE since 2003.</p>
-    </div>
-  </section>
+<section style="padding:7rem 0 4rem;text-align:center;">
+  <div class="container">
+    <p class="kicker fade-up">Our Story</p>
+    <h1 class="section-title fade-up" style="font-size:clamp(2.8rem,6vw,4.5rem);margin:1rem 0;">Engineering<br>Excellence Since 2004</h1>
+    <p class="fade-up" style="color:var(--muted);max-width:640px;margin:1.5rem auto 0;font-size:1.1rem;line-height:1.8;">Al Shafar GRC LLC has been at the forefront of advanced cementitious and composite façade systems in the Middle East for over two decades.</p>
+  </div>
+</section>
+<hr class="divider">
 
-  <!-- Main Details -->
-  <main class="py-20">
-    <div class="container-custom space-y-16">
-      
-      <div class="grid gap-12 lg:grid-cols-[0.6fr_1.4fr] items-start">
-        <div>
-          <p class="kicker mb-3">Our History</p>
-          <h2 class="display-font text-4xl font-bold">Two Decades of Crafting Landmarks</h2>
-        </div>
-        <div class="text-gray-600 space-y-4 text-base leading-relaxed">
-          <p>
-            Al Shafar GRC LLC (ASGRC) commenced operations in 2003 with an initial production capacity of 100 m² per day. Over the last twenty-plus years, relentless technical innovation, capital investment in robotics, and deep engineering partnerships have propelled ASGRC to exceed 1,000 m² per day across its flagship plant in Dubai Industrial City (DIC).
-          </p>
-          <p>
-            Operating as part of Al Shafar Group, ASGRC provides an unmatched integrated delivery model: combining early design engineering, mould fabrication, composite manufacturing, and turnkey on-site façade construction.
-          </p>
-        </div>
+<section style="padding:5rem 0;">
+  <div class="container">
+    <div class="grid" style="display:grid;gap:5rem;grid-template-columns:1fr 1fr;align-items:center;">
+      <div>
+        <p class="kicker fade-up" style="margin-bottom:0.75rem;">Our Story</p>
+        <h2 class="section-title fade-up" style="font-size:clamp(2rem,4vw,2.8rem);margin-bottom:1.5rem;">From Local Pioneers to Regional Leaders</h2>
+        <p class="fade-up" style="color:var(--muted);line-height:1.8;margin-bottom:1rem;">Founded in 2004, ASGRC began as a pioneering GRC manufacturer in the UAE, serving the region's rapid construction boom with innovative façade solutions.</p>
+        <p class="fade-up" style="color:var(--muted);line-height:1.8;margin-bottom:1rem;">Today, we operate a state-of-the-art manufacturing facility, employ over 200 skilled professionals, and deliver turnkey façade packages to landmark projects across 15+ countries.</p>
+        <p class="fade-up" style="color:var(--muted);line-height:1.8;">Our integrated approach — spanning design engineering, precision manufacturing, and turnkey installation — makes us uniquely positioned to deliver complex façade systems with confidence.</p>
       </div>
-
-      <!-- Certifications -->
-      <div class="p-10 bg-white border line-border rounded-2xl">
-        <p class="kicker">Quality Assurance</p>
-        <h3 class="display-font text-3xl font-bold mt-2">Certifications & Approvals</h3>
-        <p class="text-gray-500 text-sm mt-2 max-w-xl">All ASGRC products are audited, certified, and approved by the highest UAE and international authorities.</p>
-        
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-          <div class="p-6 bg-[#f8f6f0] rounded-xl border line-border">
-            <h4 class="font-bold text-lg text-blue-900">GRCA Full Member</h4>
-            <p class="text-xs text-gray-600 mt-2">Annual UK Glass Fiber Reinforced Concrete Association audit compliance.</p>
-          </div>
-          <div class="p-6 bg-[#f8f6f0] rounded-xl border line-border">
-            <h4 class="font-bold text-lg text-blue-900">ISO 9001:2015</h4>
-            <p class="text-xs text-gray-600 mt-2">Integrated Quality Management System for manufacturing & installation.</p>
-          </div>
-          <div class="p-6 bg-[#f8f6f0] rounded-xl border line-border">
-            <h4 class="font-bold text-lg text-blue-900">ISO 14001 / 45001</h4>
-            <p class="text-xs text-gray-600 mt-2">Environmental Management and Occupational Health & Safety certification.</p>
-          </div>
-          <div class="p-6 bg-[#f8f6f0] rounded-xl border line-border">
-            <h4 class="font-bold text-lg text-blue-900">Civil Defense Approved</h4>
-            <p class="text-xs text-gray-600 mt-2">Full Dubai & Abu Dhabi Civil Defense fire safety compliance (EN 13501 & BS 8414).</p>
-          </div>
-        </div>
+      <div class="fade-up" style="border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;">
+        <img src="https://asgrc.co/assets/img/ahad.jpg" alt="ASGRC facility" class="img-cover">
       </div>
+    </div>
+  </div>
+</section>
 
-      <!-- Sustainability / Go Green -->
-      <div class="grid gap-10 lg:grid-cols-2 items-center card-panel p-8 md:p-12">
-        <div>
-          <span class="text-xs tracking-widest uppercase font-bold text-green-700">Sustainability Commitment</span>
-          <h2 class="display-font text-4xl font-bold mt-2">Building Responsibly for a Green UAE</h2>
-          <p class="text-gray-600 mt-4 leading-relaxed text-sm">
-            ASGRC is committed to minimizing environmental impact across all stages of production. Our low-embodied-carbon GFRC mix designs, closed-loop water filtration, 100% recyclable GRP mould patterns, and localized aggregate sourcing support Dubai Clean Energy Strategy and UAE Net Zero commitments.
-          </p>
+<!-- Stats -->
+<section style="padding:4rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="container">
+    <div class="grid" style="display:grid;gap:2rem;grid-template-columns:repeat(4,1fr);text-align:center;">
+      <div class="fade-up"><div class="stat-num">20+</div><p style="font-size:0.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.5rem;">Years Experience</p></div>
+      <div class="fade-up fade-up-delay-1"><div class="stat-num">200+</div><p style="font-size:0.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.5rem;">Projects Delivered</p></div>
+      <div class="fade-up fade-up-delay-2"><div class="stat-num">15+</div><p style="font-size:0.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.5rem;">Countries</p></div>
+      <div class="fade-up fade-up-delay-3"><div class="stat-num">ISO</div><p style="font-size:0.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.5rem;">Certified</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Values -->
+<section style="padding:5rem 0;">
+  <div class="container">
+    <p class="kicker fade-up" style="text-align:center;margin-bottom:0.75rem;">Our Values</p>
+    <h2 class="section-title fade-up" style="font-size:clamp(2rem,4vw,2.8rem);margin-bottom:3rem;text-align:center;">What Drives Us</h2>
+    <div class="grid" style="display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));">
+      <div class="card fade-up" style="padding:2.5rem;text-align:center;">
+        <div style="width:56px;height:56px;background:var(--navy);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
         </div>
-        <div>
-          <img src="https://asgrc.co/assets/img/mosque.jpg" alt="Sustainable Architecture" class="rounded-2xl w-full h-[280px] object-cover border line-border">
-        </div>
+        <h3 style="font-size:1.4rem;font-weight:700;margin-bottom:1rem;">Precision</h3>
+        <p style="color:var(--muted);line-height:1.8;">Every panel, every joint, every measurement — accuracy is non-negotiable in our craft.</p>
       </div>
-
+      <div class="card fade-up fade-up-delay-1" style="padding:2.5rem;text-align:center;">
+        <div style="width:56px;height:56px;background:var(--navy);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3 style="font-size:1.4rem;font-weight:700;margin-bottom:1rem;">Innovation</h3>
+        <p style="color:var(--muted);line-height:1.8;">We invest in advanced technology, computational design, and R&D to stay at the forefront.</p>
+      </div>
+      <div class="card fade-up fade-up-delay-2" style="padding:2.5rem;text-align:center;">
+        <div style="width:56px;height:56px;background:var(--navy);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 style="font-size:1.4rem;font-weight:700;margin-bottom:1rem;">Integrity</h3>
+        <p style="color:var(--muted);line-height:1.8;">We build trust through transparency, reliability, and delivering on our promises.</p>
+      </div>
     </div>
-  </main>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="border-t line-border bg-white pt-12 pb-8">
-    <div class="container-custom text-center text-xs text-gray-500">
-      <p>&copy; 2026 Al Shafar GRC LLC (ASGRC). All rights reserved.</p>
+<!-- Certifications -->
+<section style="padding:5rem 0;background:var(--bg-alt);">
+  <div class="container" style="max-width:600px;text-align:center;">
+    <p class="kicker fade-up" style="margin-bottom:0.75rem;">Certifications</p>
+    <h2 class="section-title fade-up" style="font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1rem;">Quality You Can Trust</h2>
+    <p class="fade-up" style="color:var(--muted);margin-bottom:2.5rem;">We maintain the highest industry standards across all operations.</p>
+    <div class="fade-up" style="display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
+      <div style="padding:1.5rem;background:var(--surface);border-radius:16px;border:1px solid var(--line);font-weight:700;">ISO 9001 Certified</div>
+      <div style="padding:1.5rem;background:var(--surface);border-radius:16px;border:1px solid var(--line);font-weight:700;">Dubai Civil Defense Approved</div>
+      <div style="padding:1.5rem;background:var(--surface);border-radius:16px;border:1px solid var(--line);font-weight:700;">Abu Dhabi Civil Defense Approved</div>
     </div>
-  </footer>
+  </div>
+</section>
+
+<section style="padding:5rem 0;text-align:center;">
+  <div class="container" style="max-width:600px;">
+    <p class="kicker fade-up" style="margin-bottom:0.75rem;">Join Us</p>
+    <h2 class="section-title fade-up" style="font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1rem;">Work With ASGRC</h2>
+    <p class="fade-up" style="color:var(--muted);margin-bottom:2rem;">Whether you're an architect, developer, or main contractor — let's discuss how we can collaborate.</p>
+    <a href="contact.html" class="btn btn-primary fade-up">Contact Our Team</a>
+  </div>
+</section>
+
+<footer class="footer" style="padding:4rem 0 2rem;">
+  <div class="container">
+    <div class="grid" style="display:grid;gap:3rem;grid-template-columns:2fr 1fr 1fr 1fr;margin-bottom:3rem;">
+      <div><div class="footer-brand">ASGRC<span class="footer-tag">Building Elegance</span></div><p style="margin-top:1rem;line-height:1.7;font-size:0.9rem;max-width:320px;">Al Shafar GRC LLC — Advanced cementitious and composite systems for architectural façades across the Middle East.</p></div>
+      <div><p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.4);margin-bottom:1rem;">Process</p><div style="display:flex;flex-direction:column;gap:0.6rem;"><a href="what-we-do.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Design</a><a href="how-we-do-it.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Manufacture</a><a href="construct.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Construct</a></div></div>
+      <div><p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.4);margin-bottom:1rem;">Company</p><div style="display:flex;flex-direction:column;gap:0.6rem;"><a href="portfolio.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Portfolio</a><a href="materials.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Materials</a><a href="about.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">About</a><a href="contact.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Contact</a></div></div>
+      <div><p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.4);margin-bottom:1rem;">Connect</p><div style="display:flex;flex-direction:column;gap:0.6rem;"><a href="mailto:info@asgrc.co" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">info@asgrc.co</a><a href="tel:+97144295500" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">+971 4 429 5500</a></div></div>
+    </div>
+    <hr class="divider" style="border-color:rgba(255,255,255,0.1);">
+    <p style="text-align:center;margin-top:1.5rem;font-size:0.8rem;color:rgba(255,255,255,0.4);">&copy; 2026 Al Shafar GRC LLC. All rights reserved.</p>
+  </div>
+</footer>
+<script src="js/animations.js"></script>
+<script src="js/mobile-nav.js"></script>
 </body>
 </html>

@@ -1,139 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASGRC – Products</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
-    <style>
-        :root {
-            --asgrc-blue: #0A2A66;
-            --asgrc-grey: #BFC4CC;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materials — ASGRC Advanced Cementitious Systems</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['DM Serif Display', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            'asg-dark': '#0f172a',
+            'asg-gold': '#c9a227',
+            'asg-cream': '#f7f3ee',
+            'asg-light': '#ede7df',
+            'asg-muted': '#7a7568',
+          },
+          spacing: { '18': '4.5rem', '88': '22rem' }
         }
-
-        /* Improved fade-in animation */
-        .fade {
-            opacity: 0;
-            animation: fadeIn 2.5s ease-out forwards;
-            animation-delay: 0.2s;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-    </style>
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .fade-up { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
 </head>
+<body class="bg-asg-cream text-asg-dark font-sans antialiased">
 
-<body class="bg-gray-50 text-gray-800 fade">
-
-<!-- NAVBAR -->
-<header class="bg-white shadow">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row md:justify-between md:items-center">
-
-        <!-- Text Logo -->
-        <div class="flex flex-col leading-tight text-center md:text-left mb-4 md:mb-0">
-            <span class="font-extrabold tracking-wider"
-                  style="color:#0A2A66; font-size:36px;">
-                ASGRC
-            </span>
-            <span class="italic"
-                  style="color:#0A2A66; font-size:16px; margin-top:-4px;">
-                Building Elegance
-            </span>
+  <nav class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-200/50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center"><img src="assets/img/asgrc-logo.png" alt="ASGRC" class="h-10 w-auto"></a>
+        <div class="hidden lg:flex items-center space-x-8">
+          <a href="what-we-do.html" class="text-gray-700 hover:text-asg-gold transition-colors font-medium">What We Do</a>
+          <a href="how-we-do-it.html" class="text-gray-700 hover:text-asg-gold transition-colors font-medium">How We Do It</a>
+          <a href="products.html" class="text-asg-gold font-medium">Materials</a>
+          <a href="portfolio.html" class="text-gray-700 hover:text-asg-gold transition-colors font-medium">Portfolio</a>
+          <a href="materials.html" class="text-gray-700 hover:text-asg-gold transition-colors font-medium">Finishes</a>
+          <a href="about.html" class="text-gray-700 hover:text-asg-gold transition-colors font-medium">About</a>
+          <a href="contact.html" class="text-gray-700 hover:text-asg-gold transition-colors font-medium">Contact</a>
         </div>
-
-        <!-- Navigation -->
-        <nav class="flex flex-wrap justify-center gap-4 text-lg font-medium">
-            <a href="index.html" class="hover:text-blue-600">Home</a>
-            <a href="products.html" class="hover:text-blue-600">Products</a>
-            <a href="projects.html" class="hover:text-blue-600">Projects</a>
-            <a href="about.html" class="hover:text-blue-600">About</a>
-            <a href="contact.html" class="hover:text-blue-600">Contact</a>
-        </nav>
-
+        <div class="hidden lg:flex items-center space-x-4">
+          <a href="mailto:info@asgrc.co" class="text-sm text-asg-muted hover:text-asg-dark">info@asgrc.co</a>
+          <button class="lg:hidden" id="mobile-menu-btn" aria-label="Menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        </div>
+      </div>
     </div>
-</header>
+  </nav>
 
-<!-- PAGE TITLE -->
-<section class="py-16 bg-white fade">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-        <h1 class="text-5xl font-bold mb-4" style="color: var(--asgrc-blue);">Our Products</h1>
-        <p class="text-lg max-w-3xl mx-auto">
-            ASGRC manufactures high‑performance composite materials including GRC, GRP and GRG,
-            engineered for architectural façades, interior features and complex structural designs.
-        </p>
+  <div class="fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 lg:hidden" id="mobile-menu">
+    <div class="p-6">
+      <div class="flex justify-between items-center mb-8">
+        <img src="assets/img/asgrc-logo.png" alt="ASGRC" class="h-8 w-auto">
+        <button id="mobile-close" aria-label="Close menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
+      </div>
+      <div class="space-y-4">
+        <a href="what-we-do.html" class="block text-lg font-medium text-gray-700 hover:text-asg-gold">What We Do</a>
+        <a href="how-we-do-it.html" class="block text-lg font-medium text-gray-700 hover:text-asg-gold">How We Do It</a>
+        <a href="products.html" class="block text-lg font-medium text-gray-700 hover:text-asg-gold">Materials</a>
+        <a href="portfolio.html" class="block text-lg font-medium text-gray-700 hover:text-asg-gold">Portfolio</a>
+        <a href="materials.html" class="block text-lg font-medium text-gray-700 hover:text-asg-gold">Finishes</a>
+        <a href="about.html" class="block text-lg font-medium text-gray-700 hover:text-asg-gold">About</a>
+        <a href="contact.html" class="block text-lg font-medium text-gray-700 hover:text-asg-gold">Contact</a>
+      </div>
     </div>
-</section>
+  </div>
 
-<!-- PRODUCTS GRID WITH BLURRED ARCHITECTURAL BACKGROUND -->
-<section class="py-20 fade"
-style="
-    background: url('assets/img/creek.jpg') center/cover no-repeat fixed;
-    backdrop-filter: blur(6px);
-    background-color: rgba(255,255,255,0.85);
-">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
-
-        <!-- GRC -->
-        <div class="bg-white shadow-xl rounded p-8 fade">
-            <h2 class="text-3xl font-bold mb-4" style="color: var(--asgrc-blue);">GRC</h2>
-            <p class="text-lg mb-4">
-                Glass Reinforced Concrete (GRC) is a lightweight, durable material ideal for
-                architectural façades, cladding, screens, cornices, domes and decorative elements.
-            </p>
-            <p class="text-lg mb-4">
-                ASGRC produces GRC using advanced spray and premix techniques, ensuring high strength,
-                weather resistance and long‑term performance.
-            </p>
-        </div>
-
-        <!-- GRP -->
-        <div class="bg-white shadow-xl rounded p-8 fade">
-            <h2 class="text-3xl font-bold mb-4" style="color: var(--asgrc-blue);">GRP</h2>
-            <p class="text-lg mb-4">
-                Glass Reinforced Plastic (GRP) is a high‑strength composite used for domes, canopies,
-                complex curved structures, moulded shapes and lightweight architectural features.
-            </p>
-            <p class="text-lg mb-4">
-                GRP offers excellent flexibility, corrosion resistance and design freedom,
-                making it ideal for custom architectural applications.
-            </p>
-        </div>
-
-        <!-- GRG -->
-        <div class="bg-white shadow-xl rounded p-8 fade">
-            <h2 class="text-3xl font-bold mb-4" style="color: var(--asgrc-blue);">GRG</h2>
-            <p class="text-lg mb-4">
-                Glass Reinforced Gypsum (GRG) is designed for interior applications such as ceilings,
-                wall panels, cornices, columns and decorative interior features.
-            </p>
-            <p class="text-lg mb-4">
-                GRG provides smooth finishes, precise detailing and fire‑resistant performance,
-                making it ideal for luxury interior environments.
-            </p>
-        </div>
-
+  <section class="pt-32 pb-16 bg-asg-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <span class="text-asg-gold font-semibold uppercase tracking-wider text-sm">Our Materials</span>
+        <h1 class="text-4xl md:text-6xl font-serif mt-4 mb-6 leading-tight">Advanced Materials &<br><span class="text-asg-gold italic">Advanced Systems</span></h1>
+        <p class="text-lg text-gray-700 leading-relaxed">Our façade systems leverage advanced cementitious materials — UHPC and GFRC — engineered for strength, durability, and design flexibility. Each material system is optimized for specific applications across residential, commercial, hospitality, and institutional sectors.</p>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer style="background-color: var(--asgrc-blue); color: white;" class="py-10 fade">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
-        <div>
-            <h4 class="text-xl font-bold mb-4">ASGRC</h4>
-            <p>Delivering engineered GRC, GRP & GRG solutions with precision, innovation and excellence.</p>
+  <!-- GRC -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="fade-up"><img src="assets/img/ahad.jpg" alt="GFRC" class="w-full rounded-xl shadow-lg"></div>
+        <div class="fade-up">
+          <span class="inline-block px-3 py-1 bg-asg-gold/10 text-asg-gold text-sm font-semibold rounded-full mb-4">GRC</span>
+          <h2 class="text-3xl md:text-4xl font-serif mb-4">Glass Fiber Reinforced Concrete</h2>
+          <p class="text-gray-700 leading-relaxed mb-6">A thin concrete shell of cement, sand, and alkali-resistant glass fibers supported by a secondary steel frame. Engineered for complex geometries and expressive architectural applications.</p>
+          <h3 class="font-bold text-lg mb-3">Key Properties</h3>
+          <ul class="space-y-3 text-gray-700 mb-8">
+            <li class="flex items-start"><svg class="w-5 h-5 text-asg-gold mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Thickness: 1–1½ inches with secondary steel frame support</li>
+            <li class="flex items-start"><svg class="w-5 h-5 text-asg-gold mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Compressive strength: >6,000 PSI at 28 days</li>
+            <li class="flex items-start"><svg class="w-5 h-5 text-asg-gold mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Excellent durability — resists corrosion, UV, and freeze–thaw cycles</li>
+            <li class="flex items-start"><svg class="w-5 h-5 text-asg-gold mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Ideal for sculptural, parametric, and organic façade designs</li>
+          </ul>
+          <a href="contact.html" class="inline-flex items-center text-asg-gold font-semibold hover:text-yellow-600">
+            Request GRC Spec Sheet <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
         </div>
-        <div>
-            <h4 class="text-xl font-bold mb-4">Quick Links</h4>
-            <ul class="space-y-2">
-                <li><a href="products.html" class="hover:text-gray-200">Products</a></li>
-                <li><a href="projects.html" class="hover:text-gray-200">Projects</a></li>
-                <li><a href="about.html" class="hover:text-gray-200">About</a></li>
-                <li><a href="contact.html" class="hover:text-gray-200">Contact</a></li>
-            </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- UHPC -->
+  <section class="py-20 bg-asg-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="fade-up order-2 lg:order-1">
+          <span class="inline-block px-3 py-1 bg-asg-gold/10 text-asg-gold text-sm font-semibold rounded-full mb-4">UHPC</span>
+          <h2 class="text-3xl md:text-4xl font-serif mb-4">Ultra High Performance Concrete</h2>
+          <p class="text-gray-700 leading-relaxed mb-6">A thin-walled cladding of high-performance cement, fine aggregates, and steel or synthetic fibers with exceptionally high strength and dense material matrix.</p>
+          <h3 class="font-bold text-lg mb-3">Key Properties</h3>
+          <ul class="space-y-3 text-gray-700 mb-8">
+            <li class="flex items-start"><svg class="w-5 h-5 text-asg-gold mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Thickness: ½–¾ inches with structural-grade performance</li>
+            <li class="flex items-start"><svg class="w-5 h-5 text-asg-gold mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Compressive strength: >15,000 PSI at 28 days</li>
+            <li class="flex items-start"><svg class="w-5 h-5 text-asg-gold mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Dense material matrix — smooth, precise surfaces with tight tolerances</li>
+            <li class="flex items-start"><svg class="w-5 h-5 text-asg-gold mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Exceptional durability — resists freeze–thaw, abrasion, and chloride penetration</li>
+          </ul>
+          <a href="contact.html" class="inline-flex items-center text-asg-gold font-semibold hover:text-yellow-600">
+            Request UHPC Spec Sheet <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
         </div>
+        <div class="fade-up order-1 lg:order-2"><img src="assets/img/mosque.jpg" alt="UHPC" class="w-full rounded-xl shadow-lg"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRP -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="fade-up"><img src="assets/img/urban.jpg" alt="GRP" class="w-full rounded-xl shadow-lg"></div>
+        <div class="fade-up">
+          <span class="inline-block px-3 py-1 bg-asg-gold/10 text-asg-gold text-sm font-semibold rounded-full mb-4">GRP</span>
+          <h2 class="text-3xl md:text-4xl font-serif mb-4">Glass Fiber Reinforced Plastic</h2>
+          <p class="text-gray-700 leading-relaxed mb-6">Composite panels from 3mm to 8mm thick with non-combustible layer configurations for versatile architectural applications across interiors and exteriors.</p>
+          <h3 class="font-bold text-lg mb-3">Key Properties</h3>
+          <ul class="space-y-3 text-gray-700 mb-8">
+            <li class="flex items-start"><svg class="w-5 h-5 text-asg-gold mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>GRP thickness: 3mm – 8mm with optimized layer configuration</li>
+            <li class="flex items-start"><svg class="w-5 h-5 text-asg-gold mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Non-combustible deck options and fire-retardant performance</li>
+            <li class="flex items-start"><svg class="w-5 h-5 text-asg-gold mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Suitable for interiors, exteriors, roofs, and decorative screens</li>
+            <li class="flex items-start"><svg class="w-5 h-5 text-asg-gold mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Lightweight with high strength-to-weight ratio</li>
+          </ul>
+          <a href="contact.html" class="inline-flex items-center text-asg-gold font-semibold hover:text-yellow-600">
+            Request GRP Spec Sheet <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRG -->
+  <section class="py-20 bg-asg-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="fade-up order-2 lg:order-1">
+          <span class="inline-block px-3 py-1 bg-asg-gold/10 text-asg-gold text-sm font-semibold rounded-full mb-4">GRG</span>
+          <h2 class="text-3xl md:text-4xl font-serif mb-4">Glass Fiber Reinforced Gypsum</h2>
+          <p class="text-gray-700 leading-relaxed mb-6">Interior decorative elements, cornices, columns, and intricate gypsum-based architectural features for luxury residential and hospitality projects.</p>
+          <h3 class="font-bold text-lg mb-3">Key Properties</h3>
+          <ul class="space-y-3 text-gray-700 mb-8">
+            <li class="flex items-start"><svg class="w-5 h-5 text-asg-gold mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Intricate decorative elements for luxury interiors</li>
+            <li class="flex items-start"><svg class="w-5 h-5 text-asg-gold mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Cornices, columns, medallions, and custom moldings</li>
+            <li class="flex items-start"><svg class="w-5 h-5 text-asg-gold mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Smooth finish ready for painting and detailing</li>
+            <li class="flex items-start"><svg class="w-5 h-5 text-asg-gold mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Lightweight with excellent acoustic properties</li>
+          </ul>
+          <a href="contact.html" class="inline-flex items-center text-asg-gold font-semibold hover:text-yellow-600">
+            Request GRG Spec Sheet <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+        <div class="fade-up order-1 lg:order-2"><img src="assets/img/ahad.jpg" alt="GRG" class="w-full rounded-xl shadow-lg"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-asg-gold">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="fade-up">
+        <span class="text-white/80 font-semibold uppercase tracking-wider text-sm">Need Technical Data?</span>
+        <h2 class="text-4xl md:text-5xl font-serif text-white mb-6">Request Material Specifications</h2>
+        <p class="text-white/90 text-lg mb-8 max-w-2xl mx-auto">Complete spec sheets, technical data, and performance certificates available for all our material systems.</p>
+        <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-white text-asg-gold font-semibold rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
+          Request Documentation
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-asg-dark text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
         <div>
-            <h4 class="text-xl font-bold mb-4">Contact</h4>
-            <p>Email: info@asgrc.com</p>
+          <a href="index.html" class="flex items-center"><img src="assets/img/asgrc-logo.png" alt="ASGRC" class="h-8 w-auto"></a>
+          <p class="text-gray-400 mt-4 text-sm leading-relaxed">Al Shafar GRC LLC — Advanced façade systems design, manufacture, and installation.</p>
+          <div class="flex flex-wrap gap-2 mt-6">
+            <span class="px-3 py-1 bg-white/10 text-xs rounded-full">ISO 9001</span><span class="px-3 py-1 bg-white/10 text-xs rounded-full">ISO 14001</span><span class="px-3 py-1 bg-white/10 text-xs rounded-full">ISO 45001</span><span class="px-3 py-1 bg-white/10 text-xs rounded-full">GRCA</span>
+          </div>
+        </div>
+        <div><h4 class="font-semibold mb-4 text-white">Process</h4><ul class="space-y-2 text-sm"><li><a href="what-we-do.html" class="text-gray-400 hover:text-asg-gold transition-colors">What We Do</a></li><li><a href="how-we-do-it.html" class="text-gray-400 hover:text-asg-gold transition-colors">How We Do It</a></li><li><a href="products.html" class="text-gray-400 hover:text-asg-gold transition-colors">Materials</a></li><li><a href="materials.html" class="text-gray-400 hover:text-asg-gold transition-colors">Finishes</a></li><li><a href="contact.html" class="text-gray-400 hover:text-asg-gold transition-colors">Contact</a></li></ul></div>
+        <div><h4 class="font-semibold mb-4 text-white">Company</h4><ul class="space-y-2 text-sm"><li><a href="about.html" class="text-gray-400 hover:text-asg-gold transition-colors">About Us</a></li><li><a href="portfolio.html" class="text-gray-400 hover:text-asg-gold transition-colors">Portfolio</a></li><li><a href="contact.html" class="text-gray-400 hover:text-asg-gold transition-colors">Careers</a></li><li><a href="contact.html" class="text-gray-400 hover:text-asg-gold transition-colors">Certifications</a></li></ul></div>
+        <div><h4 class="font-semibold mb-4 text-white">Contact</h4><address class="text-gray-400 text-sm leading-relaxed not-italic">Plot No. 533-193<br>Saih Suhaib 04, Dubai<br>Industrial City, P.O. Box 117717<br>Dubai, UAE</address><div class="mt-4 space-y-2"><a href="tel:+97143201288" class="text-gray-400 hover:text-asg-gold transition-colors text-sm">+971 4 320 1288</a><br><a href="mailto:info@asgrc.co" class="text-gray-400 hover:text-asg-gold transition-colors text-sm">info@asgrc.co</a><br><a href="https://www.asgrc.co" target="_blank" class="text-gray-400 hover:text-asg-gold transition-colors text-sm">www.asgrc.co</a></div></div>
+      </div>
+      <div class="border-t border-white/10 pt-8 text-center"><p class="text-gray-500 text-sm">&copy; 2026 Al Shafar GRC LLC. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <div class="fixed bottom-6 right-6 z-40">
+    <button id="chat-toggle" class="bg-asg-gold text-white rounded-full p-4 shadow-lg hover:bg-yellow-600 transition-colors"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg></button>
+    <div id="chat-window" class="absolute bottom-16 right-0 w-80 bg-white rounded-xl shadow-2xl border border-gray-200 hidden">
+      <div class="bg-asg-gold text-white p-4 rounded-t-xl flex justify-between items-center"><span class="font-semibold">ASGRC Assistant</span><button id="chat-close" class="text-white/80 hover:text-white"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button></div>
+      <div id="chat-body" class="p-4 h-64 overflow-y-auto bg-gray-50"><div class="mb-3"><div class="bg-white p-3 rounded-lg shadow-sm border border-gray-200 max-w-xs"><p class="text-sm">Hello! 👋 How can I help you today?</p></div></div></div>
+      <div class="p-3 border-t border-gray-200 bg-white rounded-b-xl"><div class="flex gap-2"><input type="text" id="chat-input" placeholder="Type your message..." class="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-asg-gold"><button id="chat-send" class="bg-asg-gold text-white px-3 py-2 rounded-lg hover:bg-yellow-600 transition-colors"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg></button></div></div>
+    </div>
+  </div>
+
+  <script>
+    const mobileMenuBtn=document.getElementById('mobile-menu-btn'),mobileMenu=document.getElementById('mobile-menu'),mobileClose=document.getElementById('mobile-close');
+    if(mobileMenuBtn)mobileMenuBtn.addEventListener('click',()=>mobileMenu.classList.remove('translate-x-full'));
+    if(mobileClose)mobileClose.addEventListener('click',()=>mobileMenu.classList.add('translate-x-full'));
+    const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');})},{threshold:0.1});
+    document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+    const chatToggle=document.getElementById('chat-toggle'),chatWindow=document.getElementById('chat-window'),chatClose=document.getElementById('chat-close'),chatInput=document.getElementById('chat-input'),chatSend=document.getElementById('chat-send'),chatBody=document.getElementById('chat-body');
+    function toggleChat(){chatWindow.classList.toggle('hidden');}
+    function addMsg(text,sender){const div=document.createElement('div');div.className='mb-3 '+(sender==='user'?'text-right':'');div.innerHTML=sender==='user'?'<div class="bg-asg-gold text-white p-3 rounded-lg shadow-sm max-w-xs ml-auto">'+text+'</div>':'<div class="bg-white p-3 rounded-lg shadow-sm border border-gray-200 max-w-xs">'+text+'</div>';chatBody.appendChild(div);chatBody.scrollTop=chatBody.scrollHeight;}
+    function getBotReply(msg){const m=msg.toLowerCase();if(m.includes('material')||m.includes('grc')||m.includes('uhpc'))return 'We manufacture GRC, GRP, UHPC, and GRG. <a href="products.html" class="underline">Our Materials</a>.';if(m.includes('project')||m.includes('portfolio'))return '400+ projects. <a href="portfolio.html" class="underline">Portfolio</a>.';if(m.includes('price')||m.includes('cost')||m.includes('quote'))return 'Email <a href="mailto:info@asgrc.co" class="underline">info@asgrc.co</a>.';if(m.includes('contact')||m.includes('phone')||m.includes('email'))return '<a href="tel:+97143201288" class="underline">+971 4 320 1288</a> or <a href="mailto:info@asgrc.co" class="underline">info@asgrc.co</a>.';return 'Email <a href="mailto:info@asgrc.co" class="underline">info@asgrc.co</a> or call <a href="tel:+97143201288" class="underline">+971 4 320 1288</a>.';}
+    chatToggle.addEventListener('click',toggleChat);chatClose.addEventListener('click',toggleChat);
+    function sendMsg(){const text=chatInput.value.trim();if(!text)return;addMsg(text,'user');chatInput.value='';setTimeout(()=>addMsg(getBotReply(text),'bot'),600);}
+    chatSend.addEventListener('click',sendMsg);chatInput.addEventListener('keypress',(e)=>{if(e.key==='Enter')sendMsg();});
+  </script>
+</body>
+</html>

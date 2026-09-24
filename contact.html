@@ -1,134 +1,141 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — ASGRC Building Elegance</title>
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=cabinet-grotesk@500,700,800&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    :root { --bg: #f8f6f0; --card: #ffffff; --text: #111827; --muted: #6b7280; --line: #ded8ce; --blue: #12377f; --red: #e51d49; }
-    * { box-sizing: border-box; }
-    body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Satoshi', sans-serif; }
-    .container-custom { width: min(1200px, calc(100% - 2rem)); margin: 0 auto; }
-    @media(min-width: 768px) { .container-custom { width: min(1200px, calc(100% - 4rem)); } }
-    .display-font { font-family: 'Cabinet Grotesk', sans-serif; letter-spacing: -0.04em; }
-    .kicker { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
-    .line-border { border-color: var(--line); }
-    .top-bar { position: sticky; top: 0; z-index: 30; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(0,0,0,0.06); height: 42px; }
-    .top-bar-inner { height: 42px; display: flex; align-items: center; justify-content: space-between; font-weight: 800; font-size: 14px; }
-    .card-panel { background: var(--card); border: 1px solid var(--line); border-radius: 1.5rem; overflow: hidden; }
-    .btn-dark { background: var(--text); color: #fff; padding: 0.75rem 1.75rem; border-radius: 999px; text-decoration: none; display: inline-flex; align-items: center; font-weight: 500; }
-    .field, .select, .textarea { width: 100%; padding: 0.85rem 1.25rem; border: 1px solid var(--line); border-radius: 999px; background: transparent; outline: none; font-family: inherit; }
-    .textarea { border-radius: 1.25rem; min-height: 140px; resize: vertical; }
-    .field:focus, .select:focus, .textarea:focus { border-color: var(--blue); }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
-  <!-- Header -->
-  <header class="top-bar">
-    <div class="container-custom top-bar-inner">
-      <a href="index.html" class="display-font font-extrabold text-gray-900 tracking-tight">ASGRC <span class="text-red-600">BUILDING ELEGANCE</span></a>
-      <nav class="hidden md:flex gap-6 text-xs uppercase tracking-wider font-semibold text-gray-600">
-        <a href="what-we-do.html" class="hover:text-black">Design</a>
-        <a href="how-we-do-it.html" class="hover:text-black">Manufacture</a>
-        <a href="construct.html" class="hover:text-black">Construct</a>
-        <a href="portfolio.html" class="hover:text-black">Portfolio</a>
-        <a href="materials.html" class="hover:text-black">Materials</a>
-        <a href="about.html" class="hover:text-black">About</a>
-        <a href="contact.html" class="text-red-600">Contact</a>
-      </nav>
-      <a href="contact.html" class="text-xs uppercase tracking-wider font-bold text-red-600 md:hidden">Inquire</a>
+<nav class="navbar">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;height:64px;">
+    <a href="index.html" class="logo">ASGRC <span>BUILDING ELEGANCE</span><span class="logo-tag">Advanced Cementitious</span></a>
+    <div class="desktop-nav" style="display:flex;align-items:center;gap:2rem;">
+      <a href="what-we-do.html" class="nav-link">Design</a>
+      <a href="how-we-do-it.html" class="nav-link">Manufacture</a>
+      <a href="construct.html" class="nav-link">Construct</a>
+      <a href="portfolio.html" class="nav-link">Portfolio</a>
+      <a href="materials.html" class="nav-link">Materials</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link active">Contact</a>
     </div>
-  </header>
+    <button id="hamburger" class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div id="mobileMenu" class="mobile-menu">
+  <a href="what-we-do.html">Design</a><a href="how-we-do-it.html">Manufacture</a><a href="construct.html">Construct</a>
+  <a href="portfolio.html">Portfolio</a><a href="materials.html">Materials</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+</div>
 
-  <!-- Hero Header -->
-  <section class="py-16 md:py-24 border-b line-border bg-white">
-    <div class="container-custom">
-      <p class="kicker mb-2">Start a Project Consultation</p>
-      <h1 class="display-font text-5xl sm:text-6xl font-extrabold tracking-tight">Let's Build Smarter Together</h1>
-      <p class="mt-4 text-gray-600 text-lg max-w-2xl">Connect directly with our engineering and estimation teams for design-assist tenders, budget proposals, and technical sample inquiries.</p>
-    </div>
-  </section>
+<section style="padding:7rem 0 4rem;text-align:center;">
+  <div class="container">
+    <p class="kicker fade-up">Get in Touch</p>
+    <h1 class="section-title fade-up" style="font-size:clamp(2.8rem,6vw,4.5rem);margin:1rem 0;">Let's Build Together</h1>
+    <p class="fade-up" style="color:var(--muted);max-width:640px;margin:1.5rem auto 0;font-size:1.1rem;line-height:1.8;">Whether you need early-stage design assistance or a complete façade package — our team is ready to discuss your project.</p>
+  </div>
+</section>
+<hr class="divider">
 
-  <!-- Contact Form & Info -->
-  <main class="py-20">
-    <div class="container-custom">
-      <div class="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] items-start">
-        
-        <div class="space-y-8">
-          <div class="card-panel p-8">
-            <h3 class="display-font text-2xl font-bold mb-4">Headquarters & DIC Factory</h3>
-            <p class="text-sm text-gray-600 leading-relaxed">
-              <strong>Al Shafar GRC LLC (ASGRC)</strong><br>
-              P.O. Box 117717, Saih Suhaib 04, Plot No. 533-193<br>
-              Dubai Industrial City (DIC), Dubai, United Arab Emirates
-            </p>
-            <div class="mt-6 pt-6 border-t line-border space-y-2 text-sm text-gray-600">
-              <p><strong>Phone:</strong> +971 4 320 1288 / +971 4 320 1299</p>
-              <p><strong>Email:</strong> info@asgrc.ae / info@asgrc.co</p>
-              <p><strong>Website:</strong> www.asgrc.co / www.asgrc.ae</p>
-            </div>
+<section style="padding:5rem 0;">
+  <div class="container">
+    <div class="grid" style="display:grid;gap:4rem;grid-template-columns:1fr 1.2fr;align-items:start;">
+      <!-- Contact Info -->
+      <div class="fade-up">
+        <h2 style="font-size:1.8rem;font-weight:700;margin-bottom:2rem;">Contact Information</h2>
+        <div style="display:flex;flex-direction:column;gap:2rem;">
+          <div>
+            <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);margin-bottom:0.5rem;">Email</p>
+            <a href="mailto:info@asgrc.co" style="color:var(--text);text-decoration:none;font-size:1.05rem;">info@asgrc.co</a>
           </div>
-
-          <div class="card-panel p-8">
-            <h3 class="display-font text-2xl font-bold mb-4">Abu Dhabi Regional Branch</h3>
-            <p class="text-sm text-gray-600 leading-relaxed">
-              <strong>Al Shafar GRC LLC - Abu Dhabi</strong><br>
-              Remah Tower, Harat Al Qumzan Street<br>
-              Abu Dhabi, United Arab Emirates
-            </p>
+          <div>
+            <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);margin-bottom:0.5rem;">Phone</p>
+            <a href="tel:+97143201288" style="color:var(--text);text-decoration:none;font-size:1.05rem;">+971 4 320 1288</a>
+          </div>
+          <div>
+            <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);margin-bottom:0.5rem;">Address</p>
+            <p style="color:var(--muted);line-height:1.7;">Al Shafar GRC LLC<br>Industrial Area, Dubai<br>United Arab Emirates</p>
+          </div>
+          <div>
+            <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);margin-bottom:0.5rem;">Hours</p>
+            <p style="color:var(--muted);line-height:1.7;">Monday – Saturday: 8:00 AM – 6:00 PM<br>Sunday: Closed</p>
           </div>
         </div>
+      </div>
 
-        <form class="card-panel p-8 md:p-10 bg-white" onsubmit="event.preventDefault(); alert('Inquiry received! We will respond within 24 hours.'); this.reset();">
-          <h2 class="display-font text-3xl font-bold mb-6">Send Project RFP / Brief</h2>
-          <div class="grid gap-5 sm:grid-cols-2">
+      <!-- Contact Form -->
+      <div class="fade-up fade-up-delay-1">
+        <h2 style="font-size:1.8rem;font-weight:700;margin-bottom:2rem;">Send Us a Message</h2>
+        <form action="#" method="POST" style="display:flex;flex-direction:column;gap:1.5rem;">
+          <div class="grid" style="display:grid;gap:1.5rem;grid-template-columns:1fr 1fr;">
             <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Your Full Name *</label>
-              <input class="field" type="text" placeholder="John Doe" required>
-            </div>
-            <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Company / Studio *</label>
-              <input class="field" type="text" placeholder="Architecture / Contracting Firm" required>
+              <label class="form-label" for="name">Full Name</label>
+              <input class="form-input" type="text" id="name" name="name" placeholder="John Smith" required>
             </div>
             <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Email Address *</label>
-              <input class="field" type="email" placeholder="john@company.com" required>
+              <label class="form-label" for="company">Company</label>
+              <input class="form-input" type="text" id="company" name="company" placeholder="Your company">
             </div>
-            <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Phone Number</label>
-              <input class="field" type="tel" placeholder="+971 ...">
-            </div>
-            <div class="sm:col-span-2">
-              <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Scope / System *</label>
-              <select class="select" required>
-                <option value="">Select scope</option>
-                <option>GFRC Façade & Balcony Panels</option>
-                <option>UHPC Ultra-Thin Cladding & Screens</option>
-                <option>GFRP Curved Mouldings & Canopies</option>
-                <option>GFRG Interior Ceilings & Columns</option>
-                <option>Full Façade Engineering & Turnkey Installation</option>
-              </select>
-            </div>
-            <div class="sm:col-span-2">
-              <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Project Details *</label>
-              <textarea class="textarea" placeholder="Please specify project name, location, estimated façade area (m²), and current stage..." required></textarea>
-            </div>
-            <button type="submit" class="btn-dark sm:col-span-2 justify-center py-3 text-base">Submit Tender Brief</button>
           </div>
+          <div class="grid" style="display:grid;gap:1.5rem;grid-template-columns:1fr 1fr;">
+            <div>
+              <label class="form-label" for="email">Email</label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="john@example.com" required>
+            </div>
+            <div>
+              <label class="form-label" for="phone">Phone</label>
+              <input class="form-input" type="tel" id="phone" name="phone" placeholder="+971 ...">
+            </div>
+          </div>
+          <div>
+            <label class="form-label" for="project-type">Project Type</label>
+            <select class="form-select form-input" id="project-type" name="project-type">
+              <option value="">Select a project type</option>
+              <option value="residential">Residential</option>
+              <option value="commercial">Commercial</option>
+              <option value="hospitality">Hospitality</option>
+              <option value="infrastructure">Infrastructure</option>
+              <option value="interior">Interior / GFRG</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label" for="message">Message</label>
+            <textarea class="form-textarea" id="message" name="message" placeholder="Tell us about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Send Message</button>
         </form>
-
       </div>
     </div>
-  </main>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="border-t line-border bg-white pt-12 pb-8">
-    <div class="container-custom text-center text-xs text-gray-500">
-      <p>&copy; 2026 Al Shafar GRC LLC (ASGRC). All rights reserved.</p>
+<section style="padding:5rem 0;background:var(--bg-alt);text-align:center;">
+  <div class="container" style="max-width:600px;">
+    <p class="kicker fade-up" style="margin-bottom:0.75rem;">Prefer to Call?</p>
+    <h2 class="section-title fade-up" style="font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1rem;">Speak to Our Team Directly</h2>
+    <p class="fade-up" style="color:var(--muted);margin-bottom:2rem;">Our sales engineers are available during business hours to discuss your requirements.</p>
+    <a href="tel:+97144295500" class="btn btn-outline fade-up">+971 4 320 1288</a>
+  </div>
+</section>
+
+<footer class="footer" style="padding:4rem 0 2rem;">
+  <div class="container">
+    <div class="grid" style="display:grid;gap:3rem;grid-template-columns:2fr 1fr 1fr 1fr;margin-bottom:3rem;">
+      <div><div class="footer-brand">ASGRC<span class="footer-tag">Building Elegance</span></div><p style="margin-top:1rem;line-height:1.7;font-size:0.9rem;max-width:320px;">Al Shafar GRC LLC — Advanced cementitious and composite systems for architectural façades across the Middle East.</p></div>
+      <div><p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.4);margin-bottom:1rem;">Process</p><div style="display:flex;flex-direction:column;gap:0.6rem;"><a href="what-we-do.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Design</a><a href="how-we-do-it.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Manufacture</a><a href="construct.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Construct</a></div></div>
+      <div><p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.4);margin-bottom:1rem;">Company</p><div style="display:flex;flex-direction:column;gap:0.6rem;"><a href="portfolio.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Portfolio</a><a href="materials.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Materials</a><a href="about.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">About</a><a href="contact.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">Contact</a></div></div>
+      <div><p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.4);margin-bottom:1rem;">Connect</p><div style="display:flex;flex-direction:column;gap:0.6rem;"><a href="mailto:info@asgrc.co" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">info@asgrc.co</a><a href="tel:+97143201288" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;">+971 4 320 1288</a></div></div>
     </div>
-  </footer>
+    <hr class="divider" style="border-color:rgba(255,255,255,0.1);">
+    <p style="text-align:center;margin-top:1.5rem;font-size:0.8rem;color:rgba(255,255,255,0.4);">&copy; 2026 Al Shafar GRC LLC. All rights reserved.</p>
+  </div>
+</footer>
+<script src="js/animations.js"></script>
+<script src="js/mobile-nav.js"></script>
 </body>
 </html>
