@@ -3,232 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio — ASGRC Projects</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            serif: ['DM Serif Display', 'serif'],
-            sans: ['Inter', 'sans-serif'],
-          },
-          colors: {
-            'asg-dark': '#0f172a',
-            'asg-gold': '#c9a227',
-            'asg-cream': '#f7f3ee',
-            'asg-light': '#ede7df',
-            'asg-muted': '#7a7568',
-          },
-          spacing: { '18': '4.5rem', '88': '22rem' }
-        }
-      }
-    }
-  </script>
+  <title>Portfolio — ASGRC</title>
+  <meta name="description" content="The ASGRC portfolio now lives on the Projects page.">
+  <meta http-equiv="refresh" content="0; url=projects.html">
+  <link rel="canonical" href="projects.html">
   <style>
-    html { scroll-behavior: smooth; }
-    .fade-up { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    /* Minimal standalone fallback — runs before the redirect on slow clients */
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #17181C;
+      color: #F5F3EF;
+      font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+      text-align: center;
+      padding: 2rem;
+    }
+    a {
+      color: #C69C6D;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 0.85rem;
+      border-bottom: 1px solid #A87C4F;
+      padding-bottom: 0.3rem;
+    }
   </style>
 </head>
-<body class="bg-asg-cream text-asg-dark font-sans antialiased">
-
-  <nav class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-200/50 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
-        <a href="index.html" class="flex items-center"><img src="assets/img/asgrc-logo.png" alt="ASGRC" class="h-10 w-auto"></a>
-        <div class="hidden lg:flex items-center space-x-8">
-          <a href="what-we-do.html" class="text-gray-700 hover:text-asg-gold transition-colors font-medium">What We Do</a>
-          <a href="how-we-do-it.html" class="text-gray-700 hover:text-asg-gold transition-colors font-medium">How We Do It</a>
-          <a href="products.html" class="text-gray-700 hover:text-asg-gold transition-colors font-medium">Materials</a>
-          <a href="portfolio.html" class="text-asg-gold font-medium">Portfolio</a>
-          <a href="materials.html" class="text-gray-700 hover:text-asg-gold transition-colors font-medium">Finishes</a>
-          <a href="about.html" class="text-gray-700 hover:text-asg-gold transition-colors font-medium">About</a>
-          <a href="contact.html" class="text-gray-700 hover:text-asg-gold transition-colors font-medium">Contact</a>
-        </div>
-        <div class="hidden lg:flex items-center space-x-4">
-          <a href="mailto:info@asgrc.ae" class="text-sm text-asg-muted hover:text-asg-dark">info@asgrc.ae</a>
-          <button class="lg:hidden" id="mobile-menu-btn" aria-label="Menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <div class="fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 lg:hidden" id="mobile-menu">
-    <div class="p-6">
-      <div class="flex justify-between items-center mb-8">
-        <img src="assets/img/asgrc-logo.png" alt="ASGRC" class="h-8 w-auto">
-        <button id="mobile-close" aria-label="Close menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
-      </div>
-      <div class="space-y-4">
-        <a href="what-we-do.html" class="block text-lg font-medium text-gray-700 hover:text-asg-gold">What We Do</a>
-        <a href="how-we-do-it.html" class="block text-lg font-medium text-gray-700 hover:text-asg-gold">How We Do It</a>
-        <a href="products.html" class="block text-lg font-medium text-gray-700 hover:text-asg-gold">Materials</a>
-        <a href="portfolio.html" class="block text-lg font-medium text-gray-700 hover:text-asg-gold">Portfolio</a>
-        <a href="materials.html" class="block text-lg font-medium text-gray-700 hover:text-asg-gold">Finishes</a>
-        <a href="about.html" class="block text-lg font-medium text-gray-700 hover:text-asg-gold">About</a>
-        <a href="contact.html" class="block text-lg font-medium text-gray-700 hover:text-asg-gold">Contact</a>
-      </div>
-    </div>
+<body>
+  <div>
+    <p style="letter-spacing: 0.3em; text-transform: uppercase; font-size: 0.75rem; opacity: 0.6; margin-bottom: 1.25rem;">
+      ASGRC — Portfolio
+    </p>
+    <p style="margin-bottom: 2rem;">Our full portfolio now lives on the Projects page.</p>
+    <a href="projects.html">Continue to Projects &rarr;</a>
   </div>
-
-  <section class="pt-32 pb-16 bg-asg-light">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
-        <span class="text-asg-gold font-semibold uppercase tracking-wider text-sm">400+ Projects</span>
-        <h1 class="text-4xl md:text-6xl font-serif mt-4 mb-6 leading-tight">Our <span class="text-asg-gold italic">Portfolio</span></h1>
-        <p class="text-lg text-gray-700 leading-relaxed">From high-rise towers and luxury villas to mosques, commercial centres, and special buildings — our work spans the Middle East. Every project represents a partnership between visionary design and expert execution.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured Projects -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 gap-12">
-        <!-- Project 1 -->
-        <div class="fade-up group">
-          <div class="overflow-hidden rounded-xl shadow-lg mb-6">
-            <img src="assets/img/creek.jpg" alt="The Creek Edge" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
-          </div>
-          <span class="text-asg-gold text-sm font-semibold">High-Rise Tower</span>
-          <h3 class="text-2xl font-bold mt-1 mb-2">The Creek Edge, Dubai Harbour</h3>
-          <p class="text-gray-700 leading-relaxed">UHPC and GFRC façade panels for a landmark mixed-use tower at Dubai Harbour. Complex parametric geometry with 2,000+ custom panels.</p>
-        </div>
-        <!-- Project 2 -->
-        <div class="fade-up group" style="transition-delay: 0.1s">
-          <div class="overflow-hidden rounded-xl shadow-lg mb-6">
-            <img src="assets/img/urban.jpg" alt="Urban Oasis Tower" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
-          </div>
-          <span class="text-asg-gold text-sm font-semibold">Commercial Tower</span>
-          <h3 class="text-2xl font-bold mt-1 mb-2">Urban Oasis Tower, Business Bay</h3>
-          <p class="text-gray-700 leading-relaxed">Full façade system with GFRC cladding, louvers, and architectural screens. Delivered in 10 months from design to installation.</p>
-        </div>
-        <!-- Project 3 -->
-        <div class="fade-up group" style="transition-delay: 0.2s">
-          <div class="overflow-hidden rounded-xl shadow-lg mb-6">
-            <img src="assets/img/mosque.jpg" alt="Palace Beach Residence" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
-          </div>
-          <span class="text-asg-gold text-sm font-semibold">Luxury Villa</span>
-          <h3 class="text-2xl font-bold mt-1 mb-2">The Palace Beach Residence, Emaar</h3>
-          <p class="text-gray-700 leading-relaxed">Decorative GRG interior elements and GFRC exterior cladding for a luxury waterfront residence. Custom stone-texture finishes.</p>
-        </div>
-        <!-- Project 4 -->
-        <div class="fade-up group" style="transition-delay: 0.3s">
-          <div class="overflow-hidden rounded-xl shadow-lg mb-6">
-            <img src="assets/img/ahad.jpg" alt="Heritage Mosque" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
-          </div>
-          <span class="text-asg-gold text-sm font-semibold">Special Building</span>
-          <h3 class="text-2xl font-bold mt-1 mb-2">Heritage Mosque, Abu Dhabi</h3>
-          <p class="text-gray-700 leading-relaxed">UHPC panels for decorative façade elements and structural cladding. Precision-engineered to replicate traditional Islamic architectural motifs.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects by Sector -->
-  <section class="py-20 bg-asg-light">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16 fade-up">
-        <h2 class="text-4xl md:text-5xl font-serif">Projects by <span class="text-asg-gold italic">Sector</span></h2>
-      </div>
-      <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
-        <div class="fade-up bg-white p-8 rounded-xl text-center shadow-sm hover:shadow-md transition-shadow">
-          <div class="w-12 h-12 bg-asg-gold/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-6 h-6 text-asg-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-          </div>
-          <h3 class="font-bold mb-1">High-Rise Towers</h3>
-          <p class="text-asg-gold font-semibold">120+ Projects</p>
-        </div>
-        <div class="fade-up bg-white p-8 rounded-xl text-center shadow-sm hover:shadow-md transition-shadow" style="transition-delay: 0.05s">
-          <div class="w-12 h-12 bg-asg-gold/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-6 h-6 text-asg-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-          </div>
-          <h3 class="font-bold mb-1">Luxury Villas</h3>
-          <p class="text-asg-gold font-semibold">85 Projects</p>
-        </div>
-        <div class="fade-up bg-white p-8 rounded-xl text-center shadow-sm hover:shadow-md transition-shadow" style="transition-delay: 0.1s">
-          <div class="w-12 h-12 bg-asg-gold/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-6 h-6 text-asg-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/></svg>
-          </div>
-          <h3 class="font-bold mb-1">Mosques</h3>
-          <p class="text-asg-gold font-semibold">25 Projects</p>
-        </div>
-        <div class="fade-up bg-white p-8 rounded-xl text-center shadow-sm hover:shadow-md transition-shadow" style="transition-delay: 0.15s">
-          <div class="w-12 h-12 bg-asg-gold/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-6 h-6 text-asg-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
-          </div>
-          <h3 class="font-bold mb-1">Commercial Malls</h3>
-          <p class="text-asg-gold font-semibold">40 Projects</p>
-        </div>
-        <div class="fade-up bg-white p-8 rounded-xl text-center shadow-sm hover:shadow-md transition-shadow" style="transition-delay: 0.2s">
-          <div class="w-12 h-12 bg-asg-gold/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-6 h-6 text-asg-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
-          </div>
-          <h3 class="font-bold mb-1">Hotels</h3>
-          <p class="text-asg-gold font-semibold">60 Projects</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="py-20 bg-asg-gold">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="fade-up">
-        <h2 class="text-4xl md:text-5xl font-serif text-white mb-6">Start Your Next Project</h2>
-        <p class="text-white/90 text-lg mb-8 max-w-2xl mx-auto">Let our experience deliver excellence for yours. Discuss your project with our technical team.</p>
-        <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-white text-asg-gold font-semibold rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
-          Discuss Your Project
-          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <footer class="bg-asg-dark text-white pt-16 pb-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-        <div>
-          <a href="index.html" class="flex items-center"><img src="assets/img/asgrc-logo.png" alt="ASGRC" class="h-8 w-auto"></a>
-          <p class="text-gray-400 mt-4 text-sm leading-relaxed">Al Shafar GRC LLC — Advanced façade systems design, manufacture, and installation.</p>
-          <div class="flex flex-wrap gap-2 mt-6">
-            <span class="px-3 py-1 bg-white/10 text-xs rounded-full">ISO 9001</span><span class="px-3 py-1 bg-white/10 text-xs rounded-full">ISO 14001</span><span class="px-3 py-1 bg-white/10 text-xs rounded-full">ISO 45001</span><span class="px-3 py-1 bg-white/10 text-xs rounded-full">GRCA</span>
-          </div>
-        </div>
-        <div><h4 class="font-semibold mb-4 text-white">Process</h4><ul class="space-y-2 text-sm"><li><a href="what-we-do.html" class="text-gray-400 hover:text-asg-gold transition-colors">What We Do</a></li><li><a href="how-we-do-it.html" class="text-gray-400 hover:text-asg-gold transition-colors">How We Do It</a></li><li><a href="products.html" class="text-gray-400 hover:text-asg-gold transition-colors">Materials</a></li><li><a href="materials.html" class="text-gray-400 hover:text-asg-gold transition-colors">Finishes</a></li><li><a href="contact.html" class="text-gray-400 hover:text-asg-gold transition-colors">Contact</a></li></ul></div>
-        <div><h4 class="font-semibold mb-4 text-white">Company</h4><ul class="space-y-2 text-sm"><li><a href="about.html" class="text-gray-400 hover:text-asg-gold transition-colors">About Us</a></li><li><a href="portfolio.html" class="text-gray-400 hover:text-asg-gold transition-colors">Portfolio</a></li><li><a href="contact.html" class="text-gray-400 hover:text-asg-gold transition-colors">Careers</a></li><li><a href="contact.html" class="text-gray-400 hover:text-asg-gold transition-colors">Certifications</a></li></ul></div>
-        <div><h4 class="font-semibold mb-4 text-white">Contact</h4><address class="text-gray-400 text-sm leading-relaxed not-italic">Plot No. 533-193<br>Saih Suhaib 04, Dubai<br>Industrial City, P.O. Box 117717<br>Dubai, UAE</address><div class="mt-4 space-y-2"><a href="tel:+97143201288" class="text-gray-400 hover:text-asg-gold transition-colors text-sm">+971 4 320 1288</a><br><a href="mailto:info@asgrc.ae" class="text-gray-400 hover:text-asg-gold transition-colors text-sm">info@asgrc.ae</a><br><a href="https://www.asgrc.ae" target="_blank" class="text-gray-400 hover:text-asg-gold transition-colors text-sm">www.asgrc.ae</a></div></div>
-      </div>
-      <div class="border-t border-white/10 pt-8 text-center"><p class="text-gray-500 text-sm">&copy; 2026 Al Shafar GRC LLC. All rights reserved.</p></div>
-    </div>
-  </footer>
-
-  <div class="fixed bottom-6 right-6 z-40">
-    <button id="chat-toggle" class="bg-asg-gold text-white rounded-full p-4 shadow-lg hover:bg-yellow-600 transition-colors"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg></button>
-    <div id="chat-window" class="absolute bottom-16 right-0 w-80 bg-white rounded-xl shadow-2xl border border-gray-200 hidden">
-      <div class="bg-asg-gold text-white p-4 rounded-t-xl flex justify-between items-center"><span class="font-semibold">ASGRC Assistant</span><button id="chat-close" class="text-white/80 hover:text-white"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button></div>
-      <div id="chat-body" class="p-4 h-64 overflow-y-auto bg-gray-50"><div class="mb-3"><div class="bg-white p-3 rounded-lg shadow-sm border border-gray-200 max-w-xs"><p class="text-sm">Hello! 👋 How can I help you today?</p></div></div></div>
-      <div class="p-3 border-t border-gray-200 bg-white rounded-b-xl"><div class="flex gap-2"><input type="text" id="chat-input" placeholder="Type your message..." class="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-asg-gold"><button id="chat-send" class="bg-asg-gold text-white px-3 py-2 rounded-lg hover:bg-yellow-600 transition-colors"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg></button></div></div>
-    </div>
-  </div>
-
-  <script>
-    const mobileMenuBtn=document.getElementById('mobile-menu-btn'),mobileMenu=document.getElementById('mobile-menu'),mobileClose=document.getElementById('mobile-close');
-    if(mobileMenuBtn)mobileMenuBtn.addEventListener('click',()=>mobileMenu.classList.remove('translate-x-full'));
-    if(mobileClose)mobileClose.addEventListener('click',()=>mobileMenu.classList.add('translate-x-full'));
-    const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');})},{threshold:0.1});
-    document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
-    const chatToggle=document.getElementById('chat-toggle'),chatWindow=document.getElementById('chat-window'),chatClose=document.getElementById('chat-close'),chatInput=document.getElementById('chat-input'),chatSend=document.getElementById('chat-send'),chatBody=document.getElementById('chat-body');
-    function toggleChat(){chatWindow.classList.toggle('hidden');}
-    function addMsg(text,sender){const div=document.createElement('div');div.className='mb-3 '+(sender==='user'?'text-right':'');div.innerHTML=sender==='user'?'<div class="bg-asg-gold text-white p-3 rounded-lg shadow-sm max-w-xs ml-auto">'+text+'</div>':'<div class="bg-white p-3 rounded-lg shadow-sm border border-gray-200 max-w-xs">'+text+'</div>';chatBody.appendChild(div);chatBody.scrollTop=chatBody.scrollHeight;}
-    function getBotReply(msg){const m=msg.toLowerCase();if(m.includes('material')||m.includes('grc')||m.includes('uhpc'))return 'We manufacture GRC, GRP, UHPC, and GRG. <a href="products.html" class="underline">Our Materials</a>.';if(m.includes('project')||m.includes('portfolio'))return '400+ projects. <a href="portfolio.html" class="underline">Portfolio</a>.';if(m.includes('price')||m.includes('cost')||m.includes('quote'))return 'Email <a href="mailto:info@asgrc.ae" class="underline">info@asgrc.ae</a>.';if(m.includes('contact')||m.includes('phone')||m.includes('email'))return '<a href="tel:+97143201288" class="underline">+971 4 320 1288</a> or <a href="mailto:info@asgrc.ae" class="underline">info@asgrc.ae</a>.';return 'Email <a href="mailto:info@asgrc.ae" class="underline">info@asgrc.ae</a> or call <a href="tel:+97143201288" class="underline">+971 4 320 1288</a>.';}
-    chatToggle.addEventListener('click',toggleChat);chatClose.addEventListener('click',toggleChat);
-    function sendMsg(){const text=chatInput.value.trim();if(!text)return;addMsg(text,'user');chatInput.value='';setTimeout(()=>addMsg(getBotReply(text),'bot'),600);}
-    chatSend.addEventListener('click',sendMsg);chatInput.addEventListener('keypress',(e)=>{if(e.key==='Enter')sendMsg();});
-  </script>
 </body>
 </html>

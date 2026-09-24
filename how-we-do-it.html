@@ -53,7 +53,7 @@
           <a href="contact.html" class="text-gray-700 hover:text-asg-gold transition-colors font-medium">Contact</a>
         </div>
         <div class="hidden lg:flex items-center space-x-4">
-          <a href="mailto:info@asgrc.ae" class="text-sm text-asg-muted hover:text-asg-dark">info@asgrc.ae</a>
+          <a href="mailto:info@asgrc.co" class="text-sm text-asg-muted hover:text-asg-dark">info@asgrc.co</a>
           <button class="lg:hidden" id="mobile-menu-btn" aria-label="Menu">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
           </button>
@@ -185,7 +185,7 @@
         <div>
           <h4 class="font-semibold mb-4 text-white">Contact</h4>
           <address class="text-gray-400 text-sm leading-relaxed not-italic">Plot No. 533-193<br>Saih Suhaib 04, Dubai<br>Industrial City, P.O. Box 117717<br>Dubai, UAE</address>
-          <div class="mt-4 space-y-2"><a href="tel:+97143201288" class="text-gray-400 hover:text-asg-gold transition-colors text-sm">+971 4 320 1288</a><br><a href="mailto:info@asgrc.ae" class="text-gray-400 hover:text-asg-gold transition-colors text-sm">info@asgrc.ae</a><br><a href="https://www.asgrc.ae" target="_blank" class="text-gray-400 hover:text-asg-gold transition-colors text-sm">www.asgrc.ae</a></div>
+          <div class="mt-4 space-y-2"><a href="tel:+97143201288" class="text-gray-400 hover:text-asg-gold transition-colors text-sm">+971 4 320 1288</a><br><a href="mailto:info@asgrc.co" class="text-gray-400 hover:text-asg-gold transition-colors text-sm">info@asgrc.co</a><br><a href="https://www.asgrc.co" target="_blank" class="text-gray-400 hover:text-asg-gold transition-colors text-sm">www.asgrc.co</a></div>
         </div>
       </div>
       <div class="border-t border-white/10 pt-8 text-center"><p class="text-gray-500 text-sm">&copy; 2026 Al Shafar GRC LLC. All rights reserved.</p></div>
@@ -211,7 +211,7 @@
     const chatToggle=document.getElementById('chat-toggle'),chatWindow=document.getElementById('chat-window'),chatClose=document.getElementById('chat-close'),chatInput=document.getElementById('chat-input'),chatSend=document.getElementById('chat-send'),chatBody=document.getElementById('chat-body');
     function toggleChat(){chatWindow.classList.toggle('hidden');}
     function addMsg(text,sender){const div=document.createElement('div');div.className='mb-3 '+(sender==='user'?'text-right':'');div.innerHTML=sender==='user'?'<div class="bg-asg-gold text-white p-3 rounded-lg shadow-sm max-w-xs ml-auto">'+text+'</div>':'<div class="bg-white p-3 rounded-lg shadow-sm border border-gray-200 max-w-xs">'+text+'</div>';chatBody.appendChild(div);chatBody.scrollTop=chatBody.scrollHeight;}
-    function getBotReply(msg){const m=msg.toLowerCase();if(m.includes('material')||m.includes('grc')||m.includes('uhpc'))return 'We manufacture GRC, GRP, UHPC, and GRG. <a href="products.html" class="underline">Our Materials</a>.';if(m.includes('project')||m.includes('portfolio'))return '400+ projects. <a href="portfolio.html" class="underline">Portfolio</a>.';if(m.includes('price')||m.includes('cost')||m.includes('quote'))return 'Email <a href="mailto:info@asgrc.ae" class="underline">info@asgrc.ae</a>.';if(m.includes('contact')||m.includes('phone')||m.includes('email'))return '<a href="tel:+97143201288" class="underline">+971 4 320 1288</a> or <a href="mailto:info@asgrc.ae" class="underline">info@asgrc.ae</a>.';return 'Email <a href="mailto:info@asgrc.ae" class="underline">info@asgrc.ae</a> or call <a href="tel:+97143201288" class="underline">+971 4 320 1288</a>.';}
+    function getBotReply(msg){const m=msg.toLowerCase();if(m.includes('material')||m.includes('grc')||m.includes('uhpc'))return 'We manufacture GRC, GRP, UHPC, and GRG. <a href="products.html" class="underline">Our Materials</a>.';if(m.includes('project')||m.includes('portfolio'))return '400+ projects. <a href="portfolio.html" class="underline">Portfolio</a>.';if(m.includes('price')||m.includes('cost')||m.includes('quote'))return 'Email <a href="mailto:info@asgrc.co" class="underline">info@asgrc.co</a>.';if(m.includes('contact')||m.includes('phone')||m.includes('email'))return '<a href="tel:+97143201288" class="underline">+971 4 320 1288</a> or <a href="mailto:info@asgrc.co" class="underline">info@asgrc.co</a>.';return 'Email <a href="mailto:info@asgrc.co" class="underline">info@asgrc.co</a> or call <a href="tel:+97143201288" class="underline">+971 4 320 1288</a>.';}
     chatToggle.addEventListener('click',toggleChat);chatClose.addEventListener('click',toggleChat);
     function sendMsg(){const text=chatInput.value.trim();if(!text)return;addMsg(text,'user');chatInput.value='';setTimeout(()=>addMsg(getBotReply(text),'bot'),600);}
     chatSend.addEventListener('click',sendMsg);chatInput.addEventListener('keypress',(e)=>{if(e.key==='Enter')sendMsg();});
